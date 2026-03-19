@@ -1,5 +1,5 @@
 {
   "STAR_POINT_POWER.title": "星位",
-  "STAR_POINT_POWER.description": "手牌第3格和第6格为默认[gold]星位[/gold]。在[gold]星位[/gold]上的牌可以触发其[gold]星位[/gold]效果。",
-  "STAR_POINT_POWER.smartDescription": "手牌第3格和第6格为默认[gold]星位[/gold]。在[gold]星位[/gold]上的牌可以触发其[gold]星位[/gold]效果。\n当前[gold]星位[/gold]：{StarPointList}。"
+  "STAR_POINT_POWER.description": "手牌第3格和第6格为默认[gold]星位[/gold]。\n在[gold]星位[/gold]上的牌可以触发其[gold]星位[/gold]效果。",
+  "STAR_POINT_POWER.smartDescription": "手牌第3格和第6格为默认[gold]星位[/gold]。\n在[gold]星位[/gold]上的牌可以触发其[gold]星位[/gold]效果。\n当前[gold]星位[/gold]：{StarPointList}。"
 }

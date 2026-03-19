@@ -76,6 +76,7 @@ public sealed class AstralMoveFlank : StarPointCardModel
     /// </summary>
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3);
+        DynamicVars.Damage.UpgradeValueBy(1);
+        DynamicVars[STAR_POINT_DAMAGE_VAR].UpgradeValueBy(3);
     }
 }

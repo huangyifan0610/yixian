@@ -1,0 +1,6 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://d33tx34t38piq"]
+
+[ext_resource type="Texture2D" uid="uid://dldnq38crgaid" path="res://images/powers/star_point_power.png" id="1_2r5wj"]
+
+[resource]
+atlas = ExtResource("1_2r5wj")
