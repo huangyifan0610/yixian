@@ -1,0 +1,9 @@
+{
+  "id": "yixian",
+  "name": "Yixian Pai",
+  "author": "huangyifan0610",
+  "description": "Play Yixian Pai on Slay the Spire II",
+  "version": "0.1.0",
+  "has_dll": true,
+  "has_pck": true
+}
