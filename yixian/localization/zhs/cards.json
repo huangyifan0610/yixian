@@ -1,0 +1,6 @@
+{
+    "ASTRAL_MOVE_FLANK.title": "星弈・夹",
+    "ASTRAL_MOVE_FLANK.description": "造成{Damage:diff()}点伤害\n[gold]星位[/gold]：造成{StarPointDamage:diff()}点伤害",
+    "ASTRAL_MOVE_BLOCK.title": "星弈・挡",
+    "ASTRAL_MOVE_BLOCK.description": "获得{Block:diff()}点[gold]格挡[/gold]\n[gold]星位[/gold]：获得{StarPointBlock:diff()}点[gold]格挡[/gold]"
+}

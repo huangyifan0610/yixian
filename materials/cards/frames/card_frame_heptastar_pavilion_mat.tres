@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://0liygca52vwc"]
+
+[ext_resource type="Shader" uid="uid://cqsqo4bhbvaox" path="res://shaders/hsv.gdshader" id="1_0eypd"]
+
+[resource]
+shader = ExtResource("1_0eypd")
+shader_parameter/h = 0.7
+shader_parameter/s = 0.9
+shader_parameter/v = 0.7

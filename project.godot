@@ -16,7 +16,7 @@ config/name_localized={
 "zh_CN": "弈仙牌"
 }
 config/description="Play Yixian Pai on Slay the Spire II"
-config/features=PackedStringArray("4.5", "Mobile")
+config/features=PackedStringArray("4.5", "C#", "Mobile")
 config/icon="res://icon.svg"
 
 [dotnet]

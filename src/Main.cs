@@ -1,6 +1,7 @@
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
+using Yixian.Cards.HeptastarPavilion;
 
 namespace Yixian;
 
@@ -35,8 +36,11 @@ public sealed class Main
     /// </summary>
     public static void Run()
     {
-        /// Harmony Patches.
+        // Harmony Patches.
         var harmony = new Harmony(ID);
         harmony.PatchAll();
+
+        // Card pool.
+        ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralMoveFlank>();
     }
 }
