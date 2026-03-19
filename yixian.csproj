@@ -15,7 +15,6 @@
       <HintPath>$(registry:HKEY_CURRENT_USER\Software\Valve\Steam@SteamPath)\steamapps\common\Slay the Spire 2\data_sts2_windows_x86_64\0Harmony.dll</HintPath>
     </Reference>
   </ItemGroup>
-
   <ItemGroup Condition="$([MSBuild]::IsOSPlatform('Linux'))">
     <Reference Include="sts2">
       <HintPath>$(HOME)/.local/share/Steam/steamapps/common/Slay the Spire 2/data_sts2_linuxbsd_x86_64/sts2.dll</HintPath>
@@ -24,4 +23,19 @@
       <HintPath>$(HOME)/.local/share/Steam/steamapps/common/Slay the Spire 2/data_sts2_linuxbsd_x86_64/0Harmony.dll</HintPath>
     </Reference>
   </ItemGroup>
+
+  <Target Name="DllCopyOnWindows" AfterTargets="Build" Condition="$([MSBuild]::IsOSPlatform('Windows'))">
+    <Copy
+      SourceFiles="yixian.json;.godot\mono\temp\bin\Debug\yixian.dll"
+      DestinationFolder="$(registry:HKEY_CURRENT_USER\Software\Valve\Steam@SteamPath)\steamapps\common\Slay the Spire 2\mods\yixian"
+      OverwriteReadOnlyFiles="true"
+      SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="DllCopyOnLinux" AfterTargets="Build" Condition="$([MSBuild]::IsOSPlatform('Linux'))">
+    <Copy
+      SourceFiles="yixian.json;.godot\mono\temp\bin\Debug\yixian.dll"
+      DestinationFolder="$(HOME)/.local/share/Steam/steamapps/common/Slay the Spire 2/mods/yixian"
+      OverwriteReadOnlyFiles="true"
+      SkipUnchangedFiles="true" />
+  </Target>
 </Project>
