@@ -49,6 +49,7 @@ public sealed class HeptastarPavilionCardPool : CardPoolModel
             ModelDb.Card<AstralMoveFlank>(),
             ModelDb.Card<AstralMoveBlock>(),
             ModelDb.Card<EarthHexagram>(),
+            ModelDb.Card<PalmThunder>(),
         ];
     }
 }

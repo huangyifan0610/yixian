@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bawfi8y6kp6ax"]
+
+[ext_resource type="Texture2D" uid="uid://i0y5svx2fadg" path="res://images/packed/card_portraits/heptastar_pavilion/palm_thunder.png" id="1_lbng2"]
+
+[resource]
+atlas = ExtResource("1_lbng2")
+region = Rect2(0, 37, 180, 142)

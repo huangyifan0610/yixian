@@ -4,5 +4,7 @@
     "ASTRAL_MOVE_BLOCK.title": "Astral Move - Block",
     "ASTRAL_MOVE_BLOCK.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Star Point[/gold]: Gain {StarPointBlock:diff()} [gold]Block[/gold].",
     "EARTH_HEXAGRAM.title": "Earth Hexagram",
-    "EARTH_HEXAGRAM.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {Hexagram:diff()} [gold]Hexagram[/gold]."
+    "EARTH_HEXAGRAM.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {Hexagram:diff()} [gold]Hexagram[/gold].",
+    "PALM_THUNDER.title": "Palm Thunder",
+    "PALM_THUNDER.description": "[gold]Hexagram[/gold]: Deal {DamageLowerBound:diff()} ~ {DamageUpperBound:diff()} damage."
 }

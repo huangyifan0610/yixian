@@ -45,6 +45,7 @@ public sealed class Main
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralMoveFlank>();
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralMoveBlock>();
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, EarthHexagram>();
+        ModHelper.AddModelToPool<HeptastarPavilionCardPool, PalmThunder>();
 
         // Relic pool.
         ModHelper.AddModelToPool<HeptastarPavilionRelicPool, StarPoint>();
