@@ -1,18 +1,19 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using MegaCrit.Sts2.Core.Commands;
-using System.Linq;
+using Yixian.Patches;
 
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>
 /// <c>Astral Move - Block</c> in <c>Heptastar Pavilion</c>.
 /// </summary>
-public sealed class AstralMoveBlock : StarPointCardModel
+public sealed class AstralMoveBlock() : HeptastarPavilionCardModel(1, CardType.Skill, CardRarity.Basic, TargetType.Self)
 {
     /// <summary>
     /// The star point block variable.
@@ -35,9 +36,9 @@ public sealed class AstralMoveBlock : StarPointCardModel
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
 
     /// <summary>
-    /// The default constructor.
+    /// Glow if on Star Point.
     /// </summary>
-    public AstralMoveBlock() : base(1, CardType.Skill, CardRarity.Basic, TargetType.Self) { }
+    protected override bool ShouldGlowGoldInternal => this.IsOnStarPoint();
 
     /// <summary>
     /// Gain blocks.
@@ -48,12 +49,9 @@ public sealed class AstralMoveBlock : StarPointCardModel
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
 
         // Continue to gain star point block.
-        if (IsStarPointVar.BoolVal)
+        if (this.IsOnStarPoint())
         {
             await CreatureCmd.GainBlock(Owner.Creature, (BlockVar)DynamicVars[STAR_POINT_BLOCK_VAR], cardPlay);
-
-            // Reset star point.
-            IsStarPointVar.BoolVal = false;
         }
     }
 

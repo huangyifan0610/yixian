@@ -1,10 +1,18 @@
 {
-    "ASTRAL_MOVE_FLANK.title": "Astral Move - Flank",
-    "ASTRAL_MOVE_FLANK.description": "Deal {Damage:diff()} damage.\n[gold]Star Point[/gold]: Deal {StarPointDamage:diff()} damage.",
+    "ALL_OR_NOTHING.title": "All Or Nothing",
+    "ALL_OR_NOTHING.description": "Deal {MinDamage:diff()} ~ {MaxDamage:diff()} damage.\nGain {MinBlock:diff()} ~ {MaxBlock} block.",
+    "ASTRAL_FLECHE.title": "Astral Fleche",
+    "ASTRAL_FLECHE.description": "Deal {Damage:diff()} damage.\nGain {StarPower:diff()} [gold]Star Power[/gold].",
     "ASTRAL_MOVE_BLOCK.title": "Astral Move - Block",
     "ASTRAL_MOVE_BLOCK.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Star Point[/gold]: Gain {StarPointBlock:diff()} [gold]Block[/gold].",
+    "ASTRAL_MOVE_CIDE.title": "Astral Move - Cide",
+    "ASTRAL_MOVE_CIDE.description": "Deal {Damage:diff()} damage.\n[gold]Star Point[/gold]: Skip opponent's next card.",
+    "ASTRAL_MOVE_DRAGON_SLAY.title": "Astral Move - Dragon Slay",
+    "ASTRAL_MOVE_DRAGON_SLAY.description": "Deal {Damage:diff()} damage.\n[gold]Star Point[/gold]: This card receives {StarPowerBonus:diff()} times bonus from [gold]Star Power[/gold].",
+    "ASTRAL_MOVE_FLANK.title": "Astral Move - Flank",
+    "ASTRAL_MOVE_FLANK.description": "Deal {Damage:diff()} damage.\n[gold]Star Point[/gold]: Deal {StarPointDamage:diff()} damage.",
     "EARTH_HEXAGRAM.title": "Earth Hexagram",
     "EARTH_HEXAGRAM.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {Hexagram:diff()} [gold]Hexagram[/gold].",
     "PALM_THUNDER.title": "Palm Thunder",
-    "PALM_THUNDER.description": "[gold]Hexagram[/gold]: Deal {DamageLowerBound:diff()} ~ {DamageUpperBound:diff()} damage."
+    "PALM_THUNDER.description": "Deal {MinDamage:diff()} ~ {MaxDamage:diff()} damage."
 }

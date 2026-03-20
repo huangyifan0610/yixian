@@ -23,9 +23,7 @@ public sealed class HeptastarPavilionRelicPool: RelicPoolModel
     /// </summary>
     protected override IEnumerable<RelicModel> GenerateAllRelics()
     {
-        return [
-            ModelDb.Relic<StarPoint>(),
-        ]; 
+        return []; 
     }
 
     /// <summary>

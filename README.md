@@ -25,10 +25,6 @@ See [Splay the Spire II] and [Yixian Pai] on *Steam*.
 
 - **Heptastar Pavilion**
 
-### New Relics
-
-- **Star Point** in Heptastar Pavilion
-
 ### New Powers
 
 - **Star Point Power**

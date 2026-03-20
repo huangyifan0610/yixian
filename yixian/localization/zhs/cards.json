@@ -1,10 +1,18 @@
 {
-    "ASTRAL_MOVE_FLANK.title": "星弈・夹",
-    "ASTRAL_MOVE_FLANK.description": "造成{Damage:diff()}点伤害\n[gold]星位[/gold]：造成{StarPointDamage:diff()}点伤害",
+    "ALL_OR_NOTHING.title": "一掷乾坤",
+    "ALL_OR_NOTHING.description": "造成{MinDamage:diff()} ~ {MaxDamage:diff()}伤害\n获得{MinBlock:diff()} ~ {MaxBlock}格挡",
+    "ASTRAL_FLECHE.title": "飞星刺",
+    "ASTRAL_FLECHE.description": "造成{Damage:diff()}伤害\n获得{StarPower:diff()}[gold]星力[/gold]",
     "ASTRAL_MOVE_BLOCK.title": "星弈・挡",
-    "ASTRAL_MOVE_BLOCK.description": "获得{Block:diff()}点[gold]格挡[/gold]\n[gold]星位[/gold]：获得{StarPointBlock:diff()}点[gold]格挡[/gold]",
+    "ASTRAL_MOVE_BLOCK.description": "获得{Block:diff()}格挡\n[gold]星位[/gold]：获得{StarPointBlock:diff()}格挡",
+    "ASTRAL_MOVE_CIDE.title": "星弈・断",
+    "ASTRAL_MOVE_CIDE.description": "造成{Damage:diff()}伤害\n[gold]星位[/gold]：使敌人跳过当前意图",
+    "ASTRAL_MOVE_DRAGON_SLAY.title": "星弈・屠龙",
+    "ASTRAL_MOVE_DRAGON_SLAY.description": "造成{Damage:diff()}伤害\n[gold]星位[/gold]：此牌受{StarPowerBonus:diff()}倍[gold]星力[/gold]加成",
+    "ASTRAL_MOVE_FLANK.title": "星弈・夹",
+    "ASTRAL_MOVE_FLANK.description": "造成{Damage:diff()}伤害\n[gold]星位[/gold]：造成{StarPointDamage:diff()}伤害",
     "EARTH_HEXAGRAM.title": "坤卦",
-    "EARTH_HEXAGRAM.description": "获得{Block:diff()}点[gold]格挡[/gold]\n获得{Hexagram:diff()}点[gold]卦象[/gold]",
+    "EARTH_HEXAGRAM.description": "获得{Block:diff()}格挡\n获得{Hexagram:diff()}[gold]卦象[/gold]",
     "PALM_THUNDER.title": "掌心雷",
-    "PALM_THUNDER.description": "[gold]卦象[/gold]: 造成{DamageLowerBound:diff()} ~ {DamageUpperBound:diff()}点伤害."
+    "PALM_THUNDER.description": "造成{MinDamage:diff()} ~ {MaxDamage:diff()}伤害"
 }

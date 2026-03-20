@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,7 +6,6 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
 using Yixian.Powers;
 
@@ -16,19 +14,19 @@ namespace Yixian.Cards.HeptastarPavilion;
 /// <summary>
 /// <c>Palm Thunder</c> in <c>Heptastar Pavilion</c>.
 /// </summary>
-public sealed class PalmThunder : HeptastarPavilionCardModel
+public sealed class PalmThunder() : HeptastarPavilionCardModel(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
 {
     /// <summary>
     /// The dynamic variables.
     /// </summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => base.CanonicalVars.Concat([
         // Deal at least 2 damage.
-        new DamageVar(DAMAGE_LOWER_BOUND_VAR, 2, ValueProp.Move),
+        new DamageVar(MIN_DAMAGE_VAR, 2, ValueProp.Move),
         // Deal at most 10 hexagrams.
-        new DamageVar(DAMAGE_UPPER_BOUND_VAR, 10, ValueProp.Move),
+        new DamageVar(MAX_DAMAGE_VAR, 10, ValueProp.Move),
     ]);
-    private const string DAMAGE_LOWER_BOUND_VAR = "DamageLowerBound";
-    private const string DAMAGE_UPPER_BOUND_VAR = "DamageUpperBound";
+    private const string MIN_DAMAGE_VAR = "MinDamage";
+    private const string MAX_DAMAGE_VAR = "MaxDamage";
 
     /// <summary>
     /// Adds star point power to the hover tips.
@@ -38,20 +36,15 @@ public sealed class PalmThunder : HeptastarPavilionCardModel
     ]);
 
     /// <summary>
-    /// The default constructor.
-    /// </summary>
-    public PalmThunder() : base(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy) { }
-
-    /// <summary>
     /// Deal random damage.
     /// </summary>
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (cardPlay.Target != null)
         {
-            int lowerBound = (int)DynamicVars[DAMAGE_LOWER_BOUND_VAR].BaseValue;
-            int upperBound = (int)DynamicVars[DAMAGE_UPPER_BOUND_VAR].BaseValue;
-            decimal damage = await HexagramPower.Range(Owner.Creature, this, Owner.RunState, lowerBound, upperBound);
+            int min = (int)DynamicVars[MIN_DAMAGE_VAR].BaseValue;
+            int max = (int)DynamicVars[MAX_DAMAGE_VAR].BaseValue;
+            decimal damage = await HexagramPower.Range(Owner.Creature, this, Owner.RunState, min, max);
 
             // Takes maximum value.
             await DamageCmd
@@ -68,7 +61,7 @@ public sealed class PalmThunder : HeptastarPavilionCardModel
     /// </summary>
     protected override void OnUpgrade()
     {
-        DynamicVars[DAMAGE_LOWER_BOUND_VAR].UpgradeValueBy(2);
-        DynamicVars[DAMAGE_UPPER_BOUND_VAR].UpgradeValueBy(4);
+        DynamicVars[MIN_DAMAGE_VAR].UpgradeValueBy(2);
+        DynamicVars[MAX_DAMAGE_VAR].UpgradeValueBy(4);
     }
 }

@@ -2,7 +2,6 @@ using HarmonyLib;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
 using Yixian.Cards.HeptastarPavilion;
-using Yixian.Relics;
 
 namespace Yixian;
 
@@ -46,8 +45,5 @@ public sealed class Main
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralMoveBlock>();
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, EarthHexagram>();
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, PalmThunder>();
-
-        // Relic pool.
-        ModHelper.AddModelToPool<HeptastarPavilionRelicPool, StarPoint>();
     }
 }

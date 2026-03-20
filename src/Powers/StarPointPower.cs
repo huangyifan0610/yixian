@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.Extensions;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
-using Yixian.Cards.HeptastarPavilion;
 
 namespace Yixian.Powers;
 
@@ -25,83 +26,58 @@ public sealed class StarPointPower : PowerModel
     public override PowerStackType StackType => PowerStackType.Single;
 
     /// <summary>
-    /// The i-th bit indicates whether the i-th slot is Star Point.
-    /// </summary>
-    private ulong _starPoints = 0;
-
-    /// <summary>
     /// Variables for localization.
     /// </summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         // comma-seperated integers displaying current Star Points.
-        new StringVar(STAR_POINT_LIST_VAR)
+        new StringVar(STAR_POINT_LIST_VAR, _starPoints.ToString())
     ];
     private const string STAR_POINT_LIST_VAR = "StarPointList";
 
+
     /// <summary>
-    /// Returns true if the index-th slot is Star Point. 
+    /// The i-th bit indicates whether the i-th slot is Star Point.
     /// </summary>
-    public bool this[int index]
-    {
-        get
-        {
-            return (_starPoints & (1ul << index)) != 0;
-        }
-        set
-        {
-            ulong old = _starPoints;
-
-            if (value)
-            {
-                _starPoints |= 1ul << index;
-            }
-            else
-            {
-                _starPoints &= ~(1ul << index);
-            }
-
-            // Also updates the displaying string.
-            if (old != _starPoints)
-            {
-                var starPointList = (StringVar)DynamicVars[STAR_POINT_LIST_VAR];
-                starPointList.StringValue = ToString();
-            }
-        }
-    }
+    private ulong _starPoints = 0;
 
     /// <summary>
     /// The third and sixth slots are the default Star Point. 
     /// </summary>
     public StarPointPower()
     {
-        // The third slot.
-        this[2] = true;
-        // The sixth slot.
-        this[5] = true;
+        SetStarPoint(2);
+        SetStarPoint(5);
     }
 
     /// <summary>
-    /// Updates star points for hand cards.
+    /// Returns true if the index-th slot is Star Point. 
     /// </summary>
-    public override Task AfterApplied(Creature? applier, CardModel? cardSource)
+    public bool IsStarPoint(int index)
     {
-        var hand = Owner?.Player?.PlayerCombatState?.Hand;
-        if (hand != null)
-        {
-            hand.ContentsChanged += () =>
-            {
-                for (int index = 0; index < hand.Cards.Count; ++index)
-                {
-                    if (hand.Cards[index] is StarPointCardModel starPointCard && starPointCard.IsStarPointVar != null)
-                    {
-                        starPointCard.IsStarPointVar.BoolVal = this[index];
-                    }
-                }
-            };
-        }
-        return base.AfterApplied(applier, cardSource);
+        return 0 <= index && index < 64 && (_starPoints & (1ul << index)) != 0;
     }
 
+    /// <summary>
+    /// Returns true if the slot is default Star Point.
+    /// </summary>
+    public static bool IsDefaultStarPoint(int index)
+    {
+        return index == 2 || index == 5;
+    }
+    
+    /// <summary>
+    /// Sets the index-th slot to Star Point.
+    /// </summary>
+    public void SetStarPoint(int index)
+    {
+        if (0 <= index && index < 64 && !IsStarPoint(index))
+        {
+            _starPoints |= 1ul << index;
+            var list = (StringVar)DynamicVars[STAR_POINT_LIST_VAR];
+            list.StringValue = ToString();
+        }
+    }
+    
     /// <summary>
     /// Returns a list of comma-seperated integers displaying current Star Points.
     /// </summary>
@@ -112,7 +88,7 @@ public sealed class StarPointPower : PowerModel
 
         for (int index = 0; index < 64; ++index)
         {
-            if (this[index])
+            if (IsStarPoint(index))
             {
                 if (comma)
                 {

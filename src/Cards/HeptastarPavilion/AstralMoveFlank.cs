@@ -6,13 +6,14 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using MegaCrit.Sts2.Core.Commands;
 using System.Linq;
+using Yixian.Patches;
 
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>
 /// <c>Astral Move - Flank</c> in <c>Heptastar Pavilion</c>.
 /// </summary>
-public sealed class AstralMoveFlank : StarPointCardModel
+public sealed class AstralMoveFlank() : HeptastarPavilionCardModel(1, CardType.Attack, CardRarity.Basic, TargetType.AnyEnemy)
 {
     /// <summary>
     /// The star point damage variable.
@@ -35,9 +36,9 @@ public sealed class AstralMoveFlank : StarPointCardModel
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
 
     /// <summary>
-    /// The default constructor.
+    /// Glow if on Star Point.
     /// </summary>
-    public AstralMoveFlank() : base(1, CardType.Attack, CardRarity.Basic, TargetType.AnyEnemy) { }
+    protected override bool ShouldGlowGoldInternal => this.IsOnStarPoint();
 
     /// <summary>
     /// Deal damages.
@@ -54,16 +55,13 @@ public sealed class AstralMoveFlank : StarPointCardModel
                 .Execute(choiceContext);
 
             // Continue to deal star point damage.
-            if (IsStarPointVar.BoolVal)
+            if (this.IsOnStarPoint())
             {
                 await DamageCmd
                     .Attack(DynamicVars[STAR_POINT_DAMAGE_VAR].BaseValue)
                     .FromCard(this)
                     .Targeting(cardPlay.Target)
                     .Execute(choiceContext);
-
-                // Reset star point.
-                IsStarPointVar.BoolVal = false;
             }
         }
     }

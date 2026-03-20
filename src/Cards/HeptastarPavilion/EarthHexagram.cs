@@ -14,7 +14,7 @@ namespace Yixian.Cards.HeptastarPavilion;
 /// <summary>
 /// <c>Earch Hexagram</c> in <c>Heptastar Pavilion</c>.
 /// </summary>
-public sealed class EarthHexagram : HeptastarPavilionCardModel
+public sealed class EarthHexagram() : HeptastarPavilionCardModel(1, CardType.Skill, CardRarity.Common, TargetType.Self)
 {
     /// <summary>
     /// Variable name of Hexagram.
@@ -30,18 +30,13 @@ public sealed class EarthHexagram : HeptastarPavilionCardModel
         // Gain 2 hexagrams.
         new IntVar(HEXAGRAM_VAR, 2),
     ]);
-    
+
     /// <summary>
     /// Adds star point power to the hover tips.
     /// </summary>
     protected override IEnumerable<IHoverTip> ExtraHoverTips => base.ExtraHoverTips.Concat([
         HoverTipFactory.FromPower<HexagramPower>(),
     ]);
-
-    /// <summary>
-    /// The default constructor.
-    /// </summary>
-    public EarthHexagram() : base(1, CardType.Skill, CardRarity.Common, TargetType.Self) { }
 
     /// <summary>
     /// Gain blocks and hexagrams.
