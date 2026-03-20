@@ -16,14 +16,16 @@ See [Splay the Spire II] and [Yixian Pai] on *Steam*.
 
 ### New Cards
 
-| Card                | Type   | Rarity   | Card Pool          |
-| ------------------- | ------ | -------- | ------------------ |
-| All Or Nothing      | Attact | Uncommon | Heptastar Pavilion |
-| Astral Fleche       | Attact | Common   | Heptastar Pavilion |
-| Astral Move - Flank | Attact | Basic    | Heptastar Pavilion |
-| Astral Move - Block | Skill  | Basic    | Heptastar Pavilion |
-| Earth Hexagram      | Skill  | Common   | Heptastar Pavilion |
-| Palm Thunder        | Attack | Common   | Heptastar Pavilion |
+| Card                      | Type   | Rarity   | Card Pool          |
+| ------------------------- | ------ | -------- | ------------------ |
+| All Or Nothing            | Attact | Uncommon | Heptastar Pavilion |
+| Astral Fleche             | Attact | Common   | Heptastar Pavilion |
+| Astral Move - Flank       | Attact | Basic    | Heptastar Pavilion |
+| Astral Move - Block       | Skill  | Basic    | Heptastar Pavilion |
+| Astral Move - Cide        | Attact | Rare     | Heptastar Pavilion |
+| Astral Move - Dragon Slay | Attact | Rare     | Heptastar Pavilion |
+| Earth Hexagram            | Skill  | Common   | Heptastar Pavilion |
+| Palm Thunder              | Attack | Common   | Heptastar Pavilion |
 
 ### New Relic Pools
 

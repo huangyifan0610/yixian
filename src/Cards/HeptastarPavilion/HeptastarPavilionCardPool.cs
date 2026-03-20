@@ -49,8 +49,10 @@ public sealed class HeptastarPavilionCardPool : CardPoolModel
         return [
             ModelDb.Card<AllOrNothing>(),
             ModelDb.Card<AstralFleche>(),
-            ModelDb.Card<AstralMoveFlank>(),
             ModelDb.Card<AstralMoveBlock>(),
+            ModelDb.Card<AstralMoveCide>(),
+            ModelDb.Card<AstralMoveDragonSlay>(),
+            ModelDb.Card<AstralMoveFlank>(),
             ModelDb.Card<EarthHexagram>(),
             ModelDb.Card<PalmThunder>(),
         ];
@@ -63,8 +65,10 @@ public sealed class HeptastarPavilionCardPool : CardPoolModel
     {
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, AllOrNothing>();
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralFleche>();
-        ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralMoveFlank>();
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralMoveBlock>();
+        ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralMoveCide>();
+        ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralMoveDragonSlay>();
+        ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralMoveFlank>();
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, EarthHexagram>();
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, PalmThunder>();
     }

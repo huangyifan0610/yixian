@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Yixian.Patches;
+using Yixian.Vars;
 
 namespace Yixian.Powers;
 
@@ -41,10 +42,23 @@ public sealed class StarPowerPower : PowerModel
     /// </summary>
     public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
     {
-        // Modifies the damage if and only if:
-        // 1) the damage is dealt by self;
-        // 2) the damage is powerable;
-        // 3) the card is on star point. 
-        return (Owner == dealer && props.HasFlag(ValueProp.Move) && !props.HasFlag(ValueProp.Unpowered) && cardSource != null && cardSource.IsOnStarPoint()) ? Amount : 0m;
+        // The damage must be dealt by self;
+        if (Owner != dealer) { return 0m; }
+
+        // The damage must be powerable;
+        if (props.HasFlag(ValueProp.Unpowered) || !props.HasFlag(ValueProp.Move)) { return 0m; }
+
+        // The card must be on star point.
+        if (cardSource == null || !cardSource.IsOnStarPoint()) return 0m;
+
+        // Applies bonus on star power.
+        if (cardSource.DynamicVars.TryStarPowerBonus(out var bonus))
+        {
+            return Amount * bonus.BaseValue;
+        }
+        else
+        {
+            return Amount;
+        }
     }
 }

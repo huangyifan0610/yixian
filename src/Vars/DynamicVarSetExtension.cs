@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
 namespace Yixian.Vars;
@@ -13,7 +14,7 @@ public static class DynamicVarSetExtension
     /// </summary>
     public static MinDamageVar MinDamage(this DynamicVarSet vars)
     {
-        return (MinDamageVar)vars[MinDamageVar.DEFAULT_NAME];
+        return (MinDamageVar)vars[MinDamageVar.DEFAULT];
     }
 
     /// <summary>
@@ -21,7 +22,7 @@ public static class DynamicVarSetExtension
     /// </summary>
     public static MaxDamageVar MaxDamage(this DynamicVarSet vars)
     {
-        return (MaxDamageVar)vars[MaxDamageVar.DEFAULT_NAME];
+        return (MaxDamageVar)vars[MaxDamageVar.DEFAULT];
     }
 
     /// <summary>
@@ -29,7 +30,7 @@ public static class DynamicVarSetExtension
     /// </summary>
     public static MinBlockVar MinBlock(this DynamicVarSet vars)
     {
-        return (MinBlockVar)vars[MinBlockVar.DEFAULT_NAME];
+        return (MinBlockVar)vars[MinBlockVar.DEFAULT];
     }
 
     /// <summary>
@@ -37,7 +38,7 @@ public static class DynamicVarSetExtension
     /// </summary>
     public static MaxBlockVar MaxBlock(this DynamicVarSet vars)
     {
-        return (MaxBlockVar)vars[MaxBlockVar.DEFAULT_NAME];
+        return (MaxBlockVar)vars[MaxBlockVar.DEFAULT];
     }
 
     /// <summary>
@@ -45,7 +46,7 @@ public static class DynamicVarSetExtension
     /// </summary>
     public static HexagramVar Hexagram(this DynamicVarSet vars)
     {
-        return (HexagramVar )vars[HexagramVar.DEFAULT_NAME];
+        return (HexagramVar)vars[HexagramVar.DEFAULT];
     }
 
     /// <summary>
@@ -53,6 +54,31 @@ public static class DynamicVarSetExtension
     /// </summary>
     public static StarPowerVar StarPower(this DynamicVarSet vars)
     {
-        return (StarPowerVar)vars[StarPowerVar.DEFAULT_NAME];
+        return (StarPowerVar)vars[StarPowerVar.DEFAULT];
+    }
+
+    /// <summary>
+    /// Returns the default Star Power Bonus variable.
+    /// </summary>
+    public static StarPowerBonusVar StarPowerBonus(this DynamicVarSet vars)
+    {
+        return (StarPowerBonusVar)vars[StarPowerBonusVar.DEFAULT];
+    }
+
+    /// <summary>
+    /// Attempts to get the default Star Power Bonus variable.
+    /// </summary>
+    public static bool TryStarPowerBonus(this DynamicVarSet vars, [MaybeNullWhen(false)] out StarPowerBonusVar starPowerBonus)
+    {
+        if (vars.TryGetValue(StarPowerBonusVar.DEFAULT, out var variable) && variable is StarPowerBonusVar bonus)
+        {
+            starPowerBonus = bonus;
+            return true;
+        }
+        else
+        {
+            starPowerBonus = null;
+            return false;
+        }
     }
 }

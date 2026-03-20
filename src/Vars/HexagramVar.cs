@@ -11,15 +11,15 @@ public class HexagramVar(string name, decimal amount): DynamicVar(name, amount)
     /// <summary>
     /// The default variable name.
     /// </summary>
-    public const string DEFAULT_NAME = "Hexagram";
+    public const string DEFAULT = "Hexagram";
     
     /// <summary>
     /// Construct with default variable name.
     /// </summary>
-    public HexagramVar(decimal amount) : this(DEFAULT_NAME, amount) {}
+    public HexagramVar(decimal amount) : this(DEFAULT, amount) {}
 
     /// <summary>
     /// Construct with default variable name.
     /// </summary>
-    public HexagramVar(int amount) : this(DEFAULT_NAME, amount) {}
+    public HexagramVar(int amount) : this(DEFAULT, amount) {}
 }

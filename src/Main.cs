@@ -14,33 +14,34 @@ public sealed class Main
     /// <summary>
     /// The Mod author.
     /// </summary>
-    public static readonly string AUTHOR = "huangyifan0610";
+    public static readonly string Author = "huangyifan0610";
 
     /// <summary>
     /// A unique ID indentifing the Mod.
     /// </summary>
-    public static readonly string ID = "yixian";
+    public static readonly string Id = "yixian";
 
     /// <summary>
     /// GitHub repository URL.
     /// </summary>
-    public static readonly string URL = "https://github.com/" + AUTHOR + "/" + ID;
+    public static readonly string Url = "https://github.com/" + Author + "/" + Id;
+
+    /// <summary>
+    /// Harmony Patches.
+    /// </summary>
+    public static readonly Harmony HarmonyPatch = new(Id);
 
     /// <summary>
     /// Mod-level Logger.
     /// </summary>
-    public static Logger Logger { get; } = new(ID, LogType.Generic);
+    public static Logger Logger { get; } = new(Id, LogType.Generic);
 
     /// <summary>
     /// The initializer method.
     /// </summary>
     public static void Run()
     {
-        // Harmony Patches.
-        var harmony = new Harmony(ID);
-        harmony.PatchAll();
-
-        // Card pool.
+        HarmonyPatch.PatchAll();
         HeptastarPavilionCardPool.AddModelToPool();
     }
 }
