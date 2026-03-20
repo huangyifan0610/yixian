@@ -5,7 +5,6 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using MegaCrit.Sts2.Core.Commands;
-using System;
 using System.Linq;
 
 namespace Yixian.Cards.HeptastarPavilion;
@@ -45,29 +44,27 @@ public sealed class AstralMoveFlank : StarPointCardModel
     /// </summary>
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if (cardPlay.Target == null)
+        if (cardPlay.Target != null)
         {
-            throw new ArgumentNullException("cardPlay.Target");
-        }
-
-        // Deal damage.
-        await DamageCmd
-            .Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
-            .Targeting(cardPlay.Target)
-            .Execute(choiceContext);
-
-        // Continue to deal star point damage.
-        if (IsStarPointVar.BoolVal)
-        {
+            // Deal damage.
             await DamageCmd
-                .Attack(DynamicVars[STAR_POINT_DAMAGE_VAR].BaseValue)
+                .Attack(DynamicVars.Damage.BaseValue)
                 .FromCard(this)
                 .Targeting(cardPlay.Target)
                 .Execute(choiceContext);
 
-            // Reset star point.
-            IsStarPointVar.BoolVal = false;
+            // Continue to deal star point damage.
+            if (IsStarPointVar.BoolVal)
+            {
+                await DamageCmd
+                    .Attack(DynamicVars[STAR_POINT_DAMAGE_VAR].BaseValue)
+                    .FromCard(this)
+                    .Targeting(cardPlay.Target)
+                    .Execute(choiceContext);
+
+                // Reset star point.
+                IsStarPointVar.BoolVal = false;
+            }
         }
     }
 

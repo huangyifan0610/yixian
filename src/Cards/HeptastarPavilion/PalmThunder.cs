@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
 using Yixian.Powers;
 
@@ -26,8 +27,8 @@ public sealed class PalmThunder : HeptastarPavilionCardModel
         // Deal at most 10 hexagrams.
         new DamageVar(DAMAGE_UPPER_BOUND_VAR, 10, ValueProp.Move),
     ]);
-    private const string DAMAGE_LOWER_BOUND_VAR = "DamageLowerBound"; 
-    private const string DAMAGE_UPPER_BOUND_VAR = "DamageUpperBound"; 
+    private const string DAMAGE_LOWER_BOUND_VAR = "DamageLowerBound";
+    private const string DAMAGE_UPPER_BOUND_VAR = "DamageUpperBound";
 
     /// <summary>
     /// Adds star point power to the hover tips.
@@ -46,33 +47,17 @@ public sealed class PalmThunder : HeptastarPavilionCardModel
     /// </summary>
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if (cardPlay.Target == null)
+        if (cardPlay.Target != null)
         {
-            throw new ArgumentNullException("cardPlay.Target");
-        }
+            int lowerBound = (int)DynamicVars[DAMAGE_LOWER_BOUND_VAR].BaseValue;
+            int upperBound = (int)DynamicVars[DAMAGE_UPPER_BOUND_VAR].BaseValue;
+            decimal damage = await HexagramPower.Range(Owner.Creature, this, Owner.RunState, lowerBound, upperBound);
 
-        var hexagramPower = Owner.Creature.GetPower<HexagramPower>();
-        decimal lowerBound = DynamicVars[DAMAGE_LOWER_BOUND_VAR].BaseValue;
-        decimal upperBound = DynamicVars[DAMAGE_UPPER_BOUND_VAR].BaseValue;
-
-        if (hexagramPower?.Amount > 0)
-        {
             // Takes maximum value.
             await DamageCmd
-                .Attack(upperBound)
+                .Attack(damage)
                 .FromCard(this)
-                .Targeting(cardPlay.Target)
-                .Execute(choiceContext);
-
-            // Consumes one hexagram.
-            await PowerCmd.ModifyAmount(hexagramPower, -1m, Owner.Creature, this);
-        }
-        else
-        {
-            // Deal random damage.
-            await DamageCmd
-                .Attack(HexagramPower.GetRng(Owner.RunState).NextInt((int)lowerBound, (int)upperBound + 1))
-                .FromCard(this)
+                .WithHitFx("vfx/vfx_attack_lightning")
                 .Targeting(cardPlay.Target)
                 .Execute(choiceContext);
         }
@@ -83,7 +68,7 @@ public sealed class PalmThunder : HeptastarPavilionCardModel
     /// </summary>
     protected override void OnUpgrade()
     {
-        DynamicVars[DAMAGE_LOWER_BOUND_VAR].UpgradeValueBy(3);
-        DynamicVars[DAMAGE_UPPER_BOUND_VAR].UpgradeValueBy(3);
+        DynamicVars[DAMAGE_LOWER_BOUND_VAR].UpgradeValueBy(2);
+        DynamicVars[DAMAGE_UPPER_BOUND_VAR].UpgradeValueBy(4);
     }
 }
