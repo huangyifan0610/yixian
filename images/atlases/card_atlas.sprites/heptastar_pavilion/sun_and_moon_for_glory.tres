@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://djnc0bpftaxya"]
+
+[ext_resource type="Texture2D" uid="uid://dfi4nofonlqt" path="res://images/packed/card_portraits/heptastar_pavilion/sun_and_moon_for_glory.png" id="1_4bwf5"]
+
+[resource]
+atlas = ExtResource("1_4bwf5")
+region = Rect2(0, 37, 180, 142)

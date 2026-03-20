@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bj6hyda245eor"]
+
+[ext_resource type="Texture2D" uid="uid://dokjpy53jdepc" path="res://images/packed/card_portraits/heptastar_pavilion/flower_sentient.png" id="1_kvqwf"]
+
+[resource]
+atlas = ExtResource("1_kvqwf")
+region = Rect2(0, 37, 180, 142)

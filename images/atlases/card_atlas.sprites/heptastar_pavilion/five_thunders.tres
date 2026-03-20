@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dq22u5w78gpvk"]
+
+[ext_resource type="Texture2D" uid="uid://yhcfs2hr2yhy" path="res://images/packed/card_portraits/heptastar_pavilion/five_thunders.png" id="1_34asi"]
+
+[resource]
+atlas = ExtResource("1_34asi")
+region = Rect2(0, 37, 180, 142)

@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://olyoodncxnwu"]
+
+[ext_resource type="Texture2D" uid="uid://dpb1tx2vliex8" path="res://images/packed/card_portraits/heptastar_pavilion/falling_thunder.png" id="1_otj3v"]
+
+[resource]
+atlas = ExtResource("1_otj3v")
+region = Rect2(0, 37, 180, 142)

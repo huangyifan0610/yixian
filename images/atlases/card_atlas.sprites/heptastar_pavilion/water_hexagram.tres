@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b7vnwo0awn6hf"]
+
+[ext_resource type="Texture2D" uid="uid://dbk7uccc4hrt1" path="res://images/packed/card_portraits/heptastar_pavilion/water_hexagram.png" id="1_w2kfx"]
+
+[resource]
+atlas = ExtResource("1_w2kfx")
+region = Rect2(0, 37, 180, 142)

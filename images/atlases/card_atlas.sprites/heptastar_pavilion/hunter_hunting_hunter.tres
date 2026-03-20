@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dbtjl1clk5n4"]
+
+[ext_resource type="Texture2D" uid="uid://bxaedugwsejqe" path="res://images/packed/card_portraits/heptastar_pavilion/hunter_hunting_hunter.png" id="1_jk5y0"]
+
+[resource]
+atlas = ExtResource("1_jk5y0")
+region = Rect2(0, 37, 180, 142)

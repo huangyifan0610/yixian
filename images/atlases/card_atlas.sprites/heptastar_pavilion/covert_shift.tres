@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b547ac3yugei1"]
+
+[ext_resource type="Texture2D" uid="uid://b831vqxmfg5ne" path="res://images/packed/card_portraits/heptastar_pavilion/covert_shift.png" id="1_q6we0"]
+
+[resource]
+atlas = ExtResource("1_q6we0")
+region = Rect2(0, 37, 180, 142)

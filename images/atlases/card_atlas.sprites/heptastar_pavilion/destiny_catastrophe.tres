@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://difbss5rii0yh"]
+
+[ext_resource type="Texture2D" uid="uid://d362vp6ty7l4a" path="res://images/packed/card_portraits/heptastar_pavilion/destiny_catastrophe.png" id="1_fvuof"]
+
+[resource]
+atlas = ExtResource("1_fvuof")
+region = Rect2(0, 37, 180, 142)

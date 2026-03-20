@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dlkt850g8give"]
+
+[ext_resource type="Texture2D" uid="uid://ceb7u6h7csbk3" path="res://images/packed/card_portraits/heptastar_pavilion/strike_twice.png" id="1_xb85n"]
+
+[resource]
+atlas = ExtResource("1_xb85n")
+region = Rect2(0, 37, 180, 142)

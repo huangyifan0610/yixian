@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dmalcfsvo1c52"]
+
+[ext_resource type="Texture2D" uid="uid://dx7001ague80y" path="res://images/packed/card_portraits/heptastar_pavilion/throwing_stones_for_directions.png" id="1_e2wgr"]
+
+[resource]
+atlas = ExtResource("1_e2wgr")
+region = Rect2(0, 37, 180, 142)

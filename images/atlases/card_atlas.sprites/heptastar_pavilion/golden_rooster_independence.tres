@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://wa3qjuuxpf6m"]
+
+[ext_resource type="Texture2D" uid="uid://bx0x5w3unedb" path="res://images/packed/card_portraits/heptastar_pavilion/golden_rooster_independence.png" id="1_rlmal"]
+
+[resource]
+atlas = ExtResource("1_rlmal")
+region = Rect2(0, 37, 180, 142)

@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://e0ab3i4rnfgb"]
+
+[ext_resource type="Texture2D" uid="uid://ebc6fp16n7da" path="res://images/packed/card_portraits/heptastar_pavilion/ruthless_water.png" id="1_j1hkv"]
+
+[resource]
+atlas = ExtResource("1_j1hkv")
+region = Rect2(0, 37, 180, 142)

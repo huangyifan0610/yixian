@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dwgcxshvrg0ex"]
+
+[ext_resource type="Texture2D" uid="uid://bvelgmlksuexv" path="res://images/packed/card_portraits/heptastar_pavilion/stillness_citta_dharma.png" id="1_ps6bm"]
+
+[resource]
+atlas = ExtResource("1_ps6bm")
+region = Rect2(0, 37, 180, 142)

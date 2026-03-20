@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dcwhp6oojq7u7"]
+
+[ext_resource type="Texture2D" uid="uid://coh4f5u1r3i2l" path="res://images/packed/card_portraits/heptastar_pavilion/hexagram_formacide.png" id="1_ufoeg"]
+
+[resource]
+atlas = ExtResource("1_ufoeg")
+region = Rect2(0, 37, 180, 142)

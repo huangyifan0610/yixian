@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b7xwvxets8eev"]
+
+[ext_resource type="Texture2D" uid="uid://wi4qv26row7a" path="res://images/packed/card_portraits/heptastar_pavilion/qi_therapy.png" id="1_hlp5w"]
+
+[resource]
+atlas = ExtResource("1_hlp5w")
+region = Rect2(0, 37, 180, 142)

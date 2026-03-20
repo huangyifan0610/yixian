@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b7677q1bvf1yq"]
+
+[ext_resource type="Texture2D" uid="uid://beu0yuopvj2p4" path="res://images/packed/card_portraits/heptastar_pavilion/wind_hexagram.png" id="1_v6h05"]
+
+[resource]
+atlas = ExtResource("1_v6h05")
+region = Rect2(0, 37, 180, 142)

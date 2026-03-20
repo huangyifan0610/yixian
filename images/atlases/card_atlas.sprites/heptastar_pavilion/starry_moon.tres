@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dtvhf0ab67vpx"]
+
+[ext_resource type="Texture2D" uid="uid://drm1jl1esvhuo" path="res://images/packed/card_portraits/heptastar_pavilion/starry_moon.png" id="1_qlshy"]
+
+[resource]
+atlas = ExtResource("1_qlshy")
+region = Rect2(0, 37, 180, 142)

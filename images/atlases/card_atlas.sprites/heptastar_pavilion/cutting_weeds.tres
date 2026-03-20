@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dpgnqgbwc1ltc"]
+
+[ext_resource type="Texture2D" uid="uid://vyao18h2bhie" path="res://images/packed/card_portraits/heptastar_pavilion/cutting_weeds.png" id="1_4cput"]
+
+[resource]
+atlas = ExtResource("1_4cput")
+region = Rect2(0, 37, 180, 142)

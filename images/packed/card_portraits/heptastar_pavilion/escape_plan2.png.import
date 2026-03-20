@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1w1s5llqgx7d"
-path="res://.godot/imported/astral_move_unknown.png-bd92787b23412ab088be253a71da511f.ctex"
+uid="uid://b115w42jy478v"
+path="res://.godot/imported/escape_plan2.png-53c764d82c287c7b252fb97daaea44f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/packed/card_portraits/heptastar_pavilion/astral_move_unknown.png"
-dest_files=["res://.godot/imported/astral_move_unknown.png-bd92787b23412ab088be253a71da511f.ctex"]
+source_file="res://images/packed/card_portraits/heptastar_pavilion/escape_plan2.png"
+dest_files=["res://.godot/imported/escape_plan2.png-53c764d82c287c7b252fb97daaea44f6.ctex"]
 
 [params]
 

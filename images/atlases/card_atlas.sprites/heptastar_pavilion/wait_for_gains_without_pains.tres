@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bqfpq0pef3opp"]
+
+[ext_resource type="Texture2D" uid="uid://djrk16jhard2a" path="res://images/packed/card_portraits/heptastar_pavilion/wait_for_gains_without_pains.png" id="1_la0bt"]
+
+[resource]
+atlas = ExtResource("1_la0bt")
+region = Rect2(0, 37, 180, 142)
