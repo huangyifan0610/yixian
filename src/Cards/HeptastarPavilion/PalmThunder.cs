@@ -71,9 +71,8 @@ public sealed class PalmThunder : HeptastarPavilionCardModel
         else
         {
             // Deal random damage.
-            // FIXME: We need a specialized RNG for hexagrams.
             await DamageCmd
-                .Attack(Owner.RunState.Rng.Niche.NextInt((int)lowerBound, (int)upperBound + 1))
+                .Attack(HexagramPower.GetRng(Owner.RunState).NextInt((int)lowerBound, (int)upperBound + 1))
                 .FromCard(this)
                 .Targeting(cardPlay.Target)
                 .Execute(choiceContext);

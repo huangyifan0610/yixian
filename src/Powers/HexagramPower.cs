@@ -1,5 +1,7 @@
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Random;
+using MegaCrit.Sts2.Core.Runs;
 
 namespace Yixian.Powers;
 
@@ -17,4 +19,13 @@ public sealed class HexagramPower : PowerModel
     /// Hexagram can be counted.
     /// </summary>
     public override PowerStackType StackType => PowerStackType.Counter;
+
+    /// <summary>
+    /// Returns RNG for random effects without hexgrams. 
+    /// </summary>
+    public static Rng GetRng(IRunState runState)
+    {
+        // FIXME: We need a specialized RNG for hexagrams.
+        return runState.Rng.Niche;
+    } 
 }
