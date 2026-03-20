@@ -32,7 +32,7 @@ public sealed class EarthHexagram() : HeptastarPavilionCardModel(1, CardType.Ski
     ]);
 
     /// <summary>
-    /// Adds star point power to the hover tips.
+    /// Adds hexagram power to the hover tips.
     /// </summary>
     protected override IEnumerable<IHoverTip> ExtraHoverTips => base.ExtraHoverTips.Concat([
         HoverTipFactory.FromPower<HexagramPower>(),

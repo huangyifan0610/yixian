@@ -6,7 +6,9 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.HoverTips;
 using Yixian.Patches;
+using Yixian.Powers;
 
 namespace Yixian.Cards.HeptastarPavilion;
 
@@ -28,6 +30,13 @@ public sealed class AstralMoveBlock() : HeptastarPavilionCardModel(1, CardType.S
         new BlockVar(5, ValueProp.Move),
         // Star Point: Gain 5 blocks.
         new BlockVar(STAR_POINT_BLOCK_VAR, 3, ValueProp.Move),
+    ]);
+
+    /// <summary>
+    /// Adds star point power to the hover tips.
+    /// </summary>
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => base.ExtraHoverTips.Concat([
+        HoverTipFactory.FromPower<StarPointPower>(),
     ]);
 
     /// <summary>

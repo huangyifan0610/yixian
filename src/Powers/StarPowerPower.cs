@@ -1,7 +1,11 @@
 using System.Collections.Generic;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.ValueProps;
+using Yixian.Patches;
 
 namespace Yixian.Powers;
 
@@ -31,4 +35,16 @@ public sealed class StarPowerPower : PowerModel
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
         HoverTipFactory.FromPower<StarPointPower>(),
     ];
+
+    /// <summary>
+    /// Also see <see cref="StrengthPower"/>.
+    /// </summary>
+    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
+    {
+        // Modifies the damage if and only if:
+        // 1) the damage is dealt by self;
+        // 2) the damage is powerable;
+        // 3) the card is on star point. 
+        return (Owner == dealer && props.HasFlag(ValueProp.Move) && !props.HasFlag(ValueProp.Unpowered) && cardSource != null && cardSource.IsOnStarPoint()) ? Amount : 0m;
+    }
 }

@@ -27,6 +27,6 @@ See [Splay the Spire II] and [Yixian Pai] on *Steam*.
 
 ### New Powers
 
-- **Star Point Power**
 - **Hexagram Power**
-
+- **Star Point Power**
+- **Star Power Power**

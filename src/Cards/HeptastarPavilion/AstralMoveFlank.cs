@@ -1,12 +1,15 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using MegaCrit.Sts2.Core.Commands;
-using System.Linq;
+using MegaCrit.Sts2.Core.HoverTips;
 using Yixian.Patches;
+using Yixian.Powers;
+
 
 namespace Yixian.Cards.HeptastarPavilion;
 
@@ -28,6 +31,13 @@ public sealed class AstralMoveFlank() : HeptastarPavilionCardModel(1, CardType.A
         new DamageVar(6, ValueProp.Move),
         // Star Point: Deal 3 damage.
         new DamageVar(STAR_POINT_DAMAGE_VAR, 3, ValueProp.Move),
+    ]);
+
+    /// <summary>
+    /// Adds star point power to the hover tips.
+    /// </summary>
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => base.ExtraHoverTips.Concat([
+        HoverTipFactory.FromPower<StarPointPower>(),
     ]);
 
     /// <summary>
@@ -75,3 +85,4 @@ public sealed class AstralMoveFlank() : HeptastarPavilionCardModel(1, CardType.A
         DynamicVars[STAR_POINT_DAMAGE_VAR].UpgradeValueBy(3);
     }
 }
+

@@ -68,7 +68,7 @@ public static class CardModelExtension
 public static class CardModelOnPlayWrapperPrefix
 {
     /// <summary>
-    /// Adds star point for the card before playing.
+    /// Patches <see cref="CardModel.OnPlayWrapper"/> that adds star point for the card before it's played.
     /// </summary>
     [HarmonyPrefix]
     public static async void Prefix(CardModel __instance, PlayerChoiceContext choiceContext, Creature? target, bool isAutoPlay, ResourceInfo resources, bool skipCardPileVisuals = false)
@@ -76,23 +76,27 @@ public static class CardModelOnPlayWrapperPrefix
         Creature? owner = __instance.Owner?.Creature;
         CardPile? pile = __instance.Pile;
 
-        // Star points exist in hand pile.
+        // Star points only exist in hand pile.
         if (owner != null && pile?.Type == PileType.Hand)
         {
-            // Applies Star Point power if it not exists.
-            var power = owner.GetPower<StarPointPower>();
-            if (power == null)
-            {
-                await PowerCmd.Apply<StarPointPower>([owner], 1, owner, __instance);
-                power = owner.GetPower<StarPointPower>()!;
-            }
+            // NOTE: We must get index before applying the power.
+            // 
+            // It's weired that, after applying StarPointPower for the first time, 
+            // the card is removed from our hand, then IndexOf returns -1.
+            int index = pile.Cards.IndexOf(__instance);
 
-            if (power.IsStarPoint(pile.Cards.IndexOf(__instance)))
+            // Applies Star Point power if it not exists.
+            var power = owner.GetPower<StarPointPower>()
+                ?? await PowerCmd.Apply<StarPointPower>(owner, 1, owner, __instance);
+
+            if (power != null && power.IsStarPoint(index))
             {
+                // Remebers that the card is on Star Point.
                 CardModelExtension.ExternsionTable.GetValue(__instance, key => new()).IsOnStarPoint = true;
             }
             else if (CardModelExtension.ExternsionTable.TryGetValue(__instance, out var ext))
             {
+                // Resets if the card is not on Star Point.
                 ext.IsOnStarPoint = false;
             }
         }

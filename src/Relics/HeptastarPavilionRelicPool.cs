@@ -9,7 +9,7 @@ namespace Yixian.Relics;
 /// <summary>
 /// Relics of Heptastar PavilionRelic.
 /// </summary>
-public sealed class HeptastarPavilionRelicPool: RelicPoolModel
+public sealed class HeptastarPavilionRelicPool : RelicPoolModel
 {
     /// <summary>
     /// Asset "res://images/atlases/ui_atlas.sprites/card/energy_qi.tres".
@@ -23,7 +23,7 @@ public sealed class HeptastarPavilionRelicPool: RelicPoolModel
     /// </summary>
     protected override IEnumerable<RelicModel> GenerateAllRelics()
     {
-        return []; 
+        return [];
     }
 
     /// <summary>

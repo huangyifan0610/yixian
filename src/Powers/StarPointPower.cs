@@ -64,7 +64,7 @@ public sealed class StarPointPower : PowerModel
     {
         return index == 2 || index == 5;
     }
-    
+
     /// <summary>
     /// Sets the index-th slot to Star Point.
     /// </summary>
@@ -77,7 +77,7 @@ public sealed class StarPointPower : PowerModel
             list.StringValue = ToString();
         }
     }
-    
+
     /// <summary>
     /// Returns a list of comma-seperated integers displaying current Star Points.
     /// </summary>
