@@ -2,5 +2,7 @@
     "ASTRAL_MOVE_FLANK.title": "Astral Move - Flank",
     "ASTRAL_MOVE_FLANK.description": "Deal {Damage:diff()} damage.\n[gold]Star Point[/gold]: Deal {StarPointDamage:diff()} damage.",
     "ASTRAL_MOVE_BLOCK.title": "Astral Move - Block",
-    "ASTRAL_MOVE_BLOCK.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Star Point[/gold]: Gain {StarPointBlock:diff()} [gold]Block[/gold]."
+    "ASTRAL_MOVE_BLOCK.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Star Point[/gold]: Gain {StarPointBlock:diff()} [gold]Block[/gold].",
+    "EARTH_HEXAGRAM.title": "Earth Hexagram",
+    "EARTH_HEXAGRAM.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {Hexagram:diff()} [gold]Hexagram[/gold]."
 }

@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using Yixian.Powers;
 
 namespace Yixian.Cards.HeptastarPavilion;
 
@@ -23,6 +25,13 @@ public abstract class StarPointCardModel(int canonicalEnergyCost, CardType type,
 
     protected override IEnumerable<DynamicVar> CanonicalVars => base.CanonicalVars.Concat([
         new BoolVar(IS_STAR_POINT_VAR, false)
+    ]);
+
+    /// <summary>
+    /// Adds star point power to the hover tips.
+    /// </summary>
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => base.ExtraHoverTips.Concat([
+        HoverTipFactory.FromPower<StarPointPower>(),
     ]);
 
     /// <summary>

@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b46wucglx0sdg"]
+
+[ext_resource type="Texture2D" uid="uid://dwkkfo34p22l1" path="res://images/packed/card_portraits/heptastar_pavilion/earth_hexagram.png" id="1_s6jbm"]
+
+[resource]
+atlas = ExtResource("1_s6jbm")
+region = Rect2(0, 37, 180, 142)
