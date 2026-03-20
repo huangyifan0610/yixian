@@ -1,6 +1,6 @@
 {
     "ALL_OR_NOTHING.title": "一掷乾坤",
-    "ALL_OR_NOTHING.description": "造成{MinDamage:diff()} ~ {MaxDamage:diff()}伤害\n获得{MinBlock:diff()} ~ {MaxBlock}格挡",
+    "ALL_OR_NOTHING.description": "造成{MinDamage:diff()}~{MaxDamage:diff()}伤害\n获得{MinBlock:diff()}~{MaxBlock}格挡",
     "ASTRAL_FLECHE.title": "飞星刺",
     "ASTRAL_FLECHE.description": "造成{Damage:diff()}伤害\n获得{StarPower:diff()}[gold]星力[/gold]",
     "ASTRAL_MOVE_BLOCK.title": "星弈・挡",
@@ -14,5 +14,5 @@
     "EARTH_HEXAGRAM.title": "坤卦",
     "EARTH_HEXAGRAM.description": "获得{Block:diff()}格挡\n获得{Hexagram:diff()}[gold]卦象[/gold]",
     "PALM_THUNDER.title": "掌心雷",
-    "PALM_THUNDER.description": "造成{MinDamage:diff()} ~ {MaxDamage:diff()}伤害"
+    "PALM_THUNDER.description": "造成{MinDamage:diff()}~{MaxDamage:diff()}伤害"
 }

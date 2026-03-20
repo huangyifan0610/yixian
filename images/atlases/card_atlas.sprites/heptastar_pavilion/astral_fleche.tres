@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://hdeuoa04namf"]
+
+[ext_resource type="Texture2D" uid="uid://bxehjhv802sal" path="res://images/packed/card_portraits/heptastar_pavilion/astral_fleche.png" id="1_0tyqd"]
+
+[resource]
+atlas = ExtResource("1_0tyqd")
+region = Rect2(0, 37, 180, 142)

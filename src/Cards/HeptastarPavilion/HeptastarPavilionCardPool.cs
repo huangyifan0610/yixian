@@ -1,4 +1,5 @@
 using Godot;
+using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 
 namespace Yixian.Cards.HeptastarPavilion;
@@ -40,16 +41,31 @@ public sealed class HeptastarPavilionCardPool : CardPoolModel
     /// </summary>
     public override bool IsColorless => false;
 
-    /// <summary>
+    /// <summary>`
     /// Returns all cards in the pool.
     /// </summary>
     protected override CardModel[] GenerateAllCards()
     {
         return [
+            ModelDb.Card<AllOrNothing>(),
+            ModelDb.Card<AstralFleche>(),
             ModelDb.Card<AstralMoveFlank>(),
             ModelDb.Card<AstralMoveBlock>(),
             ModelDb.Card<EarthHexagram>(),
             ModelDb.Card<PalmThunder>(),
         ];
+    }
+
+    /// <summary>
+    /// Calls <see cref="ModHelper.AddModelToPool"/> for every card in the pool.
+    /// </summary>
+    internal static void AddModelToPool()
+    {
+        ModHelper.AddModelToPool<HeptastarPavilionCardPool, AllOrNothing>();
+        ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralFleche>();
+        ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralMoveFlank>();
+        ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralMoveBlock>();
+        ModHelper.AddModelToPool<HeptastarPavilionCardPool, EarthHexagram>();
+        ModHelper.AddModelToPool<HeptastarPavilionCardPool, PalmThunder>();
     }
 }

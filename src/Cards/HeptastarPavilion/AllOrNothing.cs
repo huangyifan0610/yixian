@@ -13,18 +13,22 @@ using Yixian.Vars;
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>
-/// <c>Palm Thunder</c> in <c>Heptastar Pavilion</c>.
+/// <c>All Or Nothing</c> in <c>Heptastar Pavilion</c>.
 /// </summary>
-public sealed class PalmThunder() : HeptastarPavilionCardModel(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+public sealed class AllOrNothing() : HeptastarPavilionCardModel(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     /// <summary>
     /// The dynamic variables.
     /// </summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => base.CanonicalVars.Concat([
-        // Deal at least 2 damage.
-        new MinDamageVar(2, ValueProp.Move),
-        // Deal at most 10 damage.
-        new MaxDamageVar(10, ValueProp.Move),
+        // Deal at least 1 damage.
+        new MinDamageVar(1, ValueProp.Move),
+        // Deal at most 20 damage.
+        new MaxDamageVar(20, ValueProp.Move),
+        // Gain at least 1 block. 
+        new MinBlockVar(1, ValueProp.Move),
+        // Gain at most 20 block. 
+        new MaxBlockVar(20, ValueProp.Move),
     ]);
 
     /// <summary>
@@ -35,7 +39,7 @@ public sealed class PalmThunder() : HeptastarPavilionCardModel(1, CardType.Attac
     ]);
 
     /// <summary>
-    /// Deal random damage.
+    /// Deal random damage and gain random block.
     /// </summary>
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
@@ -45,19 +49,21 @@ public sealed class PalmThunder() : HeptastarPavilionCardModel(1, CardType.Attac
                 .ContinueWith(async damage => DamageCmd
                     .Attack(await damage)
                     .FromCard(this)
-                    .WithHitFx("vfx/vfx_attack_lightning")
                     .Targeting(cardPlay.Target)
                     .Execute(choiceContext)
                 );
         }
+
+        await HexagramPower.Range(Owner.Creature, this, Owner.RunState, DynamicVars.MinBlock().IntValue, DynamicVars.MaxBlock().IntValue)
+            .ContinueWith(async block => CreatureCmd.GainBlock(Owner.Creature, await block, ValueProp.Move, cardPlay));
     }
 
     /// <summary>
-    /// Upgrade the damage.
+    /// Upgrade the max damage and max block.
     /// </summary>
     protected override void OnUpgrade()
     {
-        DynamicVars.MinDamage().UpgradeValueBy(2);
         DynamicVars.MaxDamage().UpgradeValueBy(4);
+        DynamicVars.MaxBlock().UpgradeValueBy(4);
     }
 }

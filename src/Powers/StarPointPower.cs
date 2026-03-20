@@ -34,7 +34,6 @@ public sealed class StarPointPower : PowerModel
     ];
     private const string STAR_POINT_LIST_VAR = "StarPointList";
 
-
     /// <summary>
     /// The i-th bit indicates whether the i-th slot is Star Point.
     /// </summary>

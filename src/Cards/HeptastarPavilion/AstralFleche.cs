@@ -13,51 +13,51 @@ using Yixian.Vars;
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>
-/// <c>Palm Thunder</c> in <c>Heptastar Pavilion</c>.
+/// <c>Astral Fleche</c> in <c>Heptastar Pavilion</c>.
 /// </summary>
-public sealed class PalmThunder() : HeptastarPavilionCardModel(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+public sealed class AstralFleche() : HeptastarPavilionCardModel(0, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
 {
     /// <summary>
     /// The dynamic variables.
     /// </summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => base.CanonicalVars.Concat([
-        // Deal at least 2 damage.
-        new MinDamageVar(2, ValueProp.Move),
-        // Deal at most 10 damage.
-        new MaxDamageVar(10, ValueProp.Move),
+        // Deal 3 damage.
+        new DamageVar(3, ValueProp.Move),
+        // Gain 2 star power.
+        new StarPowerVar(2),
     ]);
 
     /// <summary>
-    /// Adds star point power to the hover tips.
+    /// Adds star point power and star power power to the hover tips.
     /// </summary>
     protected override IEnumerable<IHoverTip> ExtraHoverTips => base.ExtraHoverTips.Concat([
-        HoverTipFactory.FromPower<HexagramPower>(),
+        HoverTipFactory.FromPower<StarPointPower>(),
+        HoverTipFactory.FromPower<StarPowerPower>(),
     ]);
 
     /// <summary>
-    /// Deal random damage.
+    /// Deal damage and gain star power.
     /// </summary>
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (cardPlay.Target != null)
         {
-            await HexagramPower.Range(Owner.Creature, this, Owner.RunState, DynamicVars.MinDamage().IntValue, DynamicVars.MaxDamage().IntValue)
-                .ContinueWith(async damage => DamageCmd
-                    .Attack(await damage)
-                    .FromCard(this)
-                    .WithHitFx("vfx/vfx_attack_lightning")
-                    .Targeting(cardPlay.Target)
-                    .Execute(choiceContext)
-                );
+            await DamageCmd
+                .Attack(DynamicVars.Damage.BaseValue)
+                .FromCard(this)
+                .Targeting(cardPlay.Target)
+                .Execute(choiceContext);
         }
+
+        await PowerCmd.Apply<StarPowerPower>(Owner.Creature, DynamicVars.StarPower().BaseValue, Owner.Creature, this);
     }
 
     /// <summary>
-    /// Upgrade the damage.
+    /// Upgrade the damage and star power.
     /// </summary>
     protected override void OnUpgrade()
     {
-        DynamicVars.MinDamage().UpgradeValueBy(2);
-        DynamicVars.MaxDamage().UpgradeValueBy(4);
+        DynamicVars.Damage.UpgradeValueBy(1);
+        DynamicVars.StarPower().UpgradeValueBy(2);
     }
 }

@@ -41,9 +41,6 @@ public sealed class Main
         harmony.PatchAll();
 
         // Card pool.
-        ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralMoveFlank>();
-        ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralMoveBlock>();
-        ModHelper.AddModelToPool<HeptastarPavilionCardPool, EarthHexagram>();
-        ModHelper.AddModelToPool<HeptastarPavilionCardPool, PalmThunder>();
+        HeptastarPavilionCardPool.AddModelToPool();
     }
 }

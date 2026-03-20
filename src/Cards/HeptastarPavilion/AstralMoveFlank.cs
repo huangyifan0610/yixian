@@ -85,4 +85,3 @@ public sealed class AstralMoveFlank() : HeptastarPavilionCardModel(1, CardType.A
         DynamicVars[STAR_POINT_DAMAGE_VAR].UpgradeValueBy(3);
     }
 }
-
