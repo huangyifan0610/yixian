@@ -58,8 +58,6 @@ public sealed class AstralMoveBlock() : HeptastarPavilionCardModel(1, CardType.S
         {
             await CreatureCmd.GainBlock(Owner.Creature, (BlockVar)DynamicVars[STAR_POINT_BLOCK_VAR], cardPlay);
         }
-
-        Main.Logger.Info($"============ {cardPlay.PlayIndex} - {cardPlay.PlayCount}");
     }
 
     /// <summary>

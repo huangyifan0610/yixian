@@ -50,8 +50,6 @@ public sealed class AstralFleche() : HeptastarPavilionCardModel(0, CardType.Atta
         }
 
         await PowerCmd.Apply<StarPowerPower>(Owner.Creature, DynamicVars.StarPower().BaseValue, Owner.Creature, this);
-
-        Main.Logger.Info($"============ {cardPlay.PlayIndex} - {cardPlay.PlayCount}");
     }
 
     /// <summary>

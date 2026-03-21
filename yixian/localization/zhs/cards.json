@@ -74,7 +74,7 @@
     "PALM_THUNDER.title": "掌心雷",
     "PALM_THUNDER.description": "造成{MinDamage:diff()}~{MaxDamage:diff()}伤害",
     "POLARIS_CITTA_DHARMA.title": "天元心法",
-    "POLARIS_CITTA_DHARMA.description": "not yet implemented",
+    "POLARIS_CITTA_DHARMA.description": "手牌所有格均为[gold]星位[/gold]\n若在本场战斗中首先打出，获得{StarPower:diff()}[gold]星力[/gold]",
     "PREEMPTIVE_STRTIKE.title": "先发制人",
     "PREEMPTIVE_STRTIKE.description": "not yet implemented",
     "PROPITIOUS_OMEN.title": "紫气东来",

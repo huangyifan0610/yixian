@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using Yixian.HoverTips;
-using Yixian.Vars;
+using Yixian.Patches;
 
 namespace Yixian.Cards.HeptastarPavilion;
 
@@ -24,9 +24,7 @@ public sealed class Incessant() : HeptastarPavilionCardModel(1, CardType.Attack,
         // Deal 6 damage.
         new DamageVar(6, ValueProp.Move),
         // Deal 3 damage on post action.
-        new DamageVar(POST_ACTION_DAMAGE_VAR, 4, ValueProp.Move),
-        // Post action indicator.
-        new PostActionVar(),
+        new DamageVar(POST_ACTION_DAMAGE_VAR, 3, ValueProp.Move),
     ]);
     private const string POST_ACTION_DAMAGE_VAR = "PostActionDamage";
 
@@ -40,7 +38,7 @@ public sealed class Incessant() : HeptastarPavilionCardModel(1, CardType.Attack,
     /// <summary>
     /// Glow if post action takes effects.
     /// </summary>
-    protected override bool ShouldGlowGoldInternal => DynamicVars.PostAction().IsPlayed();
+    protected override bool ShouldGlowGoldInternal => this.HasPlayed();
 
     /// <summary>
     /// Deal damages.
@@ -57,7 +55,7 @@ public sealed class Incessant() : HeptastarPavilionCardModel(1, CardType.Attack,
                 .Execute(choiceContext);
 
             // Continue post action.
-            if (DynamicVars.PostAction().IsPlayed(cardPlay))
+            if (this.HasPlayed())
             {
                 await DamageCmd
                     .Attack(DynamicVars[POST_ACTION_DAMAGE_VAR].BaseValue)
@@ -66,8 +64,6 @@ public sealed class Incessant() : HeptastarPavilionCardModel(1, CardType.Attack,
                     .Execute(choiceContext);
             }
         }
-
-        DynamicVars.PostAction().SetPlayed();
     }
 
     /// <summary>

@@ -64,8 +64,5 @@ public sealed class AstralMoveCide() : HeptastarPavilionCardModel(1, CardType.At
     /// <summary>
     /// Upgrade the damage.
     /// </summary>
-    protected override void OnUpgrade()
-    {
-        DynamicVars.Damage.UpgradeValueBy(6);
-    }
+    protected override void OnUpgrade() => DynamicVars.Damage.UpgradeValueBy(6);
 }

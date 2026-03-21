@@ -57,6 +57,7 @@ public sealed class HeptastarPavilionCardPool : CardPoolModel
             ModelDb.Card<EarthHexagram>(),
             ModelDb.Card<Incessant>(),
             ModelDb.Card<PalmThunder>(),
+            ModelDb.Card<PolarisCittaDharma>(),
         ];
     }
 
@@ -74,5 +75,6 @@ public sealed class HeptastarPavilionCardPool : CardPoolModel
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, EarthHexagram>();
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, Incessant>();
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, PalmThunder>();
+        ModHelper.AddModelToPool<HeptastarPavilionCardPool, PolarisCittaDharma>();
     }
 }

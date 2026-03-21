@@ -33,4 +33,7 @@
   <Target Name="CopyAfterBuild" AfterTargets="Build">
     <Copy SourceFiles="$(YixianSourceFiles)" DestinationFolder="$(YixianDestinationFolder)" OverwriteReadOnlyFiles="true" />
   </Target>
+  <Target Name="CopyAfterPublish" AfterTargets="Publish">
+    <Copy SourceFiles="$(YixianSourceFiles)" DestinationFolder="$(YixianDestinationFolder)" OverwriteReadOnlyFiles="true" />
+  </Target>
 </Project>

@@ -31,7 +31,7 @@ See [Splay the Spire II] and [Yixian Pai] on *Steam*.
 - [ ] Destiny Catastrophe
 - [ ] Dotted Around
 - [ ] Drag Moon In Sea
-- [x] "Earth Hexagram
+- [x] Earth Hexagram
 - [ ] Escape Plan2
 - [ ] Falling Thunder
 - [ ] Five Thunders
@@ -46,12 +46,12 @@ See [Splay the Spire II] and [Yixian Pai] on *Steam*.
 - [ ] Hunter Becomes Preyer
 - [ ] Hunter Hunting Hunter
 - [ ] Imposing
-- [x] "Incessant
+- [x] Incessant
 - [ ] Lake Hexagram
 - [ ] Meteorite Meteor
 - [ ] Mountain Hexagram
-- [x] "Palm Thunder
-- [ ] Polaris Citta Dharma
+- [x] Palm Thunder
+- [x] Polaris Citta Dharma
 - [ ] Preemptive Strtike
 - [ ] Propitious Omen
 - [ ] Qi Therapy

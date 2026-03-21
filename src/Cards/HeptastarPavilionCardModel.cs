@@ -1,9 +1,5 @@
-using System.Collections.Generic;
-using System.Linq;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
-using Yixian.Vars;
 
 namespace Yixian.Cards;
 

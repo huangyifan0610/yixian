@@ -74,7 +74,7 @@
     "PALM_THUNDER.title": "Palm Thunder",
     "PALM_THUNDER.description": "Deal {MinDamage:diff()} ~ {MaxDamage:diff()} damage.",
     "POLARIS_CITTA_DHARMA.title": "Polaris Citta Dharma",
-    "POLARIS_CITTA_DHARMA.description": "unimplmented",
+    "POLARIS_CITTA_DHARMA.description": "All slots are [gold]Star Point[/gold].\nIf played first in the battle, gain {StarPower:diff()} [gold]Star Power[/gold].",
     "PREEMPTIVE_STRTIKE.title": "Preemptive Strtike",
     "PREEMPTIVE_STRTIKE.description": "unimplmented",
     "PROPITIOUS_OMEN.title": "Propitious Omen",

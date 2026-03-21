@@ -77,9 +77,6 @@ public sealed class HexagramPower : PowerModel
     /// <summary>
     /// Returns RNG for random effects without hexgrams. 
     /// </summary>
-    private static Rng GetRng(IRunState runState)
-    {
-        // FIXME: We need a specialized RNG for hexagrams.
-        return runState.Rng.Niche;
-    }
+    // FIXME: We need a specialized RNG for hexagrams.
+    private static Rng GetRng(IRunState runState) => runState.Rng.Niche;
 }

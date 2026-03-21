@@ -16,7 +16,7 @@ namespace Yixian.Cards.HeptastarPavilion;
 /// <summary>
 /// <c>Astral Move - DragonSlay</c> in <c>Heptastar Pavilion</c>.
 /// </summary>
-public sealed class AstralMoveDragonSlay() : HeptastarPavilionCardModel(1, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+public sealed class AstralMoveDragonSlay() : HeptastarPavilionCardModel(0, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
 {
     /// <summary>
     /// The dynamic variables.

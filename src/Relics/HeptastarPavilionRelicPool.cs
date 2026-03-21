@@ -21,16 +21,10 @@ public sealed class HeptastarPavilionRelicPool : RelicPoolModel
     /// <summary>
     /// Returns relics of Heptastar Pavilion.
     /// </summary>
-    protected override IEnumerable<RelicModel> GenerateAllRelics()
-    {
-        return [];
-    }
+    protected override IEnumerable<RelicModel> GenerateAllRelics() => [];
 
     /// <summary>
     /// Returns unlocked relics.
     /// </summary>
-    public override IEnumerable<RelicModel> GetUnlockedRelics(UnlockState unlockState)
-    {
-        return AllRelics;
-    }
+    public override IEnumerable<RelicModel> GetUnlockedRelics(UnlockState unlockState) => AllRelics;
 }

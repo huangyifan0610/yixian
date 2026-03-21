@@ -23,6 +23,11 @@ public sealed class StarPointPower : PowerModel
     public override PowerStackType StackType => PowerStackType.Single;
 
     /// <summary>
+    /// It's invisible if we have Polaris Citta Dharma power.
+    /// </summary>
+    protected override bool IsVisibleInternal => !Owner.HasPower<PolarisCittaDharmaPower>();
+
+    /// <summary>
     /// Variables for localization.
     /// </summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => base.CanonicalVars.Concat([
@@ -48,18 +53,12 @@ public sealed class StarPointPower : PowerModel
     /// <summary>
     /// Returns true if the index-th slot is Star Point. 
     /// </summary>
-    public bool IsStarPoint(int index)
-    {
-        return 0 <= index && index < 64 && (_starPoints & (1ul << index)) != 0;
-    }
+    public bool IsStarPoint(int index) => 0 <= index && index < 64 && (_starPoints & (1ul << index)) != 0;
 
     /// <summary>
     /// Returns true if the slot is default Star Point.
     /// </summary>
-    public static bool IsDefaultStarPoint(int index)
-    {
-        return index == 2 || index == 5;
-    }
+    public static bool IsDefaultStarPoint(int index) => index == 2 || index == 5;
 
     /// <summary>
     /// Sets the index-th slot to Star Point.

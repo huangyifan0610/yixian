@@ -12,58 +12,37 @@ public static class DynamicVarSetExtension
     /// <summary>
     /// Returns the default Min Damage variable.
     /// </summary>
-    public static MinDamageVar MinDamage(this DynamicVarSet vars)
-    {
-        return (MinDamageVar)vars[MinDamageVar.DEFAULT];
-    }
+    public static MinDamageVar MinDamage(this DynamicVarSet vars) => (MinDamageVar)vars[MinDamageVar.DEFAULT];
 
     /// <summary>
     /// Returns the default Max Damage variable.
     /// </summary>
-    public static MaxDamageVar MaxDamage(this DynamicVarSet vars)
-    {
-        return (MaxDamageVar)vars[MaxDamageVar.DEFAULT];
-    }
+    public static MaxDamageVar MaxDamage(this DynamicVarSet vars) => (MaxDamageVar)vars[MaxDamageVar.DEFAULT];
 
     /// <summary>
     /// Returns the default Min Block variable.
     /// </summary>
-    public static MinBlockVar MinBlock(this DynamicVarSet vars)
-    {
-        return (MinBlockVar)vars[MinBlockVar.DEFAULT];
-    }
+    public static MinBlockVar MinBlock(this DynamicVarSet vars) => (MinBlockVar)vars[MinBlockVar.DEFAULT];
 
     /// <summary>
     /// Returns the default Max Block variable.
     /// </summary>
-    public static MaxBlockVar MaxBlock(this DynamicVarSet vars)
-    {
-        return (MaxBlockVar)vars[MaxBlockVar.DEFAULT];
-    }
+    public static MaxBlockVar MaxBlock(this DynamicVarSet vars) => (MaxBlockVar)vars[MaxBlockVar.DEFAULT];
 
     /// <summary>
     /// Returns the default Hexagram variable.
     /// </summary>
-    public static HexagramVar Hexagram(this DynamicVarSet vars)
-    {
-        return (HexagramVar)vars[HexagramVar.DEFAULT];
-    }
+    public static HexagramVar Hexagram(this DynamicVarSet vars) => (HexagramVar)vars[HexagramVar.DEFAULT];
 
     /// <summary>
     /// Returns the default Star Power variable.
     /// </summary>
-    public static StarPowerVar StarPower(this DynamicVarSet vars)
-    {
-        return (StarPowerVar)vars[StarPowerVar.DEFAULT];
-    }
+    public static StarPowerVar StarPower(this DynamicVarSet vars) => (StarPowerVar)vars[StarPowerVar.DEFAULT];
 
     /// <summary>
     /// Returns the default Star Power Bonus variable.
     /// </summary>
-    public static StarPowerBonusVar StarPowerBonus(this DynamicVarSet vars)
-    {
-        return (StarPowerBonusVar)vars[StarPowerBonusVar.DEFAULT];
-    }
+    public static StarPowerBonusVar StarPowerBonus(this DynamicVarSet vars) => (StarPowerBonusVar)vars[StarPowerBonusVar.DEFAULT];
 
     /// <summary>
     /// Attempts to get the default Star Power Bonus variable.
@@ -78,31 +57,6 @@ public static class DynamicVarSetExtension
         else
         {
             starPowerBonus = null;
-            return false;
-        }
-    }
-
-    /// <summary>
-    /// Returns the default Post Action variable.
-    /// </summary>
-    public static PostActionVar PostAction(this DynamicVarSet vars)
-    {
-        return (PostActionVar)vars[PostActionVar.DEFAULT];
-    }
-
-    /// <summary>
-    /// Attempts to get the default Post Action variable.
-    /// </summary>
-    public static bool TryPostAction(this DynamicVarSet vars, [MaybeNullWhen(false)] out PostActionVar postAction)
-    {
-        if (vars.TryGetValue(PostActionVar.DEFAULT, out var variable) && variable is PostActionVar bonus)
-        {
-            postAction = bonus;
-            return true;
-        }
-        else
-        {
-            postAction = null;
             return false;
         }
     }

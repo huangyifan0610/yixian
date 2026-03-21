@@ -1,14 +1,15 @@
 using System;
+using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using HarmonyLib;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Extensions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using Yixian.Powers;
-using Yixian.Vars;
 
 namespace Yixian.Patches;
 
@@ -56,17 +57,29 @@ public static class CardModelExtension
             throw new ArgumentException($"expect hand pile, but get {cardModel.Pile?.Type}");
         }
 
-        int index = cardModel.Pile.Cards.IndexOf(cardModel);
-        if (StarPointPower.IsDefaultStarPoint(index))
+        // Polaris Citta Dharma allows every slot to be star point. 
+        if (cardModel.Owner?.Creature?.HasPower<PolarisCittaDharmaPower>() ?? false)
+        {
+            return true;
+        }
+
+        // Inspect the position of the card in hand.
+        int position = cardModel.Pile.Cards.IndexOf(cardModel);
+        if (StarPointPower.IsDefaultStarPoint(position))
         {
             return true;
         }
         else
         {
-            var power = cardModel.Owner?.Creature?.GetPower<StarPointPower>();
-            return power != null && power.IsStarPoint(index);
+            var starPointPower = cardModel.Owner?.Creature?.GetPower<StarPointPower>();
+            return starPointPower != null && starPointPower.IsStarPoint(position);
         }
     }
+
+    /// <summary>
+    /// Returns true if the card has been played at least once in the combat.
+    /// </summary>
+    internal static bool HasPlayed(this CardModel cardModel) => CombatManager.Instance.History.Entries.Any(entry => entry is CardPlayFinishedEntry cardEntry && cardEntry.CardPlay.Card == cardModel);
 }
 
 /// <summary>
