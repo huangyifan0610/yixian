@@ -1,81 +1,84 @@
-# Play **Yixian Pai** on **Slay the Spire II**
+# **杀戮尖塔2** × **弈仙牌**
 
 - [English](README.md)
 - [简体中文](README.zh_CN.md)
 
 ---
 
-See [Splay the Spire II] and [Yixian Pai] on *Steam*.
+在 *Steam* 上查看[杀戮尖塔2]和[弈仙牌].
 
-[Splay the Spire II]: https://store.steampowered.com/app/2868840/
-[Yixian Pai]: https://store.steampowered.com/app/1948800/
+[杀戮尖塔2]: https://store.steampowered.com/app/2868840/
+[弈仙牌]: https://store.steampowered.com/app/1948800/
+
+![PIC](docs/zhs/pic/1.png)
 
 ## Work in Progress
 
-- [x] All Or Nothing
-- [x] Astral Fleche
-- [x] Astral Move - Block
-- [x] Astral Move - Cide
-- [x] Astral Move - Dragon Slay
-- [x] Astral Move - Flank
-- [ ] Astral Move - Fly
-- [ ] Astral Move - Hit
-- [ ] Astral Move - Point
-- [ ] Astral Move - Stand
-- [ ] Astral Move - Tiger
-- [ ] Covert Shift
-- [ ] Cutting Weeds
-- [ ] Dance Of The Dragonfly
-- [ ] Destiny Catastrophe
-- [ ] Dotted Around
-- [ ] Drag Moon In Sea
-- [x] "Earth Hexagram
-- [ ] Escape Plan2
-- [ ] Falling Thunder
-- [ ] Five Thunders
-- [ ] Flame Hexagram
-- [ ] Flowers And Water
-- [ ] Flower Sentient
-- [ ] Golden Rooster Independence
-- [ ] Great Sprit
-- [ ] Heaven Hexagram
-- [ ] Hexagram Formacide
-- [ ] Hexgrams Spirit Resurrection
-- [ ] Hunter Becomes Preyer
-- [ ] Hunter Hunting Hunter
-- [ ] Imposing
-- [x] "Incessant
-- [ ] Lake Hexagram
-- [ ] Meteorite Meteor
-- [ ] Mountain Hexagram
-- [x] "Palm Thunder
-- [ ] Polaris Citta Dharma
-- [ ] Preemptive Strtike
-- [ ] Propitious Omen
-- [ ] Qi Therapy
-- [ ] Repel Citta Dharma
-- [ ] Revitalized
-- [ ] Ruthless Water
-- [ ] Shifting Starts
-- [ ] Snake In Reflection
-- [ ] Sparrows Tail
-- [ ] Starry Moon
-- [ ] Star Born Rhythm
-- [ ] Star Trail Divination
-- [ ] Stillness Citta Dharma
-- [ ] Strike Twice
-- [ ] Sun And Moon For Glory
-- [ ] Thin On The Ground
-- [ ] Throwing Stones For Directions
-- [ ] Thunder And Lighting
-- [ ] Thunder Citta Dharma
-- [ ] Thunder Hexagram Rhythm
-- [ ] Vitality Blossom
-- [ ] Wait For Gains Without Pains
-- [ ] Water Hexagram
-- [ ] White Crane Bright Wings
-- [ ] White Snake
-- [ ] Wild Horses Part The Mane
-- [ ] Wind Hexagram
-- [ ] Yin Yang Formation
-- [ ] Zhen Hexagram
+- [x] 一掷乾坤
+- [x] 飞星刺
+- [x] 星弈・挡
+- [x] 星弈・断
+- [x] 星弈・屠龙
+- [x] 星弈・夹
+- [ ] 星弈・飞
+- [ ] 星弈・打
+- [ ] 星弈・点
+- [ ] 星弈・立
+- [ ] 星弈・虎
+- [ ] 移花接木
+- [ ] 斩草除根
+- [ ] 蜻蜓点水
+- [ ] 天命劫
+- [ ] 星罗棋布
+- [ ] 海底捞月
+- [x] 坤卦
+- [ ] 金蝉脱壳
+- [ ] 落雷术
+- [ ] 五雷轰顶
+- [ ] 离卦
+- [ ] 落花流水
+- [ ] 流水无情
+- [ ] 金鸡独立
+- [ ] 气吞山河
+- [ ] 乾卦
+- [ ] 六爻绝阵
+- [ ] 卦灵反生
+- [ ] 螳螂捕蝉
+- [ ] 黄雀在后
+- [ ] 气贯长虹
+- [x] 藕断丝连
+- [ ] 兑卦
+- [ ] 流星天陨
+- [ ] 艮卦
+- [x] 掌心雷
+- [ ] 天元心法
+- [ ] 先发制人
+- [ ] 紫气东来
+- [ ] 气疗术
+- [ ] 反震心法
+- [ ] 枯木逢春
+- [ ] 流水无情
+- [ ] 斗转星移
+- [ ] 杯弓蛇影
+- [ ] 揽雀尾
+- [ ] 众星拱月
+- [ ] 星衍术
+- [ ] 星轨推演
+- [ ] 静气心法
+- [ ] 梅开二度
+- [ ] 日月争辉
+- [ ] 铁树开花
+- [ ] 投石问路
+- [ ] 轰雷掣电
+- [ ] 雷霆心法
+- [ ] 御雷卦决
+- [ ] 生机绽放
+- [ ] 守株待兔
+- [ ] 坎卦
+- [ ] 白鹤亮翅
+- [ ] 白蛇吐信
+- [ ] 野马分鬃
+- [ ] 巽卦
+- [ ] 两仪阵
+- [x] 震卦
+
