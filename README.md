@@ -3,6 +3,8 @@
 - [English](README.md)
 - [简体中文](README.zh_CN.md)
 
+---
+
 See [Splay the Spire II] and [Yixian Pai] on *Steam*.
 
 [Splay the Spire II]: https://store.steampowered.com/app/2868840/
@@ -10,30 +12,70 @@ See [Splay the Spire II] and [Yixian Pai] on *Steam*.
 
 ## Work in Progress
 
-### New Card Pools
-
-- **Heptastar Pavilion**
-
-### New Cards
-
-| Card                      | Type   | Rarity   | Card Pool          |
-| ------------------------- | ------ | -------- | ------------------ |
-| All Or Nothing            | Attact | Uncommon | Heptastar Pavilion |
-| Astral Fleche             | Attact | Common   | Heptastar Pavilion |
-| Astral Move - Flank       | Attact | Basic    | Heptastar Pavilion |
-| Astral Move - Block       | Skill  | Basic    | Heptastar Pavilion |
-| Astral Move - Cide        | Attact | Rare     | Heptastar Pavilion |
-| Astral Move - Dragon Slay | Attact | Rare     | Heptastar Pavilion |
-| Earth Hexagram            | Skill  | Common   | Heptastar Pavilion |
-| Incessant                 | Attact | Common   | Heptastar Pavilion |
-| Palm Thunder              | Attack | Common   | Heptastar Pavilion |
-
-### New Relic Pools
-
-- **Heptastar Pavilion**
-
-### New Powers
-
-- **Hexagram Power**
-- **Star Point Power**
-- **Star Power Power**
+- [x] All Or Nothing
+- [x] Astral Fleche
+- [x] Astral Move - Block
+- [x] Astral Move - Cide
+- [x] Astral Move - Dragon Slay
+- [x] Astral Move - Flank
+- [ ] Astral Move - Fly
+- [ ] Astral Move - Hit
+- [ ] Astral Move - Point
+- [ ] Astral Move - Stand
+- [ ] Astral Move - Tiger
+- [ ] Covert Shift
+- [ ] Cutting Weeds
+- [ ] Dance Of The Dragonfly
+- [ ] Destiny Catastrophe
+- [ ] Dotted Around
+- [ ] Drag Moon In Sea
+- [x] "Earth Hexagram
+- [ ] Escape Plan2
+- [ ] Falling Thunder
+- [ ] Five Thunders
+- [ ] Flame Hexagram
+- [ ] Flowers And Water
+- [ ] Flower Sentient
+- [ ] Golden Rooster Independence
+- [ ] Great Sprit
+- [ ] Heaven Hexagram
+- [ ] Hexagram Formacide
+- [ ] Hexgrams Spirit Resurrection
+- [ ] Hunter Becomes Preyer
+- [ ] Hunter Hunting Hunter
+- [ ] Imposing
+- [x] "Incessant
+- [ ] Lake Hexagram
+- [ ] Meteorite Meteor
+- [ ] Mountain Hexagram
+- [x] "Palm Thunder
+- [ ] Polaris Citta Dharma
+- [ ] Preemptive Strtike
+- [ ] Propitious Omen
+- [ ] Qi Therapy
+- [ ] Repel Citta Dharma
+- [ ] Revitalized
+- [ ] Ruthless Water
+- [ ] Shifting Starts
+- [ ] Snake In Reflection
+- [ ] Sparrows Tail
+- [ ] Starry Moon
+- [ ] Star Born Rhythm
+- [ ] Star Trail Divination
+- [ ] Stillness Citta Dharma
+- [ ] Strike Twice
+- [ ] Sun And Moon For Glory
+- [ ] Thin On The Ground
+- [ ] Throwing Stones For Directions
+- [ ] Thunder And Lighting
+- [ ] Thunder Citta Dharma
+- [ ] Thunder Hexagram Rhythm
+- [ ] Vitality Blossom
+- [ ] Wait For Gains Without Pains
+- [ ] Water Hexagram
+- [ ] White Crane Bright Wings
+- [ ] White Snake
+- [ ] Wild Horses Part The Mane
+- [ ] Wind Hexagram
+- [ ] Yin Yang Formation
+- [ ] Zhen Hexagram
