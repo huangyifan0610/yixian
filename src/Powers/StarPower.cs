@@ -6,14 +6,13 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Yixian.Patches;
-using Yixian.Vars;
 
 namespace Yixian.Powers;
 
 /// <summary>
 /// Star Power increases damage for cards on the Star Point.
 /// </summary>
-public sealed class StarPowerPower : PowerModel
+public sealed class StarPower : PowerModel
 {
     /// <summary>
     /// Buff for positive amount and debuff for negative amount.
@@ -34,7 +33,7 @@ public sealed class StarPowerPower : PowerModel
     /// Relates Star Point power.
     /// </summary>
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
-        HoverTipFactory.FromPower<StarPointPower>(),
+        HoverTipFactory.FromPower<StarPoint>(),
     ];
 
     /// <summary>

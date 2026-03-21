@@ -65,13 +65,13 @@ public static class CardModelExtension
 
         // Inspect the position of the card in hand.
         int position = cardModel.Pile.Cards.IndexOf(cardModel);
-        if (StarPointPower.IsDefaultStarPoint(position))
+        if (StarPoint.IsDefaultStarPoint(position))
         {
             return true;
         }
         else
         {
-            var starPointPower = cardModel.Owner?.Creature?.GetPower<StarPointPower>();
+            var starPointPower = cardModel.Owner?.Creature?.GetPower<StarPoint>();
             return starPointPower != null && starPointPower.IsStarPoint(position);
         }
     }

@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using Yixian.Powers;
-using Yixian.Vars;
+using Yixian.Patches;
 
 namespace Yixian.Cards.HeptastarPavilion;
 
@@ -24,15 +24,15 @@ public sealed class AstralFleche() : HeptastarPavilionCardModel(0, CardType.Atta
         // Deal 3 damage.
         new DamageVar(3, ValueProp.Move),
         // Gain 2 star power.
-        new StarPowerVar(2),
+        new PowerVar<StarPower>(2),
     ]);
 
     /// <summary>
     /// Adds star point power and star power power to the hover tips.
     /// </summary>
     protected override IEnumerable<IHoverTip> ExtraHoverTips => base.ExtraHoverTips.Concat([
-        HoverTipFactory.FromPower<StarPointPower>(),
-        HoverTipFactory.FromPower<StarPowerPower>(),
+        HoverTipFactory.FromPower<StarPoint>(),
+        HoverTipFactory.FromPower<StarPower>(),
     ]);
 
     /// <summary>
@@ -49,7 +49,7 @@ public sealed class AstralFleche() : HeptastarPavilionCardModel(0, CardType.Atta
                 .Execute(choiceContext);
         }
 
-        await PowerCmd.Apply<StarPowerPower>(Owner.Creature, DynamicVars.StarPower().BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<StarPower>(Owner.Creature, DynamicVars.Power<StarPower>().BaseValue, Owner.Creature, this);
     }
 
     /// <summary>
@@ -58,6 +58,6 @@ public sealed class AstralFleche() : HeptastarPavilionCardModel(0, CardType.Atta
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(1);
-        DynamicVars.StarPower().UpgradeValueBy(2);
+        DynamicVars.Power<StarPower>().UpgradeValueBy(2);
     }
 }

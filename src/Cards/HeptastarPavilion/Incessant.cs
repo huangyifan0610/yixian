@@ -7,7 +7,6 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
-using Yixian.HoverTips;
 using Yixian.Patches;
 
 namespace Yixian.Cards.HeptastarPavilion;
@@ -24,9 +23,8 @@ public sealed class Incessant() : HeptastarPavilionCardModel(1, CardType.Attack,
         // Deal 6 damage.
         new DamageVar(6, ValueProp.Move),
         // Deal 3 damage on post action.
-        new DamageVar(POST_ACTION_DAMAGE_VAR, 3, ValueProp.Move),
+        new ExtraDamageVar(3),
     ]);
-    private const string POST_ACTION_DAMAGE_VAR = "PostActionDamage";
 
     /// <summary>
     /// Adds star point power to the hover tips.
@@ -58,7 +56,7 @@ public sealed class Incessant() : HeptastarPavilionCardModel(1, CardType.Attack,
             if (this.HasPlayed())
             {
                 await DamageCmd
-                    .Attack(DynamicVars[POST_ACTION_DAMAGE_VAR].BaseValue)
+                    .Attack(DynamicVars.ExtraDamage.BaseValue)
                     .FromCard(this)
                     .Targeting(cardPlay.Target)
                     .Execute(choiceContext);
@@ -72,6 +70,6 @@ public sealed class Incessant() : HeptastarPavilionCardModel(1, CardType.Attack,
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(3);
-        DynamicVars[POST_ACTION_DAMAGE_VAR].UpgradeValueBy(3);
+        DynamicVars.ExtraDamage.UpgradeValueBy(3);
     }
 }

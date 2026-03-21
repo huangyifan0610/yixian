@@ -13,18 +13,18 @@ using Yixian.Powers;
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>
-/// <c>Astral Move - Dragon Slay</c> in <c>Heptastar Pavilion</c>.
+/// <c>Astral Move - Fly</c> in <c>Heptastar Pavilion</c>.
 /// </summary>
-public sealed class AstralMoveDragonSlay() : HeptastarPavilionCardModel(0, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+public sealed class AstralMoveFly() : HeptastarPavilionCardModel(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     /// <summary>
     /// The dynamic variables.
     /// </summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => base.CanonicalVars.Concat([
-        // Deal 5 damage.
+        // Deal 5 damage twice.
         new DamageVar(5, ValueProp.Move),
-        // Bonus from star power.
-        new StarPowerBonusVar(5),
+        // Draw 2 cards if on star point.
+        new CardsVar(2),
     ]);
 
     /// <summary>
@@ -32,7 +32,6 @@ public sealed class AstralMoveDragonSlay() : HeptastarPavilionCardModel(0, CardT
     /// </summary>
     protected override IEnumerable<IHoverTip> ExtraHoverTips => base.ExtraHoverTips.Concat([
         HoverTipFactory.FromPower<StarPoint>(),
-        HoverTipFactory.FromPower<StarPower>(),
     ]);
 
     /// <summary>
@@ -50,6 +49,7 @@ public sealed class AstralMoveDragonSlay() : HeptastarPavilionCardModel(0, CardT
             // Deal damage.
             await DamageCmd
                 .Attack(DynamicVars.Damage.BaseValue)
+                .WithHitCount(2)
                 .FromCard(this)
                 .Targeting(cardPlay.Target)
                 .Execute(choiceContext);
@@ -61,7 +61,6 @@ public sealed class AstralMoveDragonSlay() : HeptastarPavilionCardModel(0, CardT
     /// </summary>
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(1);
-        DynamicVars.StarPowerBonus().UpgradeValueBy(1);
+        DynamicVars.Cards.UpgradeValueBy(1);
     }
 }

@@ -10,7 +10,7 @@ namespace Yixian.Powers;
 /// <summary>
 /// A power indicating your Star Points.
 /// </summary>
-public sealed class StarPointPower : PowerModel
+public sealed class StarPoint : PowerModel
 {
     /// <summary>
     /// Neither buff nor debuff.
@@ -44,7 +44,7 @@ public sealed class StarPointPower : PowerModel
     /// <summary>
     /// The third and sixth slots are the default Star Point. 
     /// </summary>
-    public StarPointPower()
+    public StarPoint()
     {
         SetStarPoint(2);
         SetStarPoint(5);

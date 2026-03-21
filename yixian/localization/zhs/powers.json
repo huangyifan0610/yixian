@@ -1,11 +1,11 @@
 {
-  "HEXAGRAM_POWER.title": "卦象",
-  "HEXAGRAM_POWER.description": "每一点[gold]卦象[/gold]能让自身下一次随机效果取最优（随机范围必取最大值，随机概率100%触发，每生效一次减一[gold]卦象[/gold]）。",
+  "HEXAGRAM.title": "卦象",
+  "HEXAGRAM.description": "每一点[gold]卦象[/gold]能让自身下一次随机效果取最优（随机范围必取最大值，随机概率100%触发，每生效一次减一[gold]卦象[/gold]）。",
   "POLARIS_CITTA_DHARMA_POWER.title": "天元心法",
   "POLARIS_CITTA_DHARMA_POWER.description": "手牌所有格均为[gold]星位[/gold]。",
-  "STAR_POINT_POWER.title": "星位",
-  "STAR_POINT_POWER.description": "手牌第3格和第6格为默认[gold]星位[/gold]。\n在[gold]星位[/gold]上的牌可以触发其[gold]星位[/gold]效果。",
-  "STAR_POINT_POWER.smartDescription": "手牌第3格和第6格为默认[gold]星位[/gold]。\n在[gold]星位[/gold]上的牌可以触发其[gold]星位[/gold]效果。\n当前[gold]星位[/gold]：{StarPointList}。",
-  "STAR_POWER_POWER.title": "星力",
-  "STAR_POWER_POWER.description": "每有一点[gold]星力[/gold], [gold]星位[/gold]上的牌增加一点伤害。\n"
+  "STAR_POINT.title": "星位",
+  "STAR_POINT.description": "手牌第3格和第6格为默认[gold]星位[/gold]。\n在[gold]星位[/gold]上的牌可以触发其[gold]星位[/gold]效果。",
+  "STAR_POINT.smartDescription": "手牌第3格和第6格为默认[gold]星位[/gold]。\n在[gold]星位[/gold]上的牌可以触发其[gold]星位[/gold]效果。\n当前[gold]星位[/gold]：{StarPointList}。",
+  "STAR_POWER.title": "星力",
+  "STAR_POWER.description": "每有一点[gold]星力[/gold], [gold]星位[/gold]上的牌增加一点伤害。\n"
 }

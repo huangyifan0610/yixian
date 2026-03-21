@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using Yixian.Powers;
-using Yixian.Vars;
+using Yixian.Patches;
 
 namespace Yixian.Cards.HeptastarPavilion;
 
@@ -35,7 +35,7 @@ public sealed class AllOrNothing() : HeptastarPavilionCardModel(2, CardType.Atta
     /// Adds star point power to the hover tips.
     /// </summary>
     protected override IEnumerable<IHoverTip> ExtraHoverTips => base.ExtraHoverTips.Concat([
-        HoverTipFactory.FromPower<HexagramPower>(),
+        HoverTipFactory.FromPower<Hexagram>(),
     ]);
 
     /// <summary>
@@ -45,7 +45,7 @@ public sealed class AllOrNothing() : HeptastarPavilionCardModel(2, CardType.Atta
     {
         if (cardPlay.Target != null)
         {
-            await HexagramPower.Range(Owner.Creature, this, Owner.RunState, DynamicVars.MinDamage().IntValue, DynamicVars.MaxDamage().IntValue)
+            await Hexagram.Range(Owner.Creature, this, Owner.RunState, DynamicVars.MinDamage().IntValue, DynamicVars.MaxDamage().IntValue)
                 .ContinueWith(async damage => DamageCmd
                     .Attack(await damage)
                     .FromCard(this)
@@ -54,7 +54,7 @@ public sealed class AllOrNothing() : HeptastarPavilionCardModel(2, CardType.Atta
                 );
         }
 
-        await HexagramPower.Range(Owner.Creature, this, Owner.RunState, DynamicVars.MinBlock().IntValue, DynamicVars.MaxBlock().IntValue)
+        await Hexagram.Range(Owner.Creature, this, Owner.RunState, DynamicVars.MinBlock().IntValue, DynamicVars.MaxBlock().IntValue)
             .ContinueWith(async block => CreatureCmd.GainBlock(Owner.Creature, await block, ValueProp.Move, cardPlay));
     }
 

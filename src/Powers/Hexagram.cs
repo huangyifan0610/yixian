@@ -11,7 +11,7 @@ namespace Yixian.Powers;
 /// <summary>
 /// Hexagram Power.
 /// </summary>
-public sealed class HexagramPower : PowerModel
+public sealed class Hexagram : PowerModel
 {
     /// <summary>
     /// Neither buff nor debuff.
@@ -33,7 +33,7 @@ public sealed class HexagramPower : PowerModel
     /// <returns>Returns the boolean test result.</returns>
     public static async Task<bool> Percentege(Creature creature, CardModel? cardSource, IRunState runState, decimal successPercentege)
     {
-        var hexagramPower = creature.GetPower<HexagramPower>();
+        var hexagramPower = creature.GetPower<Hexagram>();
         if (hexagramPower?.Amount > 0)
         {
             // Consumes one hexagram.
@@ -59,7 +59,7 @@ public sealed class HexagramPower : PowerModel
     /// <returns></returns>
     public static async Task<int> Range(Creature creature, CardModel? cardSource, IRunState runState, int lower, int upper)
     {
-        var hexagramPower = creature.GetPower<HexagramPower>();
+        var hexagramPower = creature.GetPower<Hexagram>();
         if (hexagramPower?.Amount > 0)
         {
             // Consumes one hexagram.

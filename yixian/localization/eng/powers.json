@@ -1,11 +1,11 @@
 {
-  "HEXAGRAM_POWER.title": "Hexagram",
-  "HEXAGRAM_POWER.description": "For each stack of [gold]Hexagram[/gold] can make 1 random effect to get the best result (The random range takes the maximum value, and the random probablity becomes 100%. The stack of [gold]Hexagram[/gold] will remove 1 stack for each trigger of its effect).",
+  "HEXAGRAM.title": "Hexagram",
+  "HEXAGRAM.description": "For each stack of [gold]Hexagram[/gold] can make 1 random effect to get the best result (The random range takes the maximum value, and the random probablity becomes 100%. The stack of [gold]Hexagram[/gold] will remove 1 stack for each trigger of its effect).",
   "POLARIS_CITTA_DHARMA_POWER.title": "Polaris Citta Dharma",
   "POLARIS_CITTA_DHARMA_POWER.description": "All the slots in your hand are [gold]Star Point[/gold].",
-  "STAR_POINT_POWER.title": "Star Point",
-  "STAR_POINT_POWER.description": "The third and sixth slots of your hand cards are the default [gold]Star Point[/gold].\nThe card on [gold]Star Point[/gold] can trigger its [gold]Star Point[/gold] effects if applicable.",
-  "STAR_POINT_POWER.smartDescription": "The third and sixth slots of your hand cards are the default [gold]Star Point[/gold].\nThe card on [gold]Star Point[/gold] can trigger its [gold]Star Point[/gold] effects if applicable.\nCurrent [gold]Star Point[/gold]s: {StarPointList}。",
-  "STAR_POWER_POWER.title": "Star Power",
-  "STAR_POWER_POWER.description": "For each stack of [gold]Star Power[/gold], the cards on the [gold]Star Point[/gold] will increase 1 damage when attacking."
+  "STAR_POINT.title": "Star Point",
+  "STAR_POINT.description": "The third and sixth slots of your hand cards are the default [gold]Star Point[/gold].\nThe card on [gold]Star Point[/gold] can trigger its [gold]Star Point[/gold] effects if applicable.",
+  "STAR_POINT.smartDescription": "The third and sixth slots of your hand cards are the default [gold]Star Point[/gold].\nThe card on [gold]Star Point[/gold] can trigger its [gold]Star Point[/gold] effects if applicable.\nCurrent [gold]Star Point[/gold]s: {StarPointList}。",
+  "STAR_POWER.title": "Star Power",
+  "STAR_POWER.description": "For each stack of [gold]Star Power[/gold], the cards on the [gold]Star Point[/gold] will increase 1 damage when attacking."
 }

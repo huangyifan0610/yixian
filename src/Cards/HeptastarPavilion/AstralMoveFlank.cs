@@ -24,15 +24,14 @@ public sealed class AstralMoveFlank() : HeptastarPavilionCardModel(1, CardType.A
         // Deal 6 damage.
         new DamageVar(6, ValueProp.Move),
         // Star Point: Deal 3 damage.
-        new DamageVar(STAR_POINT_DAMAGE_VAR, 3, ValueProp.Move),
+        new ExtraDamageVar(3),
     ]);
-    private const string STAR_POINT_DAMAGE_VAR = "StarPointDamage";
 
     /// <summary>
     /// Adds star point power to the hover tips.
     /// </summary>
     protected override IEnumerable<IHoverTip> ExtraHoverTips => base.ExtraHoverTips.Concat([
-        HoverTipFactory.FromPower<StarPointPower>(),
+        HoverTipFactory.FromPower<StarPoint>(),
     ]);
 
     /// <summary>
@@ -63,7 +62,7 @@ public sealed class AstralMoveFlank() : HeptastarPavilionCardModel(1, CardType.A
             if (this.IsOnStarPoint())
             {
                 await DamageCmd
-                    .Attack(DynamicVars[STAR_POINT_DAMAGE_VAR].BaseValue)
+                    .Attack(DynamicVars.ExtraDamage.BaseValue)
                     .FromCard(this)
                     .Targeting(cardPlay.Target)
                     .Execute(choiceContext);
@@ -77,6 +76,6 @@ public sealed class AstralMoveFlank() : HeptastarPavilionCardModel(1, CardType.A
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(1);
-        DynamicVars[STAR_POINT_DAMAGE_VAR].UpgradeValueBy(3);
+        DynamicVars.ExtraDamage.UpgradeValueBy(3);
     }
 }

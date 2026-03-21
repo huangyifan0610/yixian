@@ -9,7 +9,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using Yixian.Powers;
-using Yixian.Vars;
+using Yixian.Patches;
 
 namespace Yixian.Cards.HeptastarPavilion;
 
@@ -23,7 +23,7 @@ public sealed class PolarisCittaDharma() : HeptastarPavilionCardModel(3, CardTyp
     /// </summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => base.CanonicalVars.Concat([
         // Gain 3 star power if it's the first played card.
-        new StarPowerVar(3),
+        new PowerVar<StarPower>(3),
     ]);
 
     /// <summary>
@@ -37,8 +37,8 @@ public sealed class PolarisCittaDharma() : HeptastarPavilionCardModel(3, CardTyp
     /// Adds star point power and star power power to the hover tips.
     /// </summary>
     protected override IEnumerable<IHoverTip> ExtraHoverTips => base.ExtraHoverTips.Concat([
-        HoverTipFactory.FromPower<StarPointPower>(),
-        HoverTipFactory.FromPower<StarPowerPower>(),
+        HoverTipFactory.FromPower<StarPoint>(),
+        HoverTipFactory.FromPower<StarPower>(),
     ]);
 
     /// <summary>
@@ -60,7 +60,7 @@ public sealed class PolarisCittaDharma() : HeptastarPavilionCardModel(3, CardTyp
         // Gains star power if it's played first in the battle.
         if (IsFirstInCombat)
         {
-            await PowerCmd.Apply<StarPowerPower>(Owner.Creature, DynamicVars.StarPower().BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<StarPower>(Owner.Creature, DynamicVars.Power<StarPower>().BaseValue, Owner.Creature, this);
         }
     }
 

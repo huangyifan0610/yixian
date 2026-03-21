@@ -32,7 +32,7 @@ public sealed class AstralMoveBlock() : HeptastarPavilionCardModel(1, CardType.S
     /// Adds star point power to the hover tips.
     /// </summary>
     protected override IEnumerable<IHoverTip> ExtraHoverTips => base.ExtraHoverTips.Concat([
-        HoverTipFactory.FromPower<StarPointPower>(),
+        HoverTipFactory.FromPower<StarPoint>(),
     ]);
 
     /// <summary>

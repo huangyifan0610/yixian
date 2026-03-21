@@ -29,7 +29,7 @@ public sealed class AstralMoveCide() : HeptastarPavilionCardModel(1, CardType.At
     /// Adds star point power to the hover tips.
     /// </summary>
     protected override IEnumerable<IHoverTip> ExtraHoverTips => base.ExtraHoverTips.Concat([
-        HoverTipFactory.FromPower<StarPointPower>(),
+        HoverTipFactory.FromPower<StarPoint>(),
     ]);
 
     /// <summary>

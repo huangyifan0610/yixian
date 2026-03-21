@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using Yixian.Powers;
-using Yixian.Vars;
+using Yixian.Patches;
 
 namespace Yixian.Cards.HeptastarPavilion;
 
@@ -24,14 +24,14 @@ public sealed class EarthHexagram() : HeptastarPavilionCardModel(1, CardType.Ski
         // Gain 4 blocks.
         new BlockVar(4, ValueProp.Move),
         // Gain 2 hexagrams.
-        new HexagramVar(2),
+        new PowerVar<Hexagram>(2),
     ]);
 
     /// <summary>
     /// Adds hexagram power to the hover tips.
     /// </summary>
     protected override IEnumerable<IHoverTip> ExtraHoverTips => base.ExtraHoverTips.Concat([
-        HoverTipFactory.FromPower<HexagramPower>(),
+        HoverTipFactory.FromPower<Hexagram>(),
     ]);
 
     /// <summary>
@@ -42,7 +42,7 @@ public sealed class EarthHexagram() : HeptastarPavilionCardModel(1, CardType.Ski
         // Gain blocks.
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
         // Gain hexagrams.
-        await PowerCmd.Apply<HexagramPower>([Owner.Creature], DynamicVars.Hexagram().IntValue, Owner.Creature, this);
+        await PowerCmd.Apply<Hexagram>([Owner.Creature], DynamicVars.Power<Hexagram>().IntValue, Owner.Creature, this);
     }
 
     /// <summary>
@@ -51,6 +51,6 @@ public sealed class EarthHexagram() : HeptastarPavilionCardModel(1, CardType.Ski
     protected override void OnUpgrade()
     {
         DynamicVars.Block.UpgradeValueBy(2);
-        DynamicVars.Hexagram().UpgradeValueBy(1);
+        DynamicVars.Power<Hexagram>().UpgradeValueBy(1);
     }
 }

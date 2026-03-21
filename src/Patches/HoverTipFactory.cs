@@ -2,7 +2,7 @@ using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 
-namespace Yixian.HoverTips;
+namespace Yixian.Patches;
 
 /// <summary>
 /// More static hover tips.

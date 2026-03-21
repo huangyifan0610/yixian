@@ -25,7 +25,7 @@ public sealed class PolarisCittaDharmaPower : PowerModel
     /// Adds star point power and star power power to the hover tips.
     /// </summary>
     protected override IEnumerable<IHoverTip> ExtraHoverTips => base.ExtraHoverTips.Concat([
-        HoverTipFactory.FromPower<StarPointPower>(),
-        HoverTipFactory.FromPower<StarPowerPower>(),
+        HoverTipFactory.FromPower<StarPoint>(),
+        HoverTipFactory.FromPower<StarPower>(),
     ]);
 }

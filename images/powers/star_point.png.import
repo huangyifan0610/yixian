@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5f3mk72feesb"
-path="res://.godot/imported/hexagram_power.png-c92e0bafa2fcb14ad143ea03877e236e.ctex"
+uid="uid://dldnq38crgaid"
+path="res://.godot/imported/star_point.png-6723002724361b1ef4c0ba395dfcae1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/powers/hexagram_power.png"
-dest_files=["res://.godot/imported/hexagram_power.png-c92e0bafa2fcb14ad143ea03877e236e.ctex"]
+source_file="res://images/powers/star_point.png"
+dest_files=["res://.godot/imported/star_point.png-6723002724361b1ef4c0ba395dfcae1d.ctex"]
 
 [params]
 
