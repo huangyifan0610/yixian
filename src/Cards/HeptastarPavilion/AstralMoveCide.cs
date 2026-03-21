@@ -10,7 +10,6 @@ using MegaCrit.Sts2.Core.HoverTips;
 using Yixian.Patches;
 using Yixian.Powers;
 
-
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>

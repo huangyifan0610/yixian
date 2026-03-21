@@ -1,8 +1,9 @@
 using Godot;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
+using Yixian.Cards.HeptastarPavilion;
 
-namespace Yixian.Cards.HeptastarPavilion;
+namespace Yixian.Cards;
 
 /// <summary>
 /// The card pool of <c>Heptastar Pavilion</c>.
@@ -54,6 +55,7 @@ public sealed class HeptastarPavilionCardPool : CardPoolModel
             ModelDb.Card<AstralMoveDragonSlay>(),
             ModelDb.Card<AstralMoveFlank>(),
             ModelDb.Card<EarthHexagram>(),
+            ModelDb.Card<Incessant>(),
             ModelDb.Card<PalmThunder>(),
         ];
     }
@@ -70,6 +72,7 @@ public sealed class HeptastarPavilionCardPool : CardPoolModel
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralMoveDragonSlay>();
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralMoveFlank>();
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, EarthHexagram>();
+        ModHelper.AddModelToPool<HeptastarPavilionCardPool, Incessant>();
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, PalmThunder>();
     }
 }

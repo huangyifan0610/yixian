@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Models;
-using Yixian.Cards.HeptastarPavilion;
+using Yixian.Cards;
 using Yixian.Relics;
 
 namespace Yixian.Patches;

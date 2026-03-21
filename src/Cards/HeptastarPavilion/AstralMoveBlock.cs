@@ -18,11 +18,6 @@ namespace Yixian.Cards.HeptastarPavilion;
 public sealed class AstralMoveBlock() : HeptastarPavilionCardModel(1, CardType.Skill, CardRarity.Basic, TargetType.Self)
 {
     /// <summary>
-    /// The star point block variable.
-    /// </summary>
-    private const string STAR_POINT_BLOCK_VAR = "StarPointBlock";
-
-    /// <summary>
     /// The dynamic variables.
     /// </summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => base.CanonicalVars.Concat([
@@ -31,6 +26,7 @@ public sealed class AstralMoveBlock() : HeptastarPavilionCardModel(1, CardType.S
         // Star Point: Gain 5 blocks.
         new BlockVar(STAR_POINT_BLOCK_VAR, 3, ValueProp.Move),
     ]);
+    private const string STAR_POINT_BLOCK_VAR = "StarPointBlock";
 
     /// <summary>
     /// Adds star point power to the hover tips.
@@ -62,6 +58,8 @@ public sealed class AstralMoveBlock() : HeptastarPavilionCardModel(1, CardType.S
         {
             await CreatureCmd.GainBlock(Owner.Creature, (BlockVar)DynamicVars[STAR_POINT_BLOCK_VAR], cardPlay);
         }
+
+        Main.Logger.Info($"============ {cardPlay.PlayIndex} - {cardPlay.PlayCount}");
     }
 
     /// <summary>

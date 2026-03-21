@@ -6,7 +6,7 @@ namespace Yixian.Vars;
 /// <summary>
 /// The lower bound of the random damage range. 
 /// </summary>
-public class MinBlockVar(decimal amount, ValueProp props): BlockVar(DEFAULT, amount, props)
+public class MinBlockVar(decimal amount, ValueProp props) : BlockVar(DEFAULT, amount, props)
 {
     /// <summary>
     /// The default variable name.
@@ -17,7 +17,7 @@ public class MinBlockVar(decimal amount, ValueProp props): BlockVar(DEFAULT, amo
 /// <summary>
 /// The upper bound of the random damage range. 
 /// </summary>
-public class MaxBlockVar(decimal amount, ValueProp props): BlockVar(DEFAULT, amount, props)
+public class MaxBlockVar(decimal amount, ValueProp props) : BlockVar(DEFAULT, amount, props)
 {
     /// <summary>
     /// The default variable name.

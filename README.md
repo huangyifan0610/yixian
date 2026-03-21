@@ -25,6 +25,7 @@ See [Splay the Spire II] and [Yixian Pai] on *Steam*.
 | Astral Move - Cide        | Attact | Rare     | Heptastar Pavilion |
 | Astral Move - Dragon Slay | Attact | Rare     | Heptastar Pavilion |
 | Earth Hexagram            | Skill  | Common   | Heptastar Pavilion |
+| Incessant                 | Attact | Common   | Heptastar Pavilion |
 | Palm Thunder              | Attack | Common   | Heptastar Pavilion |
 
 ### New Relic Pools

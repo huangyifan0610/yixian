@@ -1,7 +1,7 @@
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
-using Yixian.Cards.HeptastarPavilion;
+using Yixian.Cards;
 
 namespace Yixian;
 

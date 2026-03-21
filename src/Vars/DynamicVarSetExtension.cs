@@ -81,4 +81,29 @@ public static class DynamicVarSetExtension
             return false;
         }
     }
+
+    /// <summary>
+    /// Returns the default Post Action variable.
+    /// </summary>
+    public static PostActionVar PostAction(this DynamicVarSet vars)
+    {
+        return (PostActionVar)vars[PostActionVar.DEFAULT];
+    }
+
+    /// <summary>
+    /// Attempts to get the default Post Action variable.
+    /// </summary>
+    public static bool TryPostAction(this DynamicVarSet vars, [MaybeNullWhen(false)] out PostActionVar postAction)
+    {
+        if (vars.TryGetValue(PostActionVar.DEFAULT, out var variable) && variable is PostActionVar bonus)
+        {
+            postAction = bonus;
+            return true;
+        }
+        else
+        {
+            postAction = null;
+            return false;
+        }
+    }
 }

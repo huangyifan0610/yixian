@@ -1,10 +1,7 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Powers;
-using MegaCrit.Sts2.Core.Extensions;
-using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 
@@ -28,10 +25,10 @@ public sealed class StarPointPower : PowerModel
     /// <summary>
     /// Variables for localization.
     /// </summary>
-    protected override IEnumerable<DynamicVar> CanonicalVars => [
+    protected override IEnumerable<DynamicVar> CanonicalVars => base.CanonicalVars.Concat([
         // comma-seperated integers displaying current Star Points.
         new StringVar(STAR_POINT_LIST_VAR, _starPoints.ToString())
-    ];
+    ]);
     private const string STAR_POINT_LIST_VAR = "StarPointList";
 
     /// <summary>

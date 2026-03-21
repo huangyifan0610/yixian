@@ -11,7 +11,6 @@ using Yixian.Patches;
 using Yixian.Powers;
 using Yixian.Vars;
 
-
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>

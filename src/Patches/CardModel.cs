@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -7,6 +8,7 @@ using MegaCrit.Sts2.Core.Extensions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using Yixian.Powers;
+using Yixian.Vars;
 
 namespace Yixian.Patches;
 
@@ -79,7 +81,6 @@ public static class CardModelOnPlayWrapperPrefix
     [HarmonyPrefix]
     public static void Prefix(CardModel __instance, PlayerChoiceContext choiceContext, Creature? target, bool isAutoPlay, ResourceInfo resources, bool skipCardPileVisuals = false)
     {
-
         // Star points only exist in hand pile.
         if (__instance.Pile?.Type == PileType.Hand && __instance.IsOnStarPointForHand())
         {
