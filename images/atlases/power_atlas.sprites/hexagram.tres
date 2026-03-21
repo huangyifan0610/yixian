@@ -1,6 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://c7q44gwu725qr"]
-
-[ext_resource type="Texture2D" uid="uid://c5f3mk72feesb" path="res://images/powers/hexagram.png" id="1_5h303"]
-
-[resource]
-atlas = ExtResource("1_5h303")
+version https://git-lfs.github.com/spec/v1
+oid sha256:d99cc936c0b98ef0a6fbc84f5019cc01a761365227dce6106163bb05f4be8894
+size 237

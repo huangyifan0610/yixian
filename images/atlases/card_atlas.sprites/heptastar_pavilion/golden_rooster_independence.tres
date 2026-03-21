@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://wa3qjuuxpf6m"]
-
-[ext_resource type="Texture2D" uid="uid://bx0x5w3unedb" path="res://images/packed/card_portraits/heptastar_pavilion/golden_rooster_independence.png" id="1_rlmal"]
-
-[resource]
-atlas = ExtResource("1_rlmal")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:ab5aaf8316cb2957bd1cac2badd0007d88478d565897f7e84de3204eeebc8277
+size 320

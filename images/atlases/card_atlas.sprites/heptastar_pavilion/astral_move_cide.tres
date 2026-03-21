@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://brmwfbxdlx5lc"]
-
-[ext_resource type="Texture2D" uid="uid://c22dl4gacejlv" path="res://images/packed/card_portraits/heptastar_pavilion/astral_move_cide.png" id="1_1rb37"]
-
-[resource]
-atlas = ExtResource("1_1rb37")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:d3440151f037572837429fb47ec9567a6a23583a03e4574fd4290ca5b028e393
+size 311

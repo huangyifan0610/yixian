@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b7vnwo0awn6hf"]
-
-[ext_resource type="Texture2D" uid="uid://dbk7uccc4hrt1" path="res://images/packed/card_portraits/heptastar_pavilion/water_hexagram.png" id="1_w2kfx"]
-
-[resource]
-atlas = ExtResource("1_w2kfx")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:b49bca4bec97a0f64c8cc1a777ddff531c2ca70135c774d486c60cd79d725a77
+size 309

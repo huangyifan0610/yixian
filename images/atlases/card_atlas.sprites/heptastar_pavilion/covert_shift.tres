@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b547ac3yugei1"]
-
-[ext_resource type="Texture2D" uid="uid://b831vqxmfg5ne" path="res://images/packed/card_portraits/heptastar_pavilion/covert_shift.png" id="1_q6we0"]
-
-[resource]
-atlas = ExtResource("1_q6we0")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:a9cbf29c77581ea37e4073872e4879f453b0f0139b7f367e75d53f283ff3f824
+size 307

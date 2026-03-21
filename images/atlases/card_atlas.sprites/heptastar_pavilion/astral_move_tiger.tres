@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cwoglroqakw7p"]
-
-[ext_resource type="Texture2D" uid="uid://dcpxfsugpetxq" path="res://images/packed/card_portraits/heptastar_pavilion/astral_move_tiger.png" id="1_u5lja"]
-
-[resource]
-atlas = ExtResource("1_u5lja")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:94ffdec97e7b344b87fdcd2d3cffbda38311ea90ecc51d80ec479c90b922bb5e
+size 312

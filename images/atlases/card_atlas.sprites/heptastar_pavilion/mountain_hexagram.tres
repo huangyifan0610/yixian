@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://c213gm6kemm2n"]
-
-[ext_resource type="Texture2D" uid="uid://c7ipvus3st0o5" path="res://images/packed/card_portraits/heptastar_pavilion/mountain_hexagram.png" id="1_lsbmm"]
-
-[resource]
-atlas = ExtResource("1_lsbmm")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:0b133e888687a9496ef550a5eda937c97fcbba78c2672d9b8856420206cd5eac
+size 312

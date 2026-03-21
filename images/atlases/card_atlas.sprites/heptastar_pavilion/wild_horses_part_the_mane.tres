@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cx5vsqnfoy84v"]
-
-[ext_resource type="Texture2D" uid="uid://qeo83w56q233" path="res://images/packed/card_portraits/heptastar_pavilion/wild_horses_part_the_mane.png" id="1_p4e66"]
-
-[resource]
-atlas = ExtResource("1_p4e66")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:eeb9c5f4c803d1e7f0f9084a8ae4c2caaad7c78dc2df2a656dc97b41e1905c21
+size 319

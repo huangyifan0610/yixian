@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://d0ujwmctqlyes"]
-
-[ext_resource type="Texture2D" uid="uid://bn5ildwmwb18p" path="res://images/packed/card_portraits/heptastar_pavilion/incessant.png" id="1_tunr0"]
-
-[resource]
-atlas = ExtResource("1_tunr0")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:0edf781c20910976a63c75fb530995557a15f57b427d623ef96006744908b366
+size 304

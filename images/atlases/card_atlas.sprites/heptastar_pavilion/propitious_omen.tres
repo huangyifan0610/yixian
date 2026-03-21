@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bfjhp627c006b"]
-
-[ext_resource type="Texture2D" uid="uid://5r3ayjcqagnd" path="res://images/packed/card_portraits/heptastar_pavilion/propitious_omen.png" id="1_gyyvp"]
-
-[resource]
-atlas = ExtResource("1_gyyvp")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:4387dc615c8a2c6c0ffd16b9a2393929b95290b489fb1b4a9624b37f7416da14
+size 309

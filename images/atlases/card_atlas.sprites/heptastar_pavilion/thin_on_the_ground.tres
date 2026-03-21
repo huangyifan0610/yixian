@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://yp4ru40dp8if"]
-
-[ext_resource type="Texture2D" uid="uid://bi80d6r5ujmdp" path="res://images/packed/card_portraits/heptastar_pavilion/thin_on_the_ground.png" id="1_txdsp"]
-
-[resource]
-atlas = ExtResource("1_txdsp")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:63ec0446407d0931b0772d60dc61e44f8c4437d12eafadfd412265b8906bb287
+size 312

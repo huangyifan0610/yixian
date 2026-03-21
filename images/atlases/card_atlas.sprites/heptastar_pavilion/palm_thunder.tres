@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bawfi8y6kp6ax"]
-
-[ext_resource type="Texture2D" uid="uid://i0y5svx2fadg" path="res://images/packed/card_portraits/heptastar_pavilion/palm_thunder.png" id="1_lbng2"]
-
-[resource]
-atlas = ExtResource("1_lbng2")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:59ae7bb766881b40a86878620df6b941578d607b63a365c107ed97a65ae6a2f3
+size 306

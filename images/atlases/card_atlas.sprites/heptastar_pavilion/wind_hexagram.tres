@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b7677q1bvf1yq"]
-
-[ext_resource type="Texture2D" uid="uid://beu0yuopvj2p4" path="res://images/packed/card_portraits/heptastar_pavilion/wind_hexagram.png" id="1_v6h05"]
-
-[resource]
-atlas = ExtResource("1_v6h05")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:3ed2bc8c8241b25cd223315397fad0711936878944cba600a9ed06c7f214221c
+size 308

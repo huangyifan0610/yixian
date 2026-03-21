@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bvp3h1y548dou"]
-
-[ext_resource type="Texture2D" uid="uid://bmupdvpno8u6n" path="res://images/packed/card_portraits/heptastar_pavilion/vitality_blossom.png" id="1_5udbi"]
-
-[resource]
-atlas = ExtResource("1_5udbi")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:ecbd9d619f1770a9b1354b654a05d32f94f03ee1eb80715602b37c54163a2cc1
+size 311

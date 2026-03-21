@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dtvhf0ab67vpx"]
-
-[ext_resource type="Texture2D" uid="uid://drm1jl1esvhuo" path="res://images/packed/card_portraits/heptastar_pavilion/starry_moon.png" id="1_qlshy"]
-
-[resource]
-atlas = ExtResource("1_qlshy")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:0a0bd6ac0fa89dc3140d91528a384e777e4e4bf1eda78bc29064f2b8f200eec2
+size 306

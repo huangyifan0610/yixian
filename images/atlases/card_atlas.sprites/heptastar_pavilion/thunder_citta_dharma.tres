@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b83dewo6ls22e"]
-
-[ext_resource type="Texture2D" uid="uid://cg3umqmvnss5h" path="res://images/packed/card_portraits/heptastar_pavilion/thunder_citta_dharma.png" id="1_k537p"]
-
-[resource]
-atlas = ExtResource("1_k537p")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:3cd248834c73073758f0e2805d98d6f229c9bfc9d5929bc89eb1337b2628ba26
+size 315

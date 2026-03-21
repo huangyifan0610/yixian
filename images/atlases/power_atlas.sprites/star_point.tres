@@ -1,6 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://d33tx34t38piq"]
-
-[ext_resource type="Texture2D" uid="uid://dldnq38crgaid" path="res://images/powers/star_point.png" id="1_2r5wj"]
-
-[resource]
-atlas = ExtResource("1_2r5wj")
+version https://git-lfs.github.com/spec/v1
+oid sha256:1cd8b66ad33827ecfdefdadd79250f11129e768d41286eeb5eb45072472e7ccb
+size 239

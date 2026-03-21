@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dq22u5w78gpvk"]
-
-[ext_resource type="Texture2D" uid="uid://yhcfs2hr2yhy" path="res://images/packed/card_portraits/heptastar_pavilion/five_thunders.png" id="1_34asi"]
-
-[resource]
-atlas = ExtResource("1_34asi")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:99d4bf4b83e28f1b95ee8395b7dc664dcb28fc307c55fb618cebea0806b694a3
+size 307

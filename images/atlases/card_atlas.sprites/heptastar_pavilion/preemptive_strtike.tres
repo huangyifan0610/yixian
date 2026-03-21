@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cm3oih4g7oa0q"]
-
-[ext_resource type="Texture2D" uid="uid://d1xxgjldux4xc" path="res://images/packed/card_portraits/heptastar_pavilion/preemptive_strtike.png" id="1_xp8pu"]
-
-[resource]
-atlas = ExtResource("1_xp8pu")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:543b38aafaaeb1430e8de2aeb2cae9f248b838a4c6f283196da54509ba87c4b4
+size 313

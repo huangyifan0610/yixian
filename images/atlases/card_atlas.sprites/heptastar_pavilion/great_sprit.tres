@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dcp7b3b144dle"]
-
-[ext_resource type="Texture2D" uid="uid://2kxajvsexqug" path="res://images/packed/card_portraits/heptastar_pavilion/great_sprit.png" id="1_707oi"]
-
-[resource]
-atlas = ExtResource("1_707oi")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:220294e4281ea2e729a69bf9167c28a9c0450c6a009a3700882677eedcebd282
+size 305

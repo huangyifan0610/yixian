@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://c5yonhvwawgja"]
-
-[ext_resource type="Texture2D" uid="uid://c7akqxxurxxvk" path="res://images/packed/card_portraits/heptastar_pavilion/polaris_citta_dharma.png" id="1_0llaq"]
-
-[resource]
-atlas = ExtResource("1_0llaq")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:048c5559864b84f3d3e2d3fdc5e0fb6e7b725df24febed1fbb56470ff3c97b18
+size 315

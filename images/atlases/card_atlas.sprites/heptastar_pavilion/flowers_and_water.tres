@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bvgij4871ckhf"]
-
-[ext_resource type="Texture2D" uid="uid://lcljhbw4jxp8" path="res://images/packed/card_portraits/heptastar_pavilion/flowers_and_water.png" id="1_lq8n7"]
-
-[resource]
-atlas = ExtResource("1_lq8n7")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:371ce9eca4b3998dff5e80143c529a167059cc9c0d4a381bf914dbd8bc6e6e4f
+size 311

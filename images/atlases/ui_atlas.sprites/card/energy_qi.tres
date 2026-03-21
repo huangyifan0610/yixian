@@ -1,6 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://ci2kf0dxprmgh"]
-
-[ext_resource type="Texture2D" uid="uid://bgge7adf57mww" path="res://images/ui/energy_qi.png" id="1_dogn0"]
-
-[resource]
-atlas = ExtResource("1_dogn0")
+version https://git-lfs.github.com/spec/v1
+oid sha256:cf411c57c20caac4e20b765b72682c743fef5574dfa8517338d642a91e4b43c4
+size 234

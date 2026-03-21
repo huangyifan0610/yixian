@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dlqwxebpo727s"]
-
-[ext_resource type="Texture2D" uid="uid://bjwjq7iyyxu81" path="res://images/packed/card_portraits/heptastar_pavilion/thunder_hexagram_rhythm.png" id="1_x2pov"]
-
-[resource]
-atlas = ExtResource("1_x2pov")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:8828a589f1d8ff3087a90d1948ec82137b44b6bdf0adeea99453d973d240fe49
+size 318

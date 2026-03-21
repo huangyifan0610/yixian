@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cdg7rd4idhfqy"]
-
-[ext_resource type="Texture2D" uid="uid://c78ul2vfhbnp6" path="res://images/packed/card_portraits/heptastar_pavilion/dance_of_the_dragonfly.png" id="1_qy8ri"]
-
-[resource]
-atlas = ExtResource("1_qy8ri")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:d8069d6f5d14358fbd7f7058d5237c99a8db7f9c693f3b36ce7d64ca13c42df5
+size 317

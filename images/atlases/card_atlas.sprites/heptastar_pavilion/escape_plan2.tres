@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://w46o1wummb3p"]
-
-[ext_resource type="Texture2D" uid="uid://b115w42jy478v" path="res://images/packed/card_portraits/heptastar_pavilion/escape_plan2.png" id="1_bspfe"]
-
-[resource]
-atlas = ExtResource("1_bspfe")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:25319cc7530719be888cb9f75fe87f5ebdce4f0a277dfa8d84b983fe53bd858a
+size 306

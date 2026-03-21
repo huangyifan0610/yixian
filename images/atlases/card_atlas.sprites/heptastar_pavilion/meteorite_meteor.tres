@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://d35vhgj2f3bx2"]
-
-[ext_resource type="Texture2D" uid="uid://dpcueoxmi22to" path="res://images/packed/card_portraits/heptastar_pavilion/meteorite_meteor.png" id="1_e078q"]
-
-[resource]
-atlas = ExtResource("1_e078q")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:96ee76a4d6a9a0f73f477d64a115c958057c889f2abc92d11c7d85fa50d66882
+size 311

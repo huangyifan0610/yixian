@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dwgcxshvrg0ex"]
-
-[ext_resource type="Texture2D" uid="uid://bvelgmlksuexv" path="res://images/packed/card_portraits/heptastar_pavilion/stillness_citta_dharma.png" id="1_ps6bm"]
-
-[resource]
-atlas = ExtResource("1_ps6bm")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:67ea48ddb1be25e573504aeb450d32746a41fd8ef44d7e69fa0e0b13106327c6
+size 317

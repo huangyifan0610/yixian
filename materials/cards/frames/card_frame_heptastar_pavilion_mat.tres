@@ -1,9 +1,3 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://0liygca52vwc"]
-
-[ext_resource type="Shader" uid="uid://cqsqo4bhbvaox" path="res://shaders/hsv.gdshader" id="1_0eypd"]
-
-[resource]
-shader = ExtResource("1_0eypd")
-shader_parameter/h = 0.7
-shader_parameter/s = 0.9
-shader_parameter/v = 0.7
+version https://git-lfs.github.com/spec/v1
+oid sha256:273e1d46ddc4e8d21f463a39791d0463d1929c42f83a4f8767e72edb9569af16
+size 305

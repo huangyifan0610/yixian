@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b6ydt1jk3iaf1"]
-
-[ext_resource type="Texture2D" uid="uid://cuy08dp160w1p" path="res://images/packed/card_portraits/heptastar_pavilion/zhen_hexagram.png" id="1_y1ksg"]
-
-[resource]
-atlas = ExtResource("1_y1ksg")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:71057b190f289835a63d11cfa4dff5b85c6fbdad89888ae6397a1640704b36cd
+size 308

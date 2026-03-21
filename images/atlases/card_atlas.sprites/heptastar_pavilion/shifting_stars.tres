@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dshkvs7hhrj21"]
-
-[ext_resource type="Texture2D" uid="uid://l1t6o0oj4kap" path="res://images/packed/card_portraits/heptastar_pavilion/shifting_stars.png" id="1_6mnoh"]
-
-[resource]
-atlas = ExtResource("1_6mnoh")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:df3413987dd101c0980e5ecba0baed923ccbcfa2d0fd4527b7e358938bfcac03
+size 308

@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://hdeuoa04namf"]
-
-[ext_resource type="Texture2D" uid="uid://bxehjhv802sal" path="res://images/packed/card_portraits/heptastar_pavilion/astral_fleche.png" id="1_0tyqd"]
-
-[resource]
-atlas = ExtResource("1_0tyqd")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:d8a1b21742443906d70cbc2398af4f0d1543e173989213e645050372164cb6c8
+size 307

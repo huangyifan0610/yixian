@@ -1,7 +1,3 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b7w64jocet4rl"]
-
-[ext_resource type="Texture2D" uid="uid://dsy6l5ediedfn" path="res://images/packed/card_portraits/heptastar_pavilion/hexgrams_spirit_resurrection.png" id="1_pqw4t"]
-
-[resource]
-atlas = ExtResource("1_pqw4t")
-region = Rect2(0, 37, 180, 142)
+version https://git-lfs.github.com/spec/v1
+oid sha256:7dfe93b0d8dc71fcdd3a0c02c024915ea6af57172ab43252bd5fb68f5030ae48
+size 323
