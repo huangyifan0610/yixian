@@ -42,7 +42,7 @@ public sealed class HeptastarPavilionCardPool : CardPoolModel
     /// </summary>
     public override bool IsColorless => false;
 
-    /// <summary>`
+    /// <summary>
     /// Returns all cards in the pool.
     /// </summary>
     protected override CardModel[] GenerateAllCards()
@@ -57,6 +57,8 @@ public sealed class HeptastarPavilionCardPool : CardPoolModel
             ModelDb.Card<AstralMoveFly>(),
             ModelDb.Card<AstralMoveHit>(),
             ModelDb.Card<AstralMovePoint>(),
+            ModelDb.Card<AstralMoveStand>(),
+            ModelDb.Card<AstralMoveTiger>(),
             ModelDb.Card<EarthHexagram>(),
             ModelDb.Card<Incessant>(),
             ModelDb.Card<PalmThunder>(),
@@ -78,6 +80,8 @@ public sealed class HeptastarPavilionCardPool : CardPoolModel
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralMoveFly>();
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralMoveHit>();
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralMovePoint>();
+        ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralMoveStand>();
+        ModHelper.AddModelToPool<HeptastarPavilionCardPool, AstralMoveTiger>();
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, EarthHexagram>();
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, Incessant>();
         ModHelper.AddModelToPool<HeptastarPavilionCardPool, PalmThunder>();

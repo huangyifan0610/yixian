@@ -9,27 +9,31 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.HoverTips;
 using Yixian.Patches;
 using Yixian.Powers;
+using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>
-/// <c>Astral Move - Hit</c> in <c>Heptastar Pavilion</c>.
+/// <c>Astral Move - Tiger</c> in <c>Heptastar Pavilion</c>.
 /// </summary>
-public sealed class AstralMoveHit() : HeptastarPavilionCardModel(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+public sealed class AstralMoveTiger() : HeptastarPavilionCardModel(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     /// <summary>
     /// The dynamic variables.
     /// </summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => base.CanonicalVars.Concat([
-        // Deal 5 damage each hit.
-        new DamageVar(5, ValueProp.Move),
+        // Deal 1 damage three times.
+        new DamageVar(1, ValueProp.Move),
+        // Apply 2 weak.
+        new PowerVar<WeakPower>(2),
     ]);
 
     /// <summary>
-    /// Adds star point power to the hover tips.
+    /// Adds star point power and weak power to the hover tips.
     /// </summary>
     protected override IEnumerable<IHoverTip> ExtraHoverTips => base.ExtraHoverTips.Concat([
         HoverTipFactory.FromPower<StarPoint>(),
+        HoverTipFactory.FromPower<WeakPower>(),
     ]);
 
     /// <summary>
@@ -44,19 +48,25 @@ public sealed class AstralMoveHit() : HeptastarPavilionCardModel(1, CardType.Att
     {
         if (cardPlay.Target != null)
         {
-            // Deal damage twice, Or 3 times if on star point.
+            // Deal damage three times.
             await DamageCmd
                 .Attack(DynamicVars.Damage.BaseValue)
                 .WithHitFx("vfx/vfx_starry_impact")
-                .WithHitCount(this.IsOnStarPoint() ? 3 : 2)
+                .WithHitCount(3)
                 .FromCard(this)
                 .Targeting(cardPlay.Target)
                 .Execute(choiceContext);
+
+            // Apply weak if on star point.
+            if (this.IsOnStarPoint())
+            {
+                await PowerCmd.Apply<WeakPower>(cardPlay.Target, DynamicVars.Weak.BaseValue, Owner.Creature, this);
+            }
         }
     }
 
     /// <summary>
-    /// Upgrade the damage.
+    /// Apply more weak after upgrade.
     /// </summary>
-    protected override void OnUpgrade() => DynamicVars.Damage.UpgradeValueBy(2);
+    protected override void OnUpgrade() => DynamicVars.Weak.UpgradeValueBy(2);
 }

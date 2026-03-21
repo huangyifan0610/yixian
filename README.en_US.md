@@ -23,8 +23,8 @@ See [Splay the Spire II] and [Yixian Pai] on *Steam*.
 - [x] Astral Move - Fly
 - [x] Astral Move - Hit
 - [x] Astral Move - Point
-- [ ] Astral Move - Stand
-- [ ] Astral Move - Tiger
+- [x] Astral Move - Stand
+- [x] Astral Move - Tiger
 - [ ] Covert Shift
 - [ ] Cutting Weeds
 - [ ] Dance Of The Dragonfly

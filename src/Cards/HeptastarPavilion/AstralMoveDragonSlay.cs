@@ -50,6 +50,7 @@ public sealed class AstralMoveDragonSlay() : HeptastarPavilionCardModel(0, CardT
             // Deal damage.
             await DamageCmd
                 .Attack(DynamicVars.Damage.BaseValue)
+                .WithHitFx("vfx/vfx_starry_impact")
                 .FromCard(this)
                 .Targeting(cardPlay.Target)
                 .Execute(choiceContext);

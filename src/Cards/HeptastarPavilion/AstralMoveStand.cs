@@ -13,16 +13,18 @@ using Yixian.Powers;
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>
-/// <c>Astral Move - Hit</c> in <c>Heptastar Pavilion</c>.
+/// <c>Astral Move - Stand</c> in <c>Heptastar Pavilion</c>.
 /// </summary>
-public sealed class AstralMoveHit() : HeptastarPavilionCardModel(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+public sealed class AstralMoveStand() : HeptastarPavilionCardModel(1, CardType.Attack, CardRarity.Uncommon, TargetType.AllEnemies)
 {
     /// <summary>
     /// The dynamic variables.
     /// </summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => base.CanonicalVars.Concat([
-        // Deal 5 damage each hit.
-        new DamageVar(5, ValueProp.Move),
+        // Deal 9 damage to all enemies.
+        new DamageVar(9, ValueProp.Move),
+        // Gain 2 energy.
+        new EnergyVar(2),
     ]);
 
     /// <summary>
@@ -38,25 +40,30 @@ public sealed class AstralMoveHit() : HeptastarPavilionCardModel(1, CardType.Att
     protected override bool ShouldGlowGoldInternal => this.IsOnStarPoint();
 
     /// <summary>
-    /// Deal damages.
+    /// Deal damages and gain energy.
     /// </summary>
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if (cardPlay.Target != null)
+        if (CombatState != null)
         {
-            // Deal damage twice, Or 3 times if on star point.
+            // Deal damage once.
             await DamageCmd
                 .Attack(DynamicVars.Damage.BaseValue)
                 .WithHitFx("vfx/vfx_starry_impact")
-                .WithHitCount(this.IsOnStarPoint() ? 3 : 2)
                 .FromCard(this)
-                .Targeting(cardPlay.Target)
+                .TargetingAllOpponents(CombatState)
                 .Execute(choiceContext);
+        }
+
+        // Deal damage to all enemies if on star point.
+        if (this.IsOnStarPoint())
+        {
+            await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
         }
     }
 
     /// <summary>
-    /// Upgrade the damage.
+    /// Gain more energy.
     /// </summary>
-    protected override void OnUpgrade() => DynamicVars.Damage.UpgradeValueBy(2);
+    protected override void OnUpgrade() => DynamicVars.Energy.UpgradeValueBy(1);
 }

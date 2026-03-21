@@ -44,8 +44,8 @@ public sealed class PalmThunder() : HeptastarPavilionCardModel(1, CardType.Attac
             await Hexagram.Range(Owner.Creature, this, Owner.RunState, DynamicVars.MinDamage().IntValue, DynamicVars.MaxDamage().IntValue)
                 .ContinueWith(async damage => DamageCmd
                     .Attack(await damage)
-                    .FromCard(this)
                     .WithHitFx("vfx/vfx_attack_lightning")
+                    .FromCard(this)
                     .Targeting(cardPlay.Target)
                     .Execute(choiceContext)
                 );

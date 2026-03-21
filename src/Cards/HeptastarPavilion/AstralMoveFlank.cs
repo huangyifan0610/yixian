@@ -54,6 +54,7 @@ public sealed class AstralMoveFlank() : HeptastarPavilionCardModel(1, CardType.A
             // Deal damage.
             await DamageCmd
                 .Attack(DynamicVars.Damage.BaseValue)
+                .WithHitFx("vfx/vfx_starry_impact")
                 .FromCard(this)
                 .Targeting(cardPlay.Target)
                 .Execute(choiceContext);

@@ -9,7 +9,6 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.HoverTips;
 using Yixian.Patches;
 using Yixian.Powers;
-using MegaCrit.Sts2.Core.Models.Cards;
 
 namespace Yixian.Cards.HeptastarPavilion;
 
@@ -50,6 +49,7 @@ public sealed class AstralMovePoint() : HeptastarPavilionCardModel(1, CardType.A
             // Deal damage once.
             await DamageCmd
                 .Attack(DynamicVars.Damage.BaseValue)
+                .WithHitFx("vfx/vfx_starry_impact")
                 .FromCard(this)
                 .Targeting(cardPlay.Target)
                 .Execute(choiceContext);

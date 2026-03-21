@@ -44,6 +44,7 @@ public sealed class AstralFleche() : HeptastarPavilionCardModel(0, CardType.Atta
         {
             await DamageCmd
                 .Attack(DynamicVars.Damage.BaseValue)
+                .WithHitFx("vfx/vfx_starry_impact")
                 .FromCard(this)
                 .Targeting(cardPlay.Target)
                 .Execute(choiceContext);

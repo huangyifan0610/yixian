@@ -49,6 +49,7 @@ public sealed class AstralMoveFly() : HeptastarPavilionCardModel(1, CardType.Att
             // Deal damage twice.
             await DamageCmd
                 .Attack(DynamicVars.Damage.BaseValue)
+                .WithHitFx("vfx/vfx_starry_impact")
                 .WithHitCount(2)
                 .FromCard(this)
                 .Targeting(cardPlay.Target)

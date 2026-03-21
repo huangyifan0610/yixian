@@ -47,6 +47,7 @@ public sealed class AstralMoveCide() : HeptastarPavilionCardModel(1, CardType.At
             // Deal damage.
             await DamageCmd
                 .Attack(DynamicVars.Damage.BaseValue)
+                .WithHitFx("vfx/vfx_starry_impact")
                 .FromCard(this)
                 .Targeting(cardPlay.Target)
                 .Execute(choiceContext);
