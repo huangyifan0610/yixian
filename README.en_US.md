@@ -20,9 +20,9 @@ See [Splay the Spire II] and [Yixian Pai] on *Steam*.
 - [x] Astral Move - Cide
 - [x] Astral Move - Dragon Slay
 - [x] Astral Move - Flank
-- [ ] Astral Move - Fly
-- [ ] Astral Move - Hit
-- [ ] Astral Move - Point
+- [x] Astral Move - Fly
+- [x] Astral Move - Hit
+- [x] Astral Move - Point
 - [ ] Astral Move - Stand
 - [ ] Astral Move - Tiger
 - [ ] Covert Shift

@@ -9,22 +9,23 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.HoverTips;
 using Yixian.Patches;
 using Yixian.Powers;
+using MegaCrit.Sts2.Core.Models.Cards;
 
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>
-/// <c>Astral Move - Fly</c> in <c>Heptastar Pavilion</c>.
+/// <c>Astral Move - Point</c> in <c>Heptastar Pavilion</c>.
 /// </summary>
-public sealed class AstralMoveFly() : HeptastarPavilionCardModel(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+public sealed class AstralMovePoint() : HeptastarPavilionCardModel(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
 {
     /// <summary>
     /// The dynamic variables.
     /// </summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => base.CanonicalVars.Concat([
-        // Deal 1 damage twice.
-        new DamageVar(1, ValueProp.Move),
-        // Draw 2 cards if on star point.
-        new CardsVar(2),
+        // Deal 6 damage.
+        new DamageVar(6, ValueProp.Move),
+        // Deal 9 damage to all enemies if on star point.
+        new ExtraDamageVar(9),
     ]);
 
     /// <summary>
@@ -40,30 +41,33 @@ public sealed class AstralMoveFly() : HeptastarPavilionCardModel(1, CardType.Att
     protected override bool ShouldGlowGoldInternal => this.IsOnStarPoint();
 
     /// <summary>
-    /// Deal damage and draw cards.
+    /// Deal damages.
     /// </summary>
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (cardPlay.Target != null)
         {
-            // Deal damage twice.
+            // Deal damage once.
             await DamageCmd
                 .Attack(DynamicVars.Damage.BaseValue)
-                .WithHitCount(2)
                 .FromCard(this)
                 .Targeting(cardPlay.Target)
                 .Execute(choiceContext);
         }
 
-        // Draw cards if on star point.
-        if (this.IsOnStarPoint())
+        // Deal damage to all enemies if on star point.
+        if (this.IsOnStarPoint() && CombatState != null)
         {
-            await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
+            await DamageCmd
+                .Attack(DynamicVars.ExtraDamage.BaseValue)
+                .FromCard(this)
+                .TargetingAllOpponents(CombatState)
+                .Execute(choiceContext);
         }
     }
 
     /// <summary>
-    /// Draw more cards.
+    /// Upgrade the extra damage.
     /// </summary>
-    protected override void OnUpgrade() => DynamicVars.Cards.UpgradeValueBy(1);
+    protected override void OnUpgrade() => DynamicVars.ExtraDamage.UpgradeValueBy(4);
 }

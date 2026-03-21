@@ -13,18 +13,16 @@ using Yixian.Powers;
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>
-/// <c>Astral Move - Fly</c> in <c>Heptastar Pavilion</c>.
+/// <c>Astral Move - Hit</c> in <c>Heptastar Pavilion</c>.
 /// </summary>
-public sealed class AstralMoveFly() : HeptastarPavilionCardModel(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+public sealed class AstralMoveHit() : HeptastarPavilionCardModel(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     /// <summary>
     /// The dynamic variables.
     /// </summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => base.CanonicalVars.Concat([
-        // Deal 1 damage twice.
-        new DamageVar(1, ValueProp.Move),
-        // Draw 2 cards if on star point.
-        new CardsVar(2),
+        // Deal 5 damage each hit.
+        new DamageVar(5, ValueProp.Move),
     ]);
 
     /// <summary>
@@ -40,30 +38,24 @@ public sealed class AstralMoveFly() : HeptastarPavilionCardModel(1, CardType.Att
     protected override bool ShouldGlowGoldInternal => this.IsOnStarPoint();
 
     /// <summary>
-    /// Deal damage and draw cards.
+    /// Deal damages.
     /// </summary>
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (cardPlay.Target != null)
         {
-            // Deal damage twice.
+            // Deal damage twice, Or 3 times if on star point.
             await DamageCmd
                 .Attack(DynamicVars.Damage.BaseValue)
-                .WithHitCount(2)
+                .WithHitCount(this.IsOnStarPoint() ? 3 : 2)
                 .FromCard(this)
                 .Targeting(cardPlay.Target)
                 .Execute(choiceContext);
         }
-
-        // Draw cards if on star point.
-        if (this.IsOnStarPoint())
-        {
-            await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
-        }
     }
 
     /// <summary>
-    /// Draw more cards.
+    /// Upgrade the damage.
     /// </summary>
-    protected override void OnUpgrade() => DynamicVars.Cards.UpgradeValueBy(1);
+    protected override void OnUpgrade() => DynamicVars.Damage.UpgradeValueBy(2);
 }
