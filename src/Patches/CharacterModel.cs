@@ -1,5 +1,6 @@
 using System;
 using HarmonyLib;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
 using Yixian.Characters;
@@ -33,8 +34,9 @@ public static class Title
 {
 
     [HarmonyPrefix]
-    public static bool Prefix(ref LocString __result, CharacterModel __instance) =>
-        Utility.Patch(ref __result, __instance, hp => new LocString("characters", hp.CharacterUppercase + ".title"));
+    public static bool Prefix(ref LocString __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
+        hp => new LocString("characters", hp.CharacterUppercase + ".title")
+    );
 }
 
 /// <summary>See <see cref="CharacterModel.TitleObject"/>.</summary>
@@ -42,8 +44,9 @@ public static class Title
 public static class TitleObject
 {
     [HarmonyPrefix]
-    public static bool Prefix(ref LocString __result, CharacterModel __instance) =>
-        Utility.Patch(ref __result, __instance, hp => new LocString("characters", hp.CharacterUppercase + ".titleObject"));
+    public static bool Prefix(ref LocString __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
+        hp => new LocString("characters", hp.CharacterUppercase + ".titleObject")
+    );
 }
 
 /// <summary>See <see cref="CharacterModel.PronounObject"/>.</summary>
@@ -51,8 +54,9 @@ public static class TitleObject
 public static class PronounObject
 {
     [HarmonyPrefix]
-    public static bool Prefix(ref LocString __result, CharacterModel __instance) =>
-        Utility.Patch(ref __result, __instance, hp => new LocString("characters", hp.CharacterUppercase + ".pronounObject"));
+    public static bool Prefix(ref LocString __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
+        hp => new LocString("characters", hp.CharacterUppercase + ".pronounObject")
+    );
 }
 
 /// <summary>See <see cref="CharacterModel.PossessiveAdjective"/>.</summary>
@@ -60,8 +64,9 @@ public static class PronounObject
 public static class PossessiveAdjective
 {
     [HarmonyPrefix]
-    public static bool Prefix(ref LocString __result, CharacterModel __instance) =>
-        Utility.Patch(ref __result, __instance, hp => new LocString("characters", hp.CharacterUppercase + ".possessiveAdjective"));
+    public static bool Prefix(ref LocString __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
+        hp => new LocString("characters", hp.CharacterUppercase + ".possessiveAdjective")
+    );
 }
 
 /// <summary>See <see cref="CharacterModel.PronounPossessive"/>.</summary>
@@ -69,8 +74,9 @@ public static class PossessiveAdjective
 public static class PronounPossessive
 {
     [HarmonyPrefix]
-    public static bool Prefix(ref LocString __result, CharacterModel __instance) =>
-        Utility.Patch(ref __result, __instance, hp => new LocString("characters", hp.CharacterUppercase + ".pronounPossessive"));
+    public static bool Prefix(ref LocString __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
+        hp => new LocString("characters", hp.CharacterUppercase + ".pronounPossessive")
+    );
 }
 
 /// <summary>See <see cref="CharacterModel.PronounSubject"/>.</summary>
@@ -78,8 +84,9 @@ public static class PronounPossessive
 public static class PronounSubject
 {
     [HarmonyPrefix]
-    public static bool Prefix(ref LocString __result, CharacterModel __instance) =>
-        Utility.Patch(ref __result, __instance, hp => new LocString("characters", hp.CharacterUppercase + ".pronounSubject"));
+    public static bool Prefix(ref LocString __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
+        hp => new LocString("characters", hp.CharacterUppercase + ".pronounSubject")
+    );
 }
 
 /// <summary>See <see cref="CharacterModel.CardsModifierTitle"/>.</summary>
@@ -87,8 +94,9 @@ public static class PronounSubject
 public static class CardsModifierTitle
 {
     [HarmonyPrefix]
-    public static bool Prefix(ref LocString __result, CharacterModel __instance) =>
-        Utility.Patch(ref __result, __instance, hp => new LocString("characters", hp.CharacterUppercase + ".cardsModifierTitle"));
+    public static bool Prefix(ref LocString __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
+        hp => new LocString("characters", hp.CharacterUppercase + ".cardsModifierTitle")
+    );
 }
 
 /// <summary>See <see cref="CharacterModel.CardsModifierDescription"/>.</summary>
@@ -96,8 +104,9 @@ public static class CardsModifierTitle
 public static class CardsModifierDescription
 {
     [HarmonyPrefix]
-    public static bool Prefix(ref LocString __result, CharacterModel __instance) =>
-        Utility.Patch(ref __result, __instance, hp => new LocString("characters", hp.CharacterUppercase + ".cardsModifierDescription"));
+    public static bool Prefix(ref LocString __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
+        hp => new LocString("characters", hp.CharacterUppercase + ".cardsModifierDescription")
+    );
 }
 
 /// <summary>See <see cref="CharacterModel.EventDeathPreventionLine"/>.</summary>
@@ -105,8 +114,9 @@ public static class CardsModifierDescription
 public static class EventDeathPreventionLine
 {
     [HarmonyPrefix]
-    public static bool Prefix(ref LocString __result, CharacterModel __instance) =>
-        Utility.Patch(ref __result, __instance, hp => new LocString("characters", hp.CharacterUppercase + ".eventDeathPreventionLine"));
+    public static bool Prefix(ref LocString __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
+        hp => new LocString("characters", hp.CharacterUppercase + ".eventDeathPreventionLine")
+    );
 }
 
 /// <summary>See <see cref="CharacterModel.CharacterSelectTitle"/>.</summary>
@@ -114,8 +124,9 @@ public static class EventDeathPreventionLine
 public static class CharacterSelectTitle
 {
     [HarmonyPrefix]
-    public static bool Prefix(ref string __result, CharacterModel __instance) =>
-        Utility.Patch(ref __result, __instance, hp => hp.CharacterUppercase + ".title");
+    public static bool Prefix(ref string __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
+        hp => hp.CharacterUppercase + ".title"
+    );
 }
 
 /// <summary>See <see cref="CharacterModel.CharacterSelectDesc"/>.</summary>
@@ -123,6 +134,18 @@ public static class CharacterSelectTitle
 public static class CharacterSelectDesc
 {
     [HarmonyPrefix]
-    public static bool Prefix(ref string __result, CharacterModel __instance) =>
-        Utility.Patch(ref __result, __instance, hp => hp.CharacterUppercase + ".description");
+    public static bool Prefix(ref string __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
+        hp => hp.CharacterUppercase + ".description"
+    );
+}
+
+
+/// <summary>See <see cref="CharacterModel.CharacterSelectBg"/>.</summary>
+[HarmonyPatch(typeof(CharacterModel), nameof(CharacterModel.CharacterSelectBg), MethodType.Getter)]
+public static class CharacterSelectBg
+{
+    [HarmonyPrefix]
+    public static bool Prefix(ref string __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
+        hp => SceneHelper.GetScenePath("screens/char_select/char_select_bg_" + hp.CharacterLowercase)
+    );
 }

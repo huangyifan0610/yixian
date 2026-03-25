@@ -1,0 +1,131 @@
+[gd_scene load_steps=15 format=3 uid="uid://bwioamypf2t7c"]
+
+[ext_resource type="Script" uid="uid://cehl3xelwy42i" path="res://src/Nodes/Screens/CharSelect/CharSelectGroupHeptastarPavilion.cs" id="1_2v5se"]
+[ext_resource type="Texture2D" uid="uid://balkpxpeuxxqs" path="res://images/ui/char_avatar/char_avatar_tan_shuyan.png" id="1_hjd2r"]
+[ext_resource type="Texture2D" uid="uid://daigj34q6kcvm" path="res://images/ui/char_avatar_frame/char_avatar_frame_tan_shuyan.png" id="2_2v5se"]
+[ext_resource type="Texture2D" uid="uid://c3xeojnp104q1" path="res://images/ui/char_avatar/char_avatar_yan_chen.png" id="3_ypo7v"]
+[ext_resource type="Texture2D" uid="uid://dwwiuk6umae1k" path="res://images/ui/char_avatar_frame/char_avatar_frame_yan_chen.png" id="4_w0cm1"]
+[ext_resource type="Texture2D" uid="uid://dvqsk2cct4ihm" path="res://images/ui/char_avatar/char_avatar_yao_ling.png" id="5_5o34s"]
+[ext_resource type="Texture2D" uid="uid://dk7qc51lx6gtc" path="res://images/ui/char_avatar_frame/char_avatar_frame_yao_ling.png" id="6_sr5ri"]
+[ext_resource type="Texture2D" uid="uid://bheea5q6xvh5q" path="res://images/ui/char_avatar/char_avatar_jiang_ximing.png" id="7_r8cbn"]
+[ext_resource type="Texture2D" uid="uid://co28tq7xn0kv6" path="res://images/ui/char_avatar_frame/char_avatar_frame_jiang_ximing.png" id="8_8bi3w"]
+[ext_resource type="Texture2D" uid="uid://p6fgobymv07k" path="res://images/ui/char_avatar/char_avatar_wu_ce.png" id="9_adcnn"]
+[ext_resource type="Texture2D" uid="uid://c27nrug7dpa1" path="res://images/ui/char_avatar_frame/char_avatar_frame_wu_ce.png" id="10_520jv"]
+[ext_resource type="Texture2D" uid="uid://dusdia0t7u2rb" path="res://images/ui/char_avatar/char_avatar_feng_xu.png" id="11_5hypr"]
+[ext_resource type="Texture2D" uid="uid://ikw5dnob4cw3" path="res://images/ui/char_avatar_frame/char_avatar_frame_feng_xu.png" id="12_ir5vo"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_tnsvn"]
+
+[node name="CharSelectGroupHeptastarPavilion" type="HBoxContainer"]
+script = ExtResource("1_2v5se")
+CharAvatarGroup = SubResource("ButtonGroup_tnsvn")
+
+[node name="TanShuyan" type="TextureButton" parent="."]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_tnsvn")
+texture_normal = ExtResource("1_hjd2r")
+
+[node name="CharAvatarFrame" type="TextureRect" parent="TanShuyan"]
+layout_mode = 0
+offset_left = -58.75
+offset_top = -58.75
+offset_right = 161.25
+offset_bottom = 161.25
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_2v5se")
+
+[node name="SpaceAfterTanShuyan" type="ReferenceRect" parent="."]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="YanChen" type="TextureButton" parent="."]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_tnsvn")
+texture_normal = ExtResource("3_ypo7v")
+
+[node name="CharAvatarFrame" type="TextureRect" parent="YanChen"]
+layout_mode = 0
+offset_left = -58.75
+offset_top = -58.75
+offset_right = 161.25
+offset_bottom = 161.25
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("4_w0cm1")
+
+[node name="SpaceAfterYanChen" type="ReferenceRect" parent="."]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="YaoLing" type="TextureButton" parent="."]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_tnsvn")
+texture_normal = ExtResource("5_5o34s")
+
+[node name="CharAvatarFrame" type="TextureRect" parent="YaoLing"]
+layout_mode = 0
+offset_left = -58.75
+offset_top = -58.75
+offset_right = 161.25
+offset_bottom = 161.25
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("6_sr5ri")
+
+[node name="SpaceAfterYaoLing" type="ReferenceRect" parent="."]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="JiangXiming" type="TextureButton" parent="."]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_tnsvn")
+texture_normal = ExtResource("7_r8cbn")
+
+[node name="CharAvatarFrame" type="TextureRect" parent="JiangXiming"]
+layout_mode = 0
+offset_left = -58.75
+offset_top = -58.75
+offset_right = 161.25
+offset_bottom = 161.25
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("8_8bi3w")
+
+[node name="SpaceAfterJiangXiming" type="ReferenceRect" parent="."]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="WuCe" type="TextureButton" parent="."]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_tnsvn")
+texture_normal = ExtResource("9_adcnn")
+
+[node name="CharAvatarFrame" type="TextureRect" parent="WuCe"]
+layout_mode = 0
+offset_left = -58.75
+offset_top = -58.75
+offset_right = 161.25
+offset_bottom = 161.25
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("10_520jv")
+
+[node name="SpaceAfterWuCe" type="ReferenceRect" parent="."]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="FengXu" type="TextureButton" parent="."]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_tnsvn")
+texture_normal = ExtResource("11_5hypr")
+
+[node name="CharAvatarFrame" type="TextureRect" parent="FengXu"]
+layout_mode = 0
+offset_left = -58.75
+offset_top = -58.75
+offset_right = 161.25
+offset_bottom = 161.25
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("12_ir5vo")

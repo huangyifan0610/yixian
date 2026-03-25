@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://coudfq8whwg0y"
+path="res://.godot/imported/yan_chen_bg.skel-143d2978b8039f8883c895946f6638b0.spskel"
+
+[deps]
+
+source_file="res://animations/characters/yan_chen/yan_chen_bg.skel"
+dest_files=["res://.godot/imported/yan_chen_bg.skel-143d2978b8039f8883c895946f6638b0.spskel"]
+
+[params]
+

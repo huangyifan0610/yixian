@@ -6,7 +6,7 @@ using Yixian.Characters;
 
 namespace Yixian.Nodes.Screen.CharSelect;
 
-public partial class CharSelectBgYxHeptastarPavilion : Control
+public partial class CharSelectGroupHeptastarPavilion : HBoxContainer
 {
     [Export] public ButtonGroup? CharAvatarGroup = default;
 
@@ -24,9 +24,9 @@ public partial class CharSelectBgYxHeptastarPavilion : Control
         if (model.Character != character)
         {
             model.Character = character;
-            // We are in "/root/Game/RootSceneContainer/MainMenu/Submenus/CharacterSelectScreen/AnimatedBg/YX_HEPTASTAR_PAVILION_bg"
+            // We are in "/root/Game/RootSceneContainer/MainMenu/Submenus/CharacterSelectScreen/AnimatedBg/YX_**_bg/CharSelectGroupHeptastarPavilion"
             // We want   "/root/Game/RootSceneContainer/MainMenu/Submenus/CharacterSelectScreen/CharSelectButtons/ButtonContainer/YX_HEPTASTAR_PAVILION_button"
-            var screen = GetParent().GetParent<NCharacterSelectScreen>();
+            var screen = GetParent().GetParent().GetParent<NCharacterSelectScreen>();
             var button = screen.GetNode<NCharacterSelectButton>("CharSelectButtons/ButtonContainer/YX_HEPTASTAR_PAVILION_button");
             screen.SelectCharacter(button, model);
         }

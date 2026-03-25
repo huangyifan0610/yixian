@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://bh3qdn07vg8rh"
+path="res://.godot/imported/yan_chen.atlas-305958fb11a88197be01167ac12389f0.spatlas"
+
+[deps]
+
+source_file="res://animations/characters/yan_chen/yan_chen.atlas"
+dest_files=["res://.godot/imported/yan_chen.atlas-305958fb11a88197be01167ac12389f0.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

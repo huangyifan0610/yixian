@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://b2grklunp3a5j"
+path="res://.godot/imported/wu_ce.atlas-137a93522b069adccc89142060cf89fc.spatlas"
+
+[deps]
+
+source_file="res://animations/characters/wu_ce/wu_ce.atlas"
+dest_files=["res://.godot/imported/wu_ce.atlas-137a93522b069adccc89142060cf89fc.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

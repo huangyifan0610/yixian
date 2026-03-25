@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://ca63tug3btwi5"
+path="res://.godot/imported/feng_xu_bg.atlas-cb06a0df71b50d79dcdeb431f838c6ff.spatlas"
+
+[deps]
+
+source_file="res://animations/characters/feng_xu/feng_xu_bg.atlas"
+dest_files=["res://.godot/imported/feng_xu_bg.atlas-cb06a0df71b50d79dcdeb431f838c6ff.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

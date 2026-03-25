@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://c883cp8qn6pra"
+path="res://.godot/imported/yao_ling_bg.atlas-e3da3927faff5fbd970603a1858e2f45.spatlas"
+
+[deps]
+
+source_file="res://animations/characters/yao_ling/yao_ling_bg.atlas"
+dest_files=["res://.godot/imported/yao_ling_bg.atlas-e3da3927faff5fbd970603a1858e2f45.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

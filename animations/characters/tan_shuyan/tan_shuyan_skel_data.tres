@@ -1,0 +1,8 @@
+[gd_resource type="SpineSkeletonDataResource" load_steps=3 format=3 uid="uid://cnogdl0xfmjfs"]
+
+[ext_resource type="SpineAtlasResource" uid="uid://uxa7r846w6j2" path="res://animations/characters/tan_shuyan/tan_shuyan.atlas" id="1_u6f1k"]
+[ext_resource type="SpineSkeletonFileResource" uid="uid://bkc3e00ya1ig0" path="res://animations/characters/tan_shuyan/tan_shuyan.skel" id="2_kajvs"]
+
+[resource]
+atlas_res = ExtResource("1_u6f1k")
+skeleton_file_res = ExtResource("2_kajvs")

@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://f1c6pkofmg4b"
+path="res://.godot/imported/jiang_ximing.skel-9fcd1ecb196384f39a52cdd6e5ba5180.spskel"
+
+[deps]
+
+source_file="res://animations/characters/jiang_ximing/jiang_ximing.skel"
+dest_files=["res://.godot/imported/jiang_ximing.skel-9fcd1ecb196384f39a52cdd6e5ba5180.spskel"]
+
+[params]
+
