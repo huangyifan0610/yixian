@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b4x17qvl0hbys"]
+
+[ext_resource type="Texture2D" uid="uid://cdtv7lja0kugf" path="res://images/packed/card_portraits/yx_heptastar_pavilion/yx_astral_move_cide.png" id="1_isrif"]
+
+[resource]
+atlas = ExtResource("1_isrif")
+region = Rect2(12, 24, 168, 132)

@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cutlyh1qyccuc"]
+
+[ext_resource type="Texture2D" uid="uid://bx2760p2a7ars" path="res://images/packed/card_portraits/yx_heptastar_pavilion/yx_rotary_divination_hexagram.png" id="1_05rx5"]
+
+[resource]
+atlas = ExtResource("1_05rx5")
+region = Rect2(12, 24, 168, 132)

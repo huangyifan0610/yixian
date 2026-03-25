@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://8i6b8amfbkid"]
+
+[ext_resource type="Texture2D" uid="uid://bo8bj8nu6burh" path="res://images/packed/card_portraits/yx_heptastar_pavilion/yx_drag_moon_in_sea.png" id="1_k17o2"]
+
+[resource]
+atlas = ExtResource("1_k17o2")
+region = Rect2(12, 0, 168, 132)

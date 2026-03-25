@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://d3m4okqsxifys"]
+
+[ext_resource type="Texture2D" uid="uid://bk2f7oh6fqcqa" path="res://images/packed/card_portraits/yx_heptastar_pavilion/yx_water_drop_erosion.png" id="1_4og5n"]
+
+[resource]
+atlas = ExtResource("1_4og5n")
+region = Rect2(12, 48, 168, 132)

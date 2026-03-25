@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dg5iaoqmubev4"]
+
+[ext_resource type="Texture2D" uid="uid://vduhoq402447" path="res://images/packed/card_portraits/yx_heptastar_pavilion/yx_golden_rooster_independence.png" id="1_ehu3t"]
+
+[resource]
+atlas = ExtResource("1_ehu3t")
+region = Rect2(12, 24, 168, 132)

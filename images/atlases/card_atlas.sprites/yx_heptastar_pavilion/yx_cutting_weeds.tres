@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://s3m1a8l5dfdv"]
+
+[ext_resource type="Texture2D" uid="uid://dfc6nh60ltsx2" path="res://images/packed/card_portraits/yx_heptastar_pavilion/yx_cutting_weeds.png" id="1_74yd0"]
+
+[resource]
+atlas = ExtResource("1_74yd0")
+region = Rect2(12, 48, 168, 132)

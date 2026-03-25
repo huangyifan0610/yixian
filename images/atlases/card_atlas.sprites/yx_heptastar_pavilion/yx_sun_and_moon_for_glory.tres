@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://daikkw8xfp6hb"]
+
+[ext_resource type="Texture2D" uid="uid://xct1h6ejo57n" path="res://images/packed/card_portraits/yx_heptastar_pavilion/yx_sun_and_moon_for_glory.png" id="1_c3btw"]
+
+[resource]
+atlas = ExtResource("1_c3btw")
+region = Rect2(12, 36, 168, 132)

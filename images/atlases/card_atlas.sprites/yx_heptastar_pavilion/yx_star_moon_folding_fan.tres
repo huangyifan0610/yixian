@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bfjvokkldn6ao"]
+
+[ext_resource type="Texture2D" uid="uid://bsiqq4bfqfdkt" path="res://images/packed/card_portraits/yx_heptastar_pavilion/yx_star_moon_folding_fan.png" id="1_52njt"]
+
+[resource]
+atlas = ExtResource("1_52njt")
+region = Rect2(12, 24, 168, 132)

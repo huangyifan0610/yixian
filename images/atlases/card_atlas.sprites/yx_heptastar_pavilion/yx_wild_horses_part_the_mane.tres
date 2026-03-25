@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://fgn210immj61"]
+
+[ext_resource type="Texture2D" uid="uid://bvd6ain8m5m8m" path="res://images/packed/card_portraits/yx_heptastar_pavilion/yx_wild_horses_part_the_mane.png" id="1_2w674"]
+
+[resource]
+atlas = ExtResource("1_2w674")
+region = Rect2(12, 24, 168, 132)

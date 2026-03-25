@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://lbdwuf7wuoou"]
+
+[ext_resource type="Texture2D" uid="uid://dqb24sbrnim0p" path="res://images/packed/card_portraits/yx_heptastar_pavilion/yx_jade_scroll_of_yin_symbol.png" id="1_10h4x"]
+
+[resource]
+atlas = ExtResource("1_10h4x")
+region = Rect2(12, 48, 168, 132)

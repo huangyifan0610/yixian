@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bnonl7u28u507"]
+
+[ext_resource type="Texture2D" uid="uid://dg5gkr2apgjvw" path="res://images/packed/card_portraits/yx_heptastar_pavilion/yx_thunder_hexagram_rhythm.png" id="1_b4soj"]
+
+[resource]
+atlas = ExtResource("1_b4soj")
+region = Rect2(12, 24, 168, 132)

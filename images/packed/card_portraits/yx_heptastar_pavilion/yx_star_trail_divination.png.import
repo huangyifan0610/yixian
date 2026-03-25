@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcn8ovhb3isks"
-path="res://.godot/imported/yx_strike_heptastar_pavilion.png-adfb4ee45617e3bb570ef08ca03c74bf.ctex"
+uid="uid://br6try42h42n2"
+path="res://.godot/imported/yx_star_trail_divination.png-9c39be1c119f64e967b69d72b1df72c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/packed/card_portraits/yx_strike_heptastar_pavilion.png"
-dest_files=["res://.godot/imported/yx_strike_heptastar_pavilion.png-adfb4ee45617e3bb570ef08ca03c74bf.ctex"]
+source_file="res://images/packed/card_portraits/yx_heptastar_pavilion/yx_star_trail_divination.png"
+dest_files=["res://.godot/imported/yx_star_trail_divination.png-9c39be1c119f64e967b69d72b1df72c7.ctex"]
 
 [params]
 

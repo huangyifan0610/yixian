@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bmib21jpsn1tc"]
+
+[ext_resource type="Texture2D" uid="uid://dtm1i3qi63qd7" path="res://images/packed/card_portraits/yx_heptastar_pavilion/yx_polaris_citta_dharma.png" id="1_f8rx2"]
+
+[resource]
+atlas = ExtResource("1_f8rx2")
+region = Rect2(12, 24, 168, 132)

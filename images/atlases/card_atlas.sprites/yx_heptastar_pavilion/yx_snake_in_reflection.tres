@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://ci421j7db2q05"]
+
+[ext_resource type="Texture2D" uid="uid://dl4qka4gr5jvj" path="res://images/packed/card_portraits/yx_heptastar_pavilion/yx_snake_in_reflection.png" id="1_yjglg"]
+
+[resource]
+atlas = ExtResource("1_yjglg")
+region = Rect2(12, 6, 168, 132)
