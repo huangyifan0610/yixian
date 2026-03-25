@@ -1,0 +1,45 @@
+<Project Sdk="Godot.NET.Sdk/4.5.1">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>yixian</AssemblyName>
+    <RootNamespace>Yixian</RootNamespace>
+    <Platform>Any CPU</Platform>
+
+    <Title>Yixian</Title>
+    <Description>Play Yixian Pai on Slay the Spire II.</Description>
+    <Version>0.1.0</Version>
+    <Authors>Huang Yifan</Authors>
+    <RepositoryUrl>https://github.com/huangyifan0610/yixian</RepositoryUrl>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Windows'))">
+    <SteamPath>$(registry:HKEY_CURRENT_USER\Software\Valve\Steam@SteamPath)/steamapps</SteamPath>
+    <Sts2Path>$(SteamPath)/common/Slay the Spire 2</Sts2Path>
+    <Sts2DataPath>$(Sts2Path)/data_sts2_windows_x86_64</Sts2DataPath>
+    <InstallationPath>$(Sts2Path)/mods/$(AssemblyName)</InstallationPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Linux'))">
+    <SteamPath>$(HOME)/.local/share/Steam/steamapps</SteamPath>
+    <Sts2Path>$(SteamPath)/common/Slay the Spire 2</Sts2Path>
+    <Sts2DataPath>$(Sts2Path)/data_sts2_windows_x86_64</Sts2DataPath>
+    <InstallationPath>$(Sts2Path)/mods/$(AssemblyName)</InstallationPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>$(Sts2DataPath)/0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="sts2">
+      <HintPath>$(Sts2DataPath)/sts2.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="InstallAfterBuild" AfterTargets="Build;Publish">
+    <Copy DestinationFolder="$(InstallationPath)" SourceFiles="$(TargetPath);$(AssemblyName).json"/>
+  </Target>
+</Project>
