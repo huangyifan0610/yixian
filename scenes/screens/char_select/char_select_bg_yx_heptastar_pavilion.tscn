@@ -1,0 +1,168 @@
+[gd_scene load_steps=16 format=3 uid="uid://d2rlhgh8v8ewm"]
+
+[ext_resource type="Script" uid="uid://cehl3xelwy42i" path="res://src/Nodes/Screens/CharSelect/CharSelectBgYxHeptastarPavilion.cs" id="1_i0jr0"]
+[ext_resource type="Texture2D" uid="uid://djmx4j0b55le8" path="res://images/ui/bg/bg_yx_heptastar_pavilion.png" id="1_o3uqg"]
+[ext_resource type="Texture2D" uid="uid://balkpxpeuxxqs" path="res://images/ui/char_avatar/char_avatar_tan_shuyan.png" id="3_8do8h"]
+[ext_resource type="Texture2D" uid="uid://daigj34q6kcvm" path="res://images/ui/char_avatar_frame/char_avatar_frame_tan_shuyan.png" id="4_d53fh"]
+[ext_resource type="Texture2D" uid="uid://c3xeojnp104q1" path="res://images/ui/char_avatar/char_avatar_yan_chen.png" id="5_axxmk"]
+[ext_resource type="Texture2D" uid="uid://dwwiuk6umae1k" path="res://images/ui/char_avatar_frame/char_avatar_frame_yan_chen.png" id="6_tdapg"]
+[ext_resource type="Texture2D" uid="uid://dk7qc51lx6gtc" path="res://images/ui/char_avatar_frame/char_avatar_frame_yao_ling.png" id="7_5ryi3"]
+[ext_resource type="Texture2D" uid="uid://dvqsk2cct4ihm" path="res://images/ui/char_avatar/char_avatar_yao_ling.png" id="7_q41dg"]
+[ext_resource type="Texture2D" uid="uid://bheea5q6xvh5q" path="res://images/ui/char_avatar/char_avatar_jiang_ximing.png" id="9_b2nj1"]
+[ext_resource type="Texture2D" uid="uid://co28tq7xn0kv6" path="res://images/ui/char_avatar_frame/char_avatar_frame_jiang_ximing.png" id="10_ob736"]
+[ext_resource type="Texture2D" uid="uid://p6fgobymv07k" path="res://images/ui/char_avatar/char_avatar_wu_ce.png" id="11_onhud"]
+[ext_resource type="Texture2D" uid="uid://c27nrug7dpa1" path="res://images/ui/char_avatar_frame/char_avatar_frame_wu_ce.png" id="12_lane4"]
+[ext_resource type="Texture2D" uid="uid://dusdia0t7u2rb" path="res://images/ui/char_avatar/char_avatar_feng_xu.png" id="13_lane4"]
+[ext_resource type="Texture2D" uid="uid://ikw5dnob4cw3" path="res://images/ui/char_avatar_frame/char_avatar_frame_feng_xu.png" id="14_t5jtw"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_i0jr0"]
+
+[node name="YxHeptastarPavilionBg" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -600.0
+offset_right = 1600.0
+offset_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(1280, 600)
+script = ExtResource("1_i0jr0")
+CharAvatarGroup = SubResource("ButtonGroup_i0jr0")
+
+[node name="BgContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg" type="TextureRect" parent="BgContainer"]
+layout_mode = 2
+texture = ExtResource("1_o3uqg")
+stretch_mode = 4
+
+[node name="CharAvatarContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 276.0
+offset_right = 540.0
+offset_bottom = 432.0
+scale = Vector2(0.5, 0.5)
+
+[node name="TanShuyan" type="TextureButton" parent="CharAvatarContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_i0jr0")
+texture_normal = ExtResource("3_8do8h")
+
+[node name="CharAvatarFrame" type="TextureRect" parent="CharAvatarContainer/TanShuyan"]
+layout_mode = 0
+offset_left = -58.75
+offset_top = -58.75
+offset_right = 161.25
+offset_bottom = 161.25
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("4_d53fh")
+
+[node name="SpaceAfterTanShuyan" type="ReferenceRect" parent="CharAvatarContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="YanChen" type="TextureButton" parent="CharAvatarContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_i0jr0")
+texture_normal = ExtResource("5_axxmk")
+
+[node name="CharAvatarFrame" type="TextureRect" parent="CharAvatarContainer/YanChen"]
+layout_mode = 0
+offset_left = -58.75
+offset_top = -58.75
+offset_right = 161.25
+offset_bottom = 161.25
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("6_tdapg")
+
+[node name="SpaceAfterYanChen" type="ReferenceRect" parent="CharAvatarContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="YaoLing" type="TextureButton" parent="CharAvatarContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_i0jr0")
+texture_normal = ExtResource("7_q41dg")
+
+[node name="CharAvatarFrame" type="TextureRect" parent="CharAvatarContainer/YaoLing"]
+layout_mode = 0
+offset_left = -58.75
+offset_top = -58.75
+offset_right = 161.25
+offset_bottom = 161.25
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("7_5ryi3")
+
+[node name="SpaceAfterYaoLing" type="ReferenceRect" parent="CharAvatarContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="JiangXiming" type="TextureButton" parent="CharAvatarContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_i0jr0")
+texture_normal = ExtResource("9_b2nj1")
+
+[node name="CharAvatarFrame" type="TextureRect" parent="CharAvatarContainer/JiangXiming"]
+layout_mode = 0
+offset_left = -58.75
+offset_top = -58.75
+offset_right = 161.25
+offset_bottom = 161.25
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("10_ob736")
+
+[node name="SpaceAfterJiangXiming" type="ReferenceRect" parent="CharAvatarContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="WuCe" type="TextureButton" parent="CharAvatarContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_i0jr0")
+texture_normal = ExtResource("11_onhud")
+
+[node name="CharAvatarFrame" type="TextureRect" parent="CharAvatarContainer/WuCe"]
+layout_mode = 0
+offset_left = -58.75
+offset_top = -58.75
+offset_right = 161.25
+offset_bottom = 161.25
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("12_lane4")
+
+[node name="SpaceAfterWuCe" type="ReferenceRect" parent="CharAvatarContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="FengXu" type="TextureButton" parent="CharAvatarContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_i0jr0")
+texture_normal = ExtResource("13_lane4")
+
+[node name="CharAvatarFrame" type="TextureRect" parent="CharAvatarContainer/FengXu"]
+layout_mode = 0
+offset_left = -58.75
+offset_top = -58.75
+offset_right = 161.25
+offset_bottom = 161.25
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("14_t5jtw")
