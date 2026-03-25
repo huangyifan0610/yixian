@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dttwbn1ad7x7n"]
+
+[ext_resource type="Texture2D" uid="uid://c3xeojnp104q1" path="res://images/ui/char_avatar/char_avatar_yan_chen.png" id="1_wqu72"]
+
+[node name="TanShuyanIcon" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_wqu72")
+expand_mode = 1
+stretch_mode = 5

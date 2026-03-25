@@ -139,7 +139,6 @@ public static class CharacterSelectDesc
     );
 }
 
-
 /// <summary>See <see cref="CharacterModel.CharacterSelectBg"/>.</summary>
 [HarmonyPatch(typeof(CharacterModel), nameof(CharacterModel.CharacterSelectBg), MethodType.Getter)]
 public static class CharacterSelectBg
@@ -147,5 +146,73 @@ public static class CharacterSelectBg
     [HarmonyPrefix]
     public static bool Prefix(ref string __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
         hp => SceneHelper.GetScenePath("screens/char_select/char_select_bg_" + hp.CharacterLowercase)
+    );
+}
+
+/// <summary>See <see cref="CharacterModel.VisualsPath"/>.</summary>
+[HarmonyPatch(typeof(CharacterModel), "VisualsPath", MethodType.Getter)]
+public static class VisualsPath
+{
+    [HarmonyPrefix]
+    public static bool Prefix(ref string __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
+        hp => SceneHelper.GetScenePath("creature_visuals/" + hp.CharacterLowercase)
+    );
+}
+
+/// <summary>See <see cref="CharacterModel.IconPath"/>.</summary>
+[HarmonyPatch(typeof(CharacterModel), "IconPath", MethodType.Getter)]
+public static class IconPath
+{
+    [HarmonyPrefix]
+    public static bool Prefix(ref string __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
+        hp => SceneHelper.GetScenePath("ui/character_icons/" + hp.CharacterLowercase + "_icon")
+    );
+}
+
+/// <summary>See <see cref="CharacterModel.TrailPath"/>.</summary>
+[HarmonyPatch(typeof(CharacterModel), nameof(CharacterModel.TrailPath), MethodType.Getter)]
+public static class TrailPath
+{
+    [HarmonyPrefix]
+    public static bool Prefix(ref string __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
+        // TODO: Patch CharacterModel.TrailPath
+        // hp => SceneHelper.GetScenePath("vfx/card_trail_" + hp.CharacterLowercase)
+        hp => SceneHelper.GetScenePath("vfx/card_trail_ironclad")
+    );
+}
+
+/// <summary>See <see cref="CharacterModel.EnergyCounterPath"/>.</summary>
+[HarmonyPatch(typeof(CharacterModel), nameof(CharacterModel.EnergyCounterPath), MethodType.Getter)]
+public static class EnergyCounterPath
+{
+    [HarmonyPrefix]
+    public static bool Prefix(ref string __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
+        // TODO: Patch CharacterModel.EnergyCounterPath
+        // hp => SceneHelper.GetScenePath("combat/energy_counters/" + hp.CharacterLowercase + "_energy_counter")
+        hp => SceneHelper.GetScenePath("combat/energy_counters/ironclad_energy_counter")
+    );
+}
+
+/// <summary>See <see cref="CharacterModel.MerchantAnimPath"/>.</summary>
+[HarmonyPatch(typeof(CharacterModel), nameof(CharacterModel.MerchantAnimPath), MethodType.Getter)]
+public static class MerchantAnimPath
+{
+    [HarmonyPrefix]
+    public static bool Prefix(ref string __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
+        // TODO: Patch CharacterModel.MerchantAnimPath
+        // hp => SceneHelper.GetScenePath("merchant/characters/" + hp.CharacterLowercase + "_merchant")
+        hp => SceneHelper.GetScenePath("merchant/characters/ironclad_merchant")
+    );
+}
+
+/// <summary>See <see cref="CharacterModel.RestSiteAnimPath"/>.</summary>
+[HarmonyPatch(typeof(CharacterModel), nameof(CharacterModel.RestSiteAnimPath), MethodType.Getter)]
+public static class RestSiteAnimPath
+{
+    // TODO: Patch CharacterModel.RestSiteAnimPath
+    // hp => SceneHelper.GetScenePath("rest_site/characters/" + hp.CharacterLowercase + "_rest_site")
+    [HarmonyPrefix]
+    public static bool Prefix(ref string __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
+        hp => SceneHelper.GetScenePath("rest_site/characters/ironclad_rest_site")
     );
 }

@@ -8,7 +8,7 @@ using Yixian.Characters;
 /// Patches <see cref="ModelDb.AllCharacters"/>.
 /// </summary>
 [HarmonyPatch(typeof(ModelDb), nameof(ModelDb.AllCharacters), MethodType.Getter)]
-public static class AllCharactersPostfix
+public static class AllCharacters
 {
     /// <summary>
     /// Appends <see cref="ModelDb.AllCharacters"/>.

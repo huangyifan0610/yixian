@@ -4,7 +4,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Screens.CharacterSelect;
 using Yixian.Characters;
 
-namespace Yixian.Nodes.Screen.CharSelect;
+namespace Yixian.Nodes.Screens.CharSelect;
 
 public partial class CharSelectGroupHeptastarPavilion : HBoxContainer
 {
@@ -19,7 +19,7 @@ public partial class CharSelectGroupHeptastarPavilion : HBoxContainer
             Main.LOGGER.Warn($"Unknown character '{selected.Name}' in Heptastar Pavilion.");
             character = default;
         }
-        
+
         var model = ModelDb.Character<YxHeptastarPavilion>();
         if (model.Character != character)
         {
