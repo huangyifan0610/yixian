@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Models;
+using Yixian.Patches;
 
 namespace Yixian.Powers;
 
@@ -12,9 +13,6 @@ namespace Yixian.Powers;
 /// <remarks>A power indicating star point slots in hand.</remarks>
 public sealed class YxStarPointPower : PowerModel
 {
-    /// <summary>A default value</summary>
-    public static readonly YxStarPointPower DEFAULT = ModelDb.Power<YxStarPointPower>();
-
     /// <summary>Neither buff or debuff.</summary>
     public override PowerType Type => PowerType.None;
 
@@ -32,13 +30,18 @@ public sealed class YxStarPointPower : PowerModel
     }
 
     /// <summary>The third and sixth slots in hand are the default star points.</summary>
-    protected override object? InitInternalData()
+    public static BitArray DEFAULT_BIT_ARRAY => _defaultBitArray ??= DefaultBitArray();
+    private static BitArray? _defaultBitArray = null;
+    private static BitArray DefaultBitArray()
     {
         var data = new BitArray(CardPile.maxCardsInHand, false);
         data[2] = true;
         data[5] = true;
         return data;
     }
+
+    /// <summary>The third and sixth slots in hand are the default star points.</summary>
+    protected override object? InitInternalData() => new BitArray(DEFAULT_BIT_ARRAY);
 
     /// <summary>Checkes that the <paramref name="target"/> creature is player.</summary>
     public override Task BeforeApplied(Creature target, decimal amount, Creature? applier, CardModel? cardSource)
@@ -49,5 +52,17 @@ public sealed class YxStarPointPower : PowerModel
         }
 
         return base.BeforeApplied(target, amount, applier, cardSource);
+    }
+
+    /// <summary>Retruns true if the <paramref name="cardModel"/> is on star point.</summary>
+    public static bool Test(CardModel cardModel)
+    {
+        int index = cardModel.IndexInHand();
+        if (0 <= index && index < CardPile.maxCardsInHand)
+        {
+            var power = cardModel.Owner?.Creature?.GetPower<YxStarPointPower>();
+            return power?[index] ?? DEFAULT_BIT_ARRAY[index];
+        }
+        return false;
     }
 }

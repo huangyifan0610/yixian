@@ -1,4 +1,6 @@
 {
   "YX_STAR_POINT_POWER.title": "Star Point",
-  "YX_STAR_POINT_POWER.description": "The third and sixth slots of your hand cards are the default [gold]Star Point[/gold].\nThe card on [gold]Star Point[/gold] can trigger its [gold]Star Point[/gold] effects if applicable."
+  "YX_STAR_POINT_POWER.description": "The third and sixth slots of your hand cards are the default [gold]Star Point[/gold].\nThe card on [gold]Star Point[/gold] can trigger its [gold]Star Point[/gold] effects if applicable.",
+  "YX_STAR_POWER_POWER.title": "Star Power",
+  "YX_STAR_POWER_POWER.description": "For each stack of [gold]Star Power[/gold], the cards on the [gold]Star Point[/gold] will increase 1 damage when attacking."
 }

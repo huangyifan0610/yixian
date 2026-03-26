@@ -5,7 +5,6 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Extensions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
-using Yixian.Powers;
 
 namespace Yixian.Patches;
 
@@ -32,19 +31,6 @@ public static class CardModelExtension
         PileType.Play => Table.TryGetValue(cardModel, out var externsion) ? externsion.IndexInHand : -1,
         _ => -1,
     };
-
-    /// <summary>Retruns true if the <paramref name="cardModel"/> is on star point.</summary>
-    public static bool TestStarPoint(this CardModel cardModel)
-    {
-        int index = cardModel.IndexInHand();
-        if (0 <= index && index <= CardPile.maxCardsInHand)
-        {
-            var power = cardModel.Owner?.Creature?.GetPower<YxStarPointPower>() ?? YxStarPointPower.DEFAULT;
-            return power[index];
-        }
-
-        return false;
-    }
 }
 
 /// <summary>
