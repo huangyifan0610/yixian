@@ -37,14 +37,14 @@ public sealed class YxStarPowerPower : PowerModel
         if (cardSource == null || !YxStarPointPower.Test(cardSource)) { return 0; }
 
         // Modifies damage according to the bonus.
-        return cardSource.DynamicVars.TryGetValue(StarPowerBonusVar.DEFAULT, out var bonus)
+        return cardSource.DynamicVars.TryGetValue(YxStarPowerBonusVar.DEFAULT, out var bonus)
             ? Amount * bonus.BaseValue
             : Amount;
     }
 }
 
 /// <summary>Dynamic variable representing the damage bonus from <see cref="YxStarPowerPower"/>.</summary>
-public sealed class StarPowerBonusVar(decimal amount) : DynamicVar(DEFAULT, amount)
+public sealed class YxStarPowerBonusVar(decimal amount) : DynamicVar(DEFAULT, amount)
 {
-    public const string DEFAULT = "StarPowerBonus";
+    public const string DEFAULT = "YxStarPowerBonus";
 }
