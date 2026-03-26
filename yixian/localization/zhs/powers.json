@@ -1,6 +1,8 @@
 {
+  "YX_POLARIS_CITTA_DHARMA_POWER.title": "天元心法",
+  "YX_POLARIS_CITTA_DHARMA_POWER.description": "手牌所有位置均视为[gold]星位[/gold]。",
   "YX_STAR_POINT_POWER.title": "星位",
   "YX_STAR_POINT_POWER.description": "手牌第3格和第6格为默认[gold]星位[/gold]。\n在[gold]星位[/gold]上的牌可以触发其[gold]星位[/gold]效果。",
-  "STAR_POWER.title": "星力",
-  "STAR_POWER.description": "每拥有一点[gold]星力[/gold], [gold]星位[/gold]上的牌增加一点伤害。\n"
+  "YX_STAR_POWER_POWER.title": "星力",
+  "YX_STAR_POWER_POWER.description": "每拥有一点[gold]星力[/gold], [gold]星位[/gold]上的牌增加一点伤害。\n"
 }

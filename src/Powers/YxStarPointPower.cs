@@ -57,10 +57,16 @@ public sealed class YxStarPointPower : PowerModel
     /// <summary>Retruns true if the <paramref name="cardModel"/> is on star point.</summary>
     public static bool Test(CardModel cardModel)
     {
+        var owner = cardModel.Owner?.Creature;
+        if (owner != null && owner.HasPower<YxPolarisCittaDharmaPower>())
+        {
+            return true;
+        }
+
         int index = cardModel.IndexInHand();
         if (0 <= index && index < CardPile.maxCardsInHand)
         {
-            var power = cardModel.Owner?.Creature?.GetPower<YxStarPointPower>();
+            var power = owner?.GetPower<YxStarPointPower>();
             return power?[index] ?? DEFAULT_BIT_ARRAY[index];
         }
         return false;

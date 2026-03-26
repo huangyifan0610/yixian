@@ -1,0 +1,6 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bobmhbxujxwle"]
+
+[ext_resource type="Texture2D" uid="uid://1bkgplu0v2x5" path="res://images/powers/yx_polaris_citta_dharma_power.png" id="1_cwxrx"]
+
+[resource]
+atlas = ExtResource("1_cwxrx")
