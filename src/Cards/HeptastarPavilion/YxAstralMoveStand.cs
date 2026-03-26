@@ -14,12 +14,13 @@ using Yixian.Powers;
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>Heptastar Pavilion - Astral Move Stand.</summary>
-public sealed class YxAstralMoveStand()
-    : CardModel(0, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
-    , IYxAstralMove
+public sealed class YxAstralMoveStand() : YxCardModel(0, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     /// <summary>See <see cref="YxHeptastarPavilionCardPool"/>.</summary>
     public override CardPoolModel Pool => ModelDb.CardPool<YxHeptastarPavilionCardPool>();
+
+    /// <summary>Astral Move.</summary>
+    public override IEnumerable<YxCardTag> CanonicalYxTags => [YxCardTag.AstralMove];
 
     /// <summary>Deal damage; Draw energies on star point.</summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -33,7 +34,7 @@ public sealed class YxAstralMoveStand()
     ];
 
     /// <summary>Glow if on star point.</summary>
-    protected override bool ShouldGlowGoldInternal => YxStarPointPower.Test(this);
+    protected override bool ShouldGlowGoldInternal => IsOnStarPoint;
 
     /// <summary>Deal more damage.</summary>
     protected override void OnUpgrade() => DynamicVars.Damage.UpgradeValueBy(3);
@@ -48,7 +49,7 @@ public sealed class YxAstralMoveStand()
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
 
-        if (YxStarPointPower.Test(this))
+        if (IsOnStarPoint)
         {
             await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
         }

@@ -12,7 +12,7 @@ using Yixian.Characters;
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>Heptastar Pavilion - Starburst.</summary>
-public sealed class YxStarburst() : CardModel(1, CardType.Attack, CardRarity.Status, TargetType.AnyEnemy)
+public sealed class YxStarburst() : YxCardModel(1, CardType.Attack, CardRarity.Status, TargetType.AnyEnemy)
 {
     /// <summary>See <see cref="YxHeptastarPavilionCardPool"/>.</summary>
     public override CardPoolModel Pool => ModelDb.CardPool<YxHeptastarPavilionCardPool>();

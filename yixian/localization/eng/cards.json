@@ -1,6 +1,6 @@
 {
-    "ALL_OR_NOTHING.title": "All Or Nothing",
-    "ALL_OR_NOTHING.description": "not yet implemented",
+    "YX_ALL_OR_NOTHING.title": "All Or Nothing",
+    "YX_ALL_OR_NOTHING.description": "not yet implemented",
     "YX_ASTRAL_FLECHE.title": "Astral Fleche",
     "YX_ASTRAL_FLECHE.description": "not yet implemented",
     "YX_ASTRAL_MOVE_BLOCK.title": "Astral Move - Block",
@@ -22,7 +22,7 @@
     "YX_ASTRAL_MOVE_TIGER.title": "Astral Move - Tiger",
     "YX_ASTRAL_MOVE_TIGER.description": "Deal {Damage:diff()} damage three times.\n[gold]Star Point[/gold]: Apply {WeakPower:diff()} [gold]Weak[/gold].",
     "YX_ASTRAL_MOVE_TWIN_SWALLOWS.title": "Astral Move - Twin Swallows",
-    "YX_ASTRAL_MOVE_TWIN_SWALLOWS.description": "not yet implemented",
+    "YX_ASTRAL_MOVE_TWIN_SWALLOWS.description": "Deal {Damage:diff()} damage.\nDraw {Cards:diff()} {Cards:plural:card|cards}.\n[gold]Star Point[/gold]: Attack once.\n[gold]Post Action[/gold]: Attack once.",
     "YX_COVERT_SHIFT.title": "Covert Shift",
     "YX_COVERT_SHIFT.description": "not yet implemented",
     "YX_CUTTING_WEEDS.title": "Cutting Weeds",

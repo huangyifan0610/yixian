@@ -34,6 +34,7 @@ public sealed class Main
         ScriptManagerBridge.LookupScriptsInAssembly(typeof(Main).Assembly);
 
         // 1) Heptastar Pavilion Card Pool.
+        ModHelper.AddModelToPool<YxHeptastarPavilionCardPool, YxAllOrNothing>();
         ModHelper.AddModelToPool<YxHeptastarPavilionCardPool, YxAstralFleche>();
         ModHelper.AddModelToPool<YxHeptastarPavilionCardPool, YxAstralMoveBlock>();
         ModHelper.AddModelToPool<YxHeptastarPavilionCardPool, YxAstralMoveCide>();

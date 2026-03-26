@@ -15,6 +15,7 @@ public sealed class YxHeptastarPavilionCardPool : CardPoolModel
     public override Color DeckEntryCardColor => YxHeptastarPavilion.DECK_ENTRY_CARD_COLOR;
     public override bool IsColorless => false;
     protected override CardModel[] GenerateAllCards() => [
+        ModelDb.Card<YxAllOrNothing>(),
         ModelDb.Card<YxAstralFleche>(),
         ModelDb.Card<YxAstralMoveBlock>(),
         ModelDb.Card<YxAstralMoveCide>(),

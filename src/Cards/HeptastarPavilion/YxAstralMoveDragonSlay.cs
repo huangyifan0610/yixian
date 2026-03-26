@@ -14,12 +14,13 @@ using Yixian.Powers;
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>Heptastar Pavilion - Astral Move Dragon Slay.</summary>
-public sealed class YxAstralMoveDragonSlay()
-    : CardModel(0, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
-    , IYxAstralMove
+public sealed class YxAstralMoveDragonSlay() : YxCardModel(0, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
 {
     /// <summary>See <see cref="YxHeptastarPavilionCardPool"/>.</summary>
     public override CardPoolModel Pool => ModelDb.CardPool<YxHeptastarPavilionCardPool>();
+
+    /// <summary>Astral Move.</summary>
+    public override IEnumerable<YxCardTag> CanonicalYxTags => [YxCardTag.AstralMove];
 
     /// <summary>Deal damage with bonus from star power.</summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -34,7 +35,7 @@ public sealed class YxAstralMoveDragonSlay()
     ];
 
     /// <summary>Glow if on star point.</summary>
-    protected override bool ShouldGlowGoldInternal => YxStarPointPower.Test(this);
+    protected override bool ShouldGlowGoldInternal => IsOnStarPoint;
 
     /// <summary>Can only be played on star point.</summary>
     protected override bool IsPlayable => YxStarPointPower.Test(this);

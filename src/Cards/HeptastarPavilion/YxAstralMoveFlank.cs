@@ -14,12 +14,13 @@ using Yixian.Powers;
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>Heptastar Pavilion - Astral Move Flank.</summary>
-public sealed class YxAstralMoveFlank()
-    : CardModel(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
-    , IYxAstralMove
+public sealed class YxAstralMoveFlank() : YxCardModel(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
 {
     /// <summary>See <see cref="YxHeptastarPavilionCardPool"/>.</summary>
     public override CardPoolModel Pool => ModelDb.CardPool<YxHeptastarPavilionCardPool>();
+
+    /// <summary>Astral Move.</summary>
+    public override IEnumerable<YxCardTag> CanonicalYxTags => [YxCardTag.AstralMove];
 
     /// <summary>Deal damage; Deal extra damage on star point.</summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -33,7 +34,7 @@ public sealed class YxAstralMoveFlank()
     ];
 
     /// <summary>Glow if on star point.</summary>
-    protected override bool ShouldGlowGoldInternal => YxStarPointPower.Test(this);
+    protected override bool ShouldGlowGoldInternal => IsOnStarPoint;
 
     /// <summary>Deal extra damage.</summary>
     protected override void OnUpgrade() => DynamicVars.Damage.UpgradeValueBy(3);
@@ -48,7 +49,7 @@ public sealed class YxAstralMoveFlank()
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
 
-        if (YxStarPointPower.Test(this))
+        if (IsOnStarPoint)
         {
             await DamageCmd
                 .Attack(DynamicVars.ExtraDamage.BaseValue)

@@ -11,7 +11,7 @@ using Yixian.Characters;
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>Heptastar Pavilion - Defend.</summary>
-public sealed class YxDefendHeptastarPavilion() : CardModel(1, CardType.Skill, CardRarity.Basic, TargetType.Self)
+public sealed class YxDefendHeptastarPavilion() : YxCardModel(1, CardType.Skill, CardRarity.Basic, TargetType.Self)
 {
     /// <summary>See <see cref="YxHeptastarPavilionCardPool"/>.</summary>
     public override CardPoolModel Pool => ModelDb.CardPool<YxHeptastarPavilionCardPool>();

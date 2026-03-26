@@ -13,12 +13,13 @@ using Yixian.Powers;
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>Heptastar Pavilion - Astral Move Block.</summary>
-public sealed class YxAstralMoveBlock()
-    : CardModel(1, CardType.Skill, CardRarity.Common, TargetType.Self)
-    , IYxAstralMove
+public sealed class YxAstralMoveBlock() : YxCardModel(1, CardType.Skill, CardRarity.Common, TargetType.Self)
 {
     /// <summary>See <see cref="YxHeptastarPavilionCardPool"/>.</summary>
     public override CardPoolModel Pool => ModelDb.CardPool<YxHeptastarPavilionCardPool>();
+
+    /// <summary>Astral Move.</summary>
+    public override IEnumerable<YxCardTag> CanonicalYxTags => [YxCardTag.AstralMove];
 
     /// <summary>Gain block; Gain more block on star point.</summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -32,7 +33,7 @@ public sealed class YxAstralMoveBlock()
     ];
 
     /// <summary>Glow if on star point.</summary>
-    protected override bool ShouldGlowGoldInternal => YxStarPointPower.Test(this);
+    protected override bool ShouldGlowGoldInternal => IsOnStarPoint;
 
     /// <summary>Gain more blocks.</summary>
     protected override void OnUpgrade() => DynamicVars.Block.UpgradeValueBy(3);
@@ -45,7 +46,7 @@ public sealed class YxAstralMoveBlock()
 
         // Gain more block on star point.
         var starPower = Owner.Creature.GetPower<YxStarPowerPower>();
-        if (starPower != null && YxStarPointPower.Test(this))
+        if (starPower != null && IsOnStarPoint)
         {
             await CreatureCmd.GainBlock(Owner.Creature, starPower.Amount, ValueProp.Move, cardPlay);
         }

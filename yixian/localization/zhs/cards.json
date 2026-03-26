@@ -1,6 +1,6 @@
 {
-    "ALL_OR_NOTHING.title": "一掷乾坤",
-    "ALL_OR_NOTHING.description": "not yet implemented",
+    "YX_ALL_OR_NOTHING.title": "一掷乾坤",
+    "YX_ALL_OR_NOTHING.description": "not yet implemented",
     "YX_ASTRAL_FLECHE.title": "飞星刺",
     "YX_ASTRAL_FLECHE.description": "not yet implemented",
     "YX_ASTRAL_MOVE_BLOCK.title": "星弈・挡",
@@ -22,7 +22,7 @@
     "YX_ASTRAL_MOVE_TIGER.title": "星弈・虎",
     "YX_ASTRAL_MOVE_TIGER.description": "造成三次{Damage:diff()}点伤害\n[gold]星位[/gold]：施加{WeakPower:diff()}层虚弱",
     "YX_ASTRAL_MOVE_TWIN_SWALLOWS.title": "星弈・双飞燕",
-    "YX_ASTRAL_MOVE_TWIN_SWALLOWS.description": "not yet implemented",
+    "YX_ASTRAL_MOVE_TWIN_SWALLOWS.description": "造成{Damage:diff()}点伤害\n抽{Cards:diff()}张牌\n[gold]星位[/gold]：追加一次伤害\n[gold]后招[/gold]：追加一次伤害",
     "YX_COVERT_SHIFT.title": "移花接木",
     "YX_COVERT_SHIFT.description": "not yet implemented",
     "YX_CUTTING_WEEDS.title": "斩草除根",

@@ -15,7 +15,7 @@ using MegaCrit.Sts2.Core.Combat.History.Entries;
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>Heptastar Pavilion - Polaris Citta Dharma.</summary>
-public sealed class YxPolarisCittaDharma() : CardModel(3, CardType.Power, CardRarity.Rare, TargetType.Self)
+public sealed class YxPolarisCittaDharma() : YxCardModel(3, CardType.Power, CardRarity.Rare, TargetType.Self)
 {
     /// <summary>See <see cref="YxHeptastarPavilionCardPool"/>.</summary>
     public override CardPoolModel Pool => ModelDb.CardPool<YxHeptastarPavilionCardPool>();

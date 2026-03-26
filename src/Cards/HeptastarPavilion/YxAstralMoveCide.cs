@@ -14,12 +14,13 @@ using Yixian.Powers;
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>Heptastar Pavilion - Astral Move Cide.</summary>
-public sealed class YxAstralMoveCide()
-    : CardModel(1, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
-    , IYxAstralMove
+public sealed class YxAstralMoveCide() : YxCardModel(1, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
 {
     /// <summary>See <see cref="YxHeptastarPavilionCardPool"/>.</summary>
     public override CardPoolModel Pool => ModelDb.CardPool<YxHeptastarPavilionCardPool>();
+
+    /// <summary>Astral Move.</summary>
+    public override IEnumerable<YxCardTag> CanonicalYxTags => [YxCardTag.AstralMove];
 
     /// <summary>Deal damage; Skip target's next intent on star point.</summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -32,7 +33,7 @@ public sealed class YxAstralMoveCide()
     ];
 
     /// <summary>Glow if on star point.</summary>
-    protected override bool ShouldGlowGoldInternal => YxStarPointPower.Test(this);
+    protected override bool ShouldGlowGoldInternal => IsOnStarPoint;
 
     /// <summary>Deal more damage.</summary>
     protected override void OnUpgrade() => DynamicVars.Damage.UpgradeValueBy(6);
@@ -47,7 +48,7 @@ public sealed class YxAstralMoveCide()
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
 
-        if (cardPlay.Target.Monster != null && YxStarPointPower.Test(this))
+        if (cardPlay.Target.Monster != null && IsOnStarPoint)
         {
             cardPlay.Target.Monster.MoveStateMachine?.OnMovePerformed(cardPlay.Target.Monster.NextMove);
             cardPlay.Target.Monster.RollMove(cardPlay.Target.Monster.CombatState.PlayerCreatures);
