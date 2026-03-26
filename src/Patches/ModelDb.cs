@@ -4,6 +4,8 @@ using HarmonyLib;
 using MegaCrit.Sts2.Core.Models;
 using Yixian.Characters;
 
+namespace Yixian.Patches;
+
 /// <summary>
 /// Patches <see cref="ModelDb.AllCharacters"/>.
 /// </summary>
