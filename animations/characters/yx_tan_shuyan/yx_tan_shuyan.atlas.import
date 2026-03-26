@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://uxa7r846w6j2"
+path="res://.godot/imported/yx_tan_shuyan.atlas-e39becd67eec80222448877a94690335.spatlas"
+
+[deps]
+
+source_file="res://animations/characters/yx_tan_shuyan/yx_tan_shuyan.atlas"
+dest_files=["res://.godot/imported/yx_tan_shuyan.atlas-e39becd67eec80222448877a94690335.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

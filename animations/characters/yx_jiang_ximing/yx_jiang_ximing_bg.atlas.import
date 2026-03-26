@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://cegv1kn4njev0"
+path="res://.godot/imported/yx_jiang_ximing_bg.atlas-8b9845e9133827022a4ae94ff07c5c1f.spatlas"
+
+[deps]
+
+source_file="res://animations/characters/yx_jiang_ximing/yx_jiang_ximing_bg.atlas"
+dest_files=["res://.godot/imported/yx_jiang_ximing_bg.atlas-8b9845e9133827022a4ae94ff07c5c1f.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

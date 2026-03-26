@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://ba8xt12px4wq"
+path="res://.godot/imported/yx_wu_ce_bg_flag.atlas-88769205021277a60f6db2dd2093d817.spatlas"
+
+[deps]
+
+source_file="res://animations/characters/yx_wu_ce/yx_wu_ce_bg_flag.atlas"
+dest_files=["res://.godot/imported/yx_wu_ce_bg_flag.atlas-88769205021277a60f6db2dd2093d817.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

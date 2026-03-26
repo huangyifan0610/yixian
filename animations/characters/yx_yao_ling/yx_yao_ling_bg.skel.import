@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://dcb1rdk3wth6e"
+path="res://.godot/imported/yx_yao_ling_bg.skel-dfa2fe514c2d9cfc6f3c7059c1c7a54b.spskel"
+
+[deps]
+
+source_file="res://animations/characters/yx_yao_ling/yx_yao_ling_bg.skel"
+dest_files=["res://.godot/imported/yx_yao_ling_bg.skel-dfa2fe514c2d9cfc6f3c7059c1c7a54b.spskel"]
+
+[params]
+

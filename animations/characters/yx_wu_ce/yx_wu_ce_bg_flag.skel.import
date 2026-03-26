@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://web00yj1qfid"
+path="res://.godot/imported/yx_wu_ce_bg_flag.skel-35e0477d5890081f6d400124bc7cb87b.spskel"
+
+[deps]
+
+source_file="res://animations/characters/yx_wu_ce/yx_wu_ce_bg_flag.skel"
+dest_files=["res://.godot/imported/yx_wu_ce_bg_flag.skel-35e0477d5890081f6d400124bc7cb87b.spskel"]
+
+[params]
+

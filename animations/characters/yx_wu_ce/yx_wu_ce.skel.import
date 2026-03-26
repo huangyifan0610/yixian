@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://fwb5r1020ujl"
+path="res://.godot/imported/yx_wu_ce.skel-be3c356d4b2c575d35a70f28b91bf208.spskel"
+
+[deps]
+
+source_file="res://animations/characters/yx_wu_ce/yx_wu_ce.skel"
+dest_files=["res://.godot/imported/yx_wu_ce.skel-be3c356d4b2c575d35a70f28b91bf208.spskel"]
+
+[params]
+

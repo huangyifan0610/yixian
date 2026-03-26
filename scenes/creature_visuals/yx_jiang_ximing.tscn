@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0egk6nyu3mxh"]
+
+[ext_resource type="Script" uid="uid://ddyrdnqjh00pj" path="res://src/Nodes/Combat/CreatureVisuals.cs" id="1_mgmxj"]
+[ext_resource type="SpineSkeletonDataResource" uid="uid://c45tkfp14dyf4" path="res://animations/characters/yx_jiang_ximing/yx_jiang_ximing_skel_data.tres" id="2_mgmxj"]
+
+[node name="TanShuyan" type="Node2D"]
+script = ExtResource("1_mgmxj")
+
+[node name="Visuals" type="SpineSprite" parent="."]
+skeleton_data_res = ExtResource("2_mgmxj")
+preview_skin = "default"
+preview_animation = "Appearance"
+preview_frame = false
+preview_time = 0.0
+unique_name_in_owner = true
+scale = Vector2(0.5, 0.5)
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -150.0
+offset_top = -400.0
+offset_right = 150.0
+mouse_filter = 2
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -200)
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -400)

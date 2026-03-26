@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://c576bkemgpaef"
+path="res://.godot/imported/yx_feng_xu.atlas-e90ad7982ae1cface482c9f276ae1aba.spatlas"
+
+[deps]
+
+source_file="res://animations/characters/yx_feng_xu/yx_feng_xu.atlas"
+dest_files=["res://.godot/imported/yx_feng_xu.atlas-e90ad7982ae1cface482c9f276ae1aba.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

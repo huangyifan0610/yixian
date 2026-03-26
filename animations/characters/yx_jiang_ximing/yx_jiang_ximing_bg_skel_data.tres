@@ -1,0 +1,8 @@
+[gd_resource type="SpineSkeletonDataResource" load_steps=3 format=3 uid="uid://d2b20ihf7qerx"]
+
+[ext_resource type="SpineAtlasResource" uid="uid://cegv1kn4njev0" path="res://animations/characters/yx_jiang_ximing/yx_jiang_ximing_bg.atlas" id="1_tpw3g"]
+[ext_resource type="SpineSkeletonFileResource" uid="uid://upcw0nakujch" path="res://animations/characters/yx_jiang_ximing/yx_jiang_ximing_bg.skel" id="2_8dbxs"]
+
+[resource]
+atlas_res = ExtResource("1_tpw3g")
+skeleton_file_res = ExtResource("2_8dbxs")

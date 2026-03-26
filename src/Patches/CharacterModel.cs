@@ -35,7 +35,7 @@ public static class Title
 
     [HarmonyPrefix]
     public static bool Prefix(ref LocString __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
-        hp => new LocString("characters", hp.CharacterUppercase + ".title")
+        hp => new LocString("characters", hp.Character.Uppercase() + ".title")
     );
 }
 
@@ -45,7 +45,7 @@ public static class TitleObject
 {
     [HarmonyPrefix]
     public static bool Prefix(ref LocString __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
-        hp => new LocString("characters", hp.CharacterUppercase + ".titleObject")
+        hp => new LocString("characters", hp.Character.Uppercase() + ".titleObject")
     );
 }
 
@@ -55,7 +55,7 @@ public static class PronounObject
 {
     [HarmonyPrefix]
     public static bool Prefix(ref LocString __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
-        hp => new LocString("characters", hp.CharacterUppercase + ".pronounObject")
+        hp => new LocString("characters", hp.Character.Uppercase() + ".pronounObject")
     );
 }
 
@@ -65,7 +65,7 @@ public static class PossessiveAdjective
 {
     [HarmonyPrefix]
     public static bool Prefix(ref LocString __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
-        hp => new LocString("characters", hp.CharacterUppercase + ".possessiveAdjective")
+        hp => new LocString("characters", hp.Character.Uppercase() + ".possessiveAdjective")
     );
 }
 
@@ -75,7 +75,7 @@ public static class PronounPossessive
 {
     [HarmonyPrefix]
     public static bool Prefix(ref LocString __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
-        hp => new LocString("characters", hp.CharacterUppercase + ".pronounPossessive")
+        hp => new LocString("characters", hp.Character.Uppercase() + ".pronounPossessive")
     );
 }
 
@@ -85,7 +85,7 @@ public static class PronounSubject
 {
     [HarmonyPrefix]
     public static bool Prefix(ref LocString __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
-        hp => new LocString("characters", hp.CharacterUppercase + ".pronounSubject")
+        hp => new LocString("characters", hp.Character.Uppercase() + ".pronounSubject")
     );
 }
 
@@ -95,7 +95,7 @@ public static class CardsModifierTitle
 {
     [HarmonyPrefix]
     public static bool Prefix(ref LocString __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
-        hp => new LocString("characters", hp.CharacterUppercase + ".cardsModifierTitle")
+        hp => new LocString("characters", hp.Character.Uppercase() + ".cardsModifierTitle")
     );
 }
 
@@ -105,7 +105,7 @@ public static class CardsModifierDescription
 {
     [HarmonyPrefix]
     public static bool Prefix(ref LocString __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
-        hp => new LocString("characters", hp.CharacterUppercase + ".cardsModifierDescription")
+        hp => new LocString("characters", hp.Character.Uppercase() + ".cardsModifierDescription")
     );
 }
 
@@ -115,7 +115,7 @@ public static class EventDeathPreventionLine
 {
     [HarmonyPrefix]
     public static bool Prefix(ref LocString __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
-        hp => new LocString("characters", hp.CharacterUppercase + ".eventDeathPreventionLine")
+        hp => new LocString("characters", hp.Character.Uppercase() + ".eventDeathPreventionLine")
     );
 }
 
@@ -125,7 +125,7 @@ public static class CharacterSelectTitle
 {
     [HarmonyPrefix]
     public static bool Prefix(ref string __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
-        hp => hp.CharacterUppercase + ".title"
+        hp => hp.Character.Uppercase() + ".title"
     );
 }
 
@@ -135,7 +135,7 @@ public static class CharacterSelectDesc
 {
     [HarmonyPrefix]
     public static bool Prefix(ref string __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
-        hp => hp.CharacterUppercase + ".description"
+        hp => hp.Character.Uppercase() + ".description"
     );
 }
 
@@ -145,7 +145,7 @@ public static class CharacterSelectBg
 {
     [HarmonyPrefix]
     public static bool Prefix(ref string __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
-        hp => SceneHelper.GetScenePath("screens/char_select/char_select_bg_" + hp.CharacterLowercase)
+        hp => SceneHelper.GetScenePath("screens/char_select/char_select_bg_" + hp.Character.Lowercase())
     );
 }
 
@@ -155,7 +155,7 @@ public static class VisualsPath
 {
     [HarmonyPrefix]
     public static bool Prefix(ref string __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
-        hp => SceneHelper.GetScenePath("creature_visuals/" + hp.CharacterLowercase)
+        hp => SceneHelper.GetScenePath("creature_visuals/" + hp.Character.Lowercase())
     );
 }
 
@@ -165,7 +165,7 @@ public static class IconPath
 {
     [HarmonyPrefix]
     public static bool Prefix(ref string __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
-        hp => SceneHelper.GetScenePath("ui/character_icons/" + hp.CharacterLowercase + "_icon")
+        hp => SceneHelper.GetScenePath("ui/character_icons/" + hp.Character.Lowercase() + "_icon")
     );
 }
 
@@ -176,7 +176,7 @@ public static class TrailPath
     [HarmonyPrefix]
     public static bool Prefix(ref string __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
         // TODO: Patch CharacterModel.TrailPath
-        // hp => SceneHelper.GetScenePath("vfx/card_trail_" + hp.CharacterLowercase)
+        // hp => SceneHelper.GetScenePath("vfx/card_trail_" + hp.Character.Lowercase())
         hp => SceneHelper.GetScenePath("vfx/card_trail_ironclad")
     );
 }
@@ -188,7 +188,7 @@ public static class EnergyCounterPath
     [HarmonyPrefix]
     public static bool Prefix(ref string __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
         // TODO: Patch CharacterModel.EnergyCounterPath
-        // hp => SceneHelper.GetScenePath("combat/energy_counters/" + hp.CharacterLowercase + "_energy_counter")
+        // hp => SceneHelper.GetScenePath("combat/energy_counters/" + hp.Character.Lowercase() + "_energy_counter")
         hp => SceneHelper.GetScenePath("combat/energy_counters/ironclad_energy_counter")
     );
 }
@@ -200,7 +200,7 @@ public static class MerchantAnimPath
     [HarmonyPrefix]
     public static bool Prefix(ref string __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
         // TODO: Patch CharacterModel.MerchantAnimPath
-        // hp => SceneHelper.GetScenePath("merchant/characters/" + hp.CharacterLowercase + "_merchant")
+        // hp => SceneHelper.GetScenePath("merchant/characters/" + hp.Character.Lowercase() + "_merchant")
         hp => SceneHelper.GetScenePath("merchant/characters/ironclad_merchant")
     );
 }
@@ -210,7 +210,7 @@ public static class MerchantAnimPath
 public static class RestSiteAnimPath
 {
     // TODO: Patch CharacterModel.RestSiteAnimPath
-    // hp => SceneHelper.GetScenePath("rest_site/characters/" + hp.CharacterLowercase + "_rest_site")
+    // hp => SceneHelper.GetScenePath("rest_site/characters/" + hp.Character.Lowercase() + "_rest_site")
     [HarmonyPrefix]
     public static bool Prefix(ref string __result, CharacterModel __instance) => Utility.Patch(ref __result, __instance,
         hp => SceneHelper.GetScenePath("rest_site/characters/ironclad_rest_site")

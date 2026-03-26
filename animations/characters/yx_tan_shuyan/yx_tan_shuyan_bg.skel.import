@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://cituae0jnth2d"
+path="res://.godot/imported/yx_tan_shuyan_bg.skel-49007886983d6b1f740b5cc3d6c96485.spskel"
+
+[deps]
+
+source_file="res://animations/characters/yx_tan_shuyan/yx_tan_shuyan_bg.skel"
+dest_files=["res://.godot/imported/yx_tan_shuyan_bg.skel-49007886983d6b1f740b5cc3d6c96485.spskel"]
+
+[params]
+

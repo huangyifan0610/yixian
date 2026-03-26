@@ -1,33 +1,12 @@
 using System.Collections.Generic;
-using System.Diagnostics;
 using Godot;
 using MegaCrit.Sts2.Core.Animation;
 using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Relics;
-using MegaCrit.Sts2.Core.Unlocks;
-using Yixian.Cards.HeptastarPavilion;
 
 namespace Yixian.Characters;
-
-/// <summary>Yixian Heptastar Pavilion Character ID.</summary>
-public enum YxHeptastarPavilionCharacter
-{
-    /// <summary>Tan shuyan.</summary>
-    TanShuyan,
-    /// <summary>Yan Chen.</summary>
-    YanChen,
-    /// <summary>Yao Ling.</summary>
-    YaoLing,
-    /// <summary>Jiang Ximing.</summary>
-    JiangXiming,
-    /// <summary>Wu Ce.</summary>
-    WuCe,
-    /// <summary>Feng Xu.</summary>
-    FengXu,
-}
 
 /// <summary>Yixian Heptastar Pavilion Character Model.</summary>
 public sealed class YxHeptastarPavilion : CharacterModel
@@ -53,86 +32,26 @@ public sealed class YxHeptastarPavilion : CharacterModel
     /// <summary>The real character ID.</summary>
     public YxHeptastarPavilionCharacter Character = default;
 
-    /// <summary>Returns the character ID in uppercase.</summary>
-    public string CharacterUppercase => Character switch
-    {
-        YxHeptastarPavilionCharacter.TanShuyan => "TAN_SHUYAN",
-        YxHeptastarPavilionCharacter.YanChen => "YAN_CHEN",
-        YxHeptastarPavilionCharacter.YaoLing => "YAO_LING",
-        YxHeptastarPavilionCharacter.JiangXiming => "JIANG_XIMING",
-        YxHeptastarPavilionCharacter.WuCe => "WU_CE",
-        YxHeptastarPavilionCharacter.FengXu => "FENG_XU",
-        _ => throw new UnreachableException("unknown character"),
-    };
-
-    /// <summary>Returns the character ID in lowercase.</summary>
-    public string CharacterLowercase => CharacterUppercase.ToLowerInvariant();
-
     /// <summary>Returns the character gender.</summary>
-    public override CharacterGender Gender => Character switch
-    {
-        YxHeptastarPavilionCharacter.TanShuyan => CharacterGender.Feminine,
-        YxHeptastarPavilionCharacter.YanChen => CharacterGender.Masculine,
-        YxHeptastarPavilionCharacter.YaoLing => CharacterGender.Feminine,
-        YxHeptastarPavilionCharacter.JiangXiming => CharacterGender.Masculine,
-        YxHeptastarPavilionCharacter.WuCe => CharacterGender.Feminine,
-        YxHeptastarPavilionCharacter.FengXu => CharacterGender.Feminine,
-        _ => throw new UnreachableException("unknown character"),
-    };
+    public override CharacterGender Gender => Character.Gender();
 
     /// <summary>Returns the initial max HP.</summary>
-    public override int StartingHp => Character switch
-    {
-        YxHeptastarPavilionCharacter.TanShuyan => 75,
-        YxHeptastarPavilionCharacter.YanChen => 75,
-        YxHeptastarPavilionCharacter.YaoLing => 70,
-        YxHeptastarPavilionCharacter.JiangXiming => 75,
-        YxHeptastarPavilionCharacter.WuCe => 75,
-        YxHeptastarPavilionCharacter.FengXu => 75,
-        _ => throw new UnreachableException("unknown character"),
-    };
+    public override int StartingHp => Character.StartingHp();
 
     /// <summary>Returns the initial Gold.</summary>
-    public override int StartingGold => Character switch
-    {
-        YxHeptastarPavilionCharacter.TanShuyan => 99,
-        YxHeptastarPavilionCharacter.YanChen => 99,
-        YxHeptastarPavilionCharacter.YaoLing => 199,
-        YxHeptastarPavilionCharacter.JiangXiming => 99,
-        YxHeptastarPavilionCharacter.WuCe => 99,
-        YxHeptastarPavilionCharacter.FengXu => 99,
-        _ => throw new UnreachableException("unknown character"),
-    };
+    public override int StartingGold => Character.StartingGold();
 
     /// <summary>Returns the maximum energy.</summary>
-    public override int MaxEnergy => 3;
+    public override int MaxEnergy => Character.MaxEnergy();
 
     /// <summary>Returns the color of character name.</summary>
-    public override Color NameColor => LAB_OUTLINE_COLOR;
+    public override Color NameColor => Character.NameColor();
 
     /// <summary>Returns the inital deck.</summary>
-    public override IEnumerable<CardModel> StartingDeck => Character switch
-    {
-        YxHeptastarPavilionCharacter.TanShuyan => [ModelDb.Card<YxStrikeHeptastarPavilion>()],
-        YxHeptastarPavilionCharacter.YanChen => [ModelDb.Card<YxStrikeHeptastarPavilion>()],
-        YxHeptastarPavilionCharacter.YaoLing => [ModelDb.Card<YxStrikeHeptastarPavilion>()],
-        YxHeptastarPavilionCharacter.JiangXiming => [ModelDb.Card<YxStrikeHeptastarPavilion>()],
-        YxHeptastarPavilionCharacter.WuCe => [ModelDb.Card<YxStrikeHeptastarPavilion>()],
-        YxHeptastarPavilionCharacter.FengXu => [ModelDb.Card<YxStrikeHeptastarPavilion>()],
-        _ => throw new UnreachableException("unknown character"),
-    };
+    public override IEnumerable<CardModel> StartingDeck => Character.StartingDeck();
 
     /// <summary>Returns the initial relics.</summary>
-    public override IReadOnlyList<RelicModel> StartingRelics => Character switch
-    {
-        YxHeptastarPavilionCharacter.TanShuyan => [ModelDb.Relic<BurningBlood>()],
-        YxHeptastarPavilionCharacter.YanChen => [ModelDb.Relic<BurningBlood>()],
-        YxHeptastarPavilionCharacter.YaoLing => [ModelDb.Relic<BurningBlood>()],
-        YxHeptastarPavilionCharacter.JiangXiming => [ModelDb.Relic<BurningBlood>()],
-        YxHeptastarPavilionCharacter.WuCe => [ModelDb.Relic<BurningBlood>()],
-        YxHeptastarPavilionCharacter.FengXu => [ModelDb.Relic<BurningBlood>()],
-        _ => throw new UnreachableException("unknown character"),
-    };
+    public override IReadOnlyList<RelicModel> StartingRelics => Character.StartingRelics();
 
     /// <summary>Returns character animations.</summary>
     public override CreatureAnimator GenerateAnimator(MegaSprite controller)
@@ -205,121 +124,4 @@ public sealed class YxHeptastarPavilion : CharacterModel
         "vfx/vfx_bloody_impact",
         "vfx/vfx_rock_shatter",
     ];
-}
-
-/// <summary>Yixian Heptastar Pavilion Card Pool Model.</summary>
-public sealed class YxHeptastarPavilionCardPool : CardPoolModel
-{
-    public override string Title => StringHelper.SnakeCase(nameof(YxHeptastarPavilion));
-    public override string CardFrameMaterialPath => "card_frame_" + Title;
-    public override string EnergyColorName => YxHeptastarPavilion.ENERGY_COLOR_NAME;
-    public override Color EnergyOutlineColor => YxHeptastarPavilion.ENERGY_OUTLINE_COLOR;
-    public override Color DeckEntryCardColor => YxHeptastarPavilion.DECK_ENTRY_CARD_COLOR;
-    public override bool IsColorless => false;
-    protected override CardModel[] GenerateAllCards() => [
-        ModelDb.Card<YxAstralFleche>(),
-        ModelDb.Card<YxAstralMoveBlock>(),
-        ModelDb.Card<YxAstralMoveCide>(),
-        ModelDb.Card<YxAstralMoveDragonSlay>(),
-        ModelDb.Card<YxAstralMoveFlank>(),
-        ModelDb.Card<YxAstralMoveFly>(),
-        ModelDb.Card<YxAstralMoveHit>(),
-        ModelDb.Card<YxAstralMovePoint>(),
-        ModelDb.Card<YxAstralMoveStand>(),
-        ModelDb.Card<YxAstralMoveTiger>(),
-        ModelDb.Card<YxAstralMoveTwinSwallows>(),
-        ModelDb.Card<YxCovertShift>(),
-        ModelDb.Card<YxCuttingWeeds>(),
-        ModelDb.Card<YxDanceOfTheDragonfly>(),
-        ModelDb.Card<YxDefendHeptastarPavilion>(),
-        ModelDb.Card<YxDestinyCatastrophe>(),
-        ModelDb.Card<YxDottedAround>(),
-        ModelDb.Card<YxDragMoonInSea>(),
-        ModelDb.Card<YxEarthHexagram>(),
-        ModelDb.Card<YxEscapePlan>(),
-        ModelDb.Card<YxFaceIsolation>(),
-        ModelDb.Card<YxFallingThunder>(),
-        ModelDb.Card<YxFiveThunders>(),
-        ModelDb.Card<YxFlameFlutter>(),
-        ModelDb.Card<YxFlameHexagram>(),
-        ModelDb.Card<YxFlowersAndWater>(),
-        ModelDb.Card<YxFlowerSentient>(),
-        ModelDb.Card<YxFuryThunder>(),
-        ModelDb.Card<YxGoldenRoosterIndependence>(),
-        ModelDb.Card<YxGreatSpirit>(),
-        ModelDb.Card<YxHeavenHexagram>(),
-        ModelDb.Card<YxHeptastarSoulstat>(),
-        ModelDb.Card<YxHexagramFormacide>(),
-        ModelDb.Card<YxHexgramsSpiritResurrection>(),
-        ModelDb.Card<YxHunterBecomesPreyer>(),
-        ModelDb.Card<YxHunterHuntingHunter>(),
-        ModelDb.Card<YxImposing>(),
-        ModelDb.Card<YxIncessant>(),
-        ModelDb.Card<YxJadeScrollOfYinSymbol>(),
-        ModelDb.Card<YxLakeHexagram>(),
-        ModelDb.Card<YxMeteoriteMeteor>(),
-        ModelDb.Card<YxMountainHexagram>(),
-        ModelDb.Card<YxOnlyTraces>(),
-        ModelDb.Card<YxPalmThunder>(),
-        ModelDb.Card<YxPerfectlyPlanned>(),
-        ModelDb.Card<YxPolarisCittaDharma>(),
-        ModelDb.Card<YxPreemptiveStrtike>(),
-        ModelDb.Card<YxPropitiousOmen>(),
-        ModelDb.Card<YxQiTherapy>(),
-        ModelDb.Card<YxRepelCittaDharma>(),
-        ModelDb.Card<YxRevitalized>(),
-        ModelDb.Card<YxRotaryDivinationHexagram>(),
-        ModelDb.Card<YxRuthlessWater>(),
-        ModelDb.Card<YxShiftingStars>(),
-        ModelDb.Card<YxSnakeInReflection>(),
-        ModelDb.Card<YxSolitaryVoidGoldenScroll>(),
-        ModelDb.Card<YxSparrowsTail>(),
-        ModelDb.Card<YxSpiritualDivination>(),
-        ModelDb.Card<YxStarBornRhythm>(),
-        ModelDb.Card<YxStarburst>(),
-        ModelDb.Card<YxStarMoonFoldingFan>(),
-        ModelDb.Card<YxStarryMoon>(),
-        ModelDb.Card<YxStarTrailDivination>(),
-        ModelDb.Card<YxStillnessCittaDharma>(),
-        ModelDb.Card<YxStrikeHeptastarPavilion>(),
-        ModelDb.Card<YxStrikeTwice>(),
-        ModelDb.Card<YxStrikeVacuity>(),
-        ModelDb.Card<YxSunAndMoonForGlory>(),
-        ModelDb.Card<YxThinOnTheGround>(),
-        ModelDb.Card<YxThrowingStonesForDirections>(),
-        ModelDb.Card<YxThrowPetrals>(),
-        ModelDb.Card<YxThunderAndLighting>(),
-        ModelDb.Card<YxThunderCittaDharma>(),
-        ModelDb.Card<YxThunderHexagramRhythm>(),
-        ModelDb.Card<YxUltimateHexagramBase>(),
-        ModelDb.Card<YxVitalityBlossom>(),
-        ModelDb.Card<YxWaitForGainsWithoutPains>(),
-        ModelDb.Card<YxWaterDropErosion>(),
-        ModelDb.Card<YxWaterHexagram>(),
-        ModelDb.Card<YxWhiteCraneBrightWings>(),
-        ModelDb.Card<YxWhiteSnake>(),
-        ModelDb.Card<YxWildHorsesPartTheMane>(),
-        ModelDb.Card<YxWindHexagram>(),
-        ModelDb.Card<YxWithinReach>(),
-        ModelDb.Card<YxYinYangFormation>(),
-        ModelDb.Card<YxZhenHexagram>(),
-    ];
-}
-
-/// <summary>Yixian Heptastar Pavilion Relic Pool Model.</summary>
-public sealed class YxHeptastarPavilionRelicPool : RelicPoolModel
-{
-    public override string EnergyColorName => YxHeptastarPavilion.ENERGY_COLOR_NAME;
-    public override Color LabOutlineColor => YxHeptastarPavilion.LAB_OUTLINE_COLOR;
-    protected override IEnumerable<RelicModel> GenerateAllRelics() => [];
-    public override IEnumerable<RelicModel> GetUnlockedRelics(UnlockState unlockState) => AllRelics;
-}
-
-/// <summary>Yixian Heptastar Pavilion Potion Pool Model.</summary>
-public sealed class YxHeptastarPavilionPotionPool : PotionPoolModel
-{
-    public override string EnergyColorName => YxHeptastarPavilion.ENERGY_COLOR_NAME;
-    public override Color LabOutlineColor => YxHeptastarPavilion.LAB_OUTLINE_COLOR;
-    protected override IEnumerable<PotionModel> GenerateAllPotions() => [];
-    public override IEnumerable<PotionModel> GetUnlockedPotions(UnlockState unlockState) => AllPotions;
 }

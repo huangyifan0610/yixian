@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://bq3ffqfenwebq"
+path="res://.godot/imported/yx_feng_xu.skel-48bf6b9bc81069f3df4553371883c4b9.spskel"
+
+[deps]
+
+source_file="res://animations/characters/yx_feng_xu/yx_feng_xu.skel"
+dest_files=["res://.godot/imported/yx_feng_xu.skel-48bf6b9bc81069f3df4553371883c4b9.spskel"]
+
+[params]
+
