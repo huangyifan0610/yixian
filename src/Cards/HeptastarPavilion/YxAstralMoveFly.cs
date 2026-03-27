@@ -46,7 +46,7 @@ public sealed class YxAstralMoveFly() : YxCardModel(1, CardType.Attack, CardRari
         await DamageCmd
             .Attack(DynamicVars.Damage.BaseValue)
             .WithHitCount(2)
-            .WithWaitBeforeHit(0.35f, 0.4f)
+            .WithWaitBeforeHit(0.15f, 0.25f)
             .FromCard(this)
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);

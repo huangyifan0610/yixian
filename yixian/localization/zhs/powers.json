@@ -1,8 +1,15 @@
 {
+  "YX_HEXAGRAM_POWER.title": "卦象",
+  "YX_HEXAGRAM_POWER.description": "使下次随机效果取最优（随机范围取最大值，随机概率取100%）。",
+  "YX_HEXAGRAM_POWER.smartDescription": "使下[blue]{Amount}[/blue]次随机效果取最优（随机范围取最大值，随机概率取100%）。",
   "YX_POLARIS_CITTA_DHARMA_POWER.title": "天元心法",
   "YX_POLARIS_CITTA_DHARMA_POWER.description": "手牌所有位置均视为[gold]星位[/gold]。",
   "YX_STAR_POINT_POWER.title": "星位",
   "YX_STAR_POINT_POWER.description": "手牌第3格和第6格为默认[gold]星位[/gold]。\n在[gold]星位[/gold]上的牌可以触发其[gold]星位[/gold]效果。",
   "YX_STAR_POWER_POWER.title": "星力",
-  "YX_STAR_POWER_POWER.description": "每拥有一点[gold]星力[/gold], [gold]星位[/gold]上的牌增加一点伤害。\n"
+  "YX_STAR_POWER_POWER.description": "增加[gold]星位[/gold]上卡牌的伤害。",
+  "YX_STAR_POWER_POWER.smartDescription": "使[gold]星位[/gold]上的卡牌{Amount:cond:<0?减少|增加}[blue]{Amount:abs()}[/blue]点伤害。",
+  "YX_TEMPORARY_HP_POWER.title": "临时生命",
+  "YX_TEMPORARY_HP_POWER.description": "在战斗中临时增加[red]生命[/red]和[red]生命上限[/red]。\n战斗结束后，失去[red]生命[/red]和[red]生命上限[/red]（最低保留1[red]生命[/red]和[red]生命上限[/red]）。",
+  "YX_TEMPORARY_HP_POWER.smartDescription": "在战斗中临时增加{Amount}点[red]生命[/red]和[red]生命上限[/red]。\n战斗结束后，失去{Amount}点[red]生命[/red]和[red]生命上限[/red]（最低保留1[red]生命[/red]和[red]生命上限[/red]）。"
 }

@@ -51,12 +51,16 @@ public sealed class YxHeptastarPavilion : YxCharacterModel
     /// <summary>Returns the initial relics.</summary>
     public override IReadOnlyList<RelicModel> StartingRelics => Character.StartingRelics();
 
+    /// <summary>Time in seconds to wait before attack.</summary>
+    public override float AttackAnimDelay => 0.3f;
+
+    /// <summary>Time in seconds to wait before cast.</summary>
+    public override float CastAnimDelay => 0.3f;
+
     // TODO: Missing map marker image.
     protected override string MapMarkerPath => ImageHelper.GetImagePath("packed/map/icons/map_marker_ironclad.png");
 
     // TODO: Overrides abstract methods.
-    public override float AttackAnimDelay => 0.15f;
-    public override float CastAnimDelay => 0.25f;
     public override Color EnergyLabelOutlineColor => new("801212FF");
     public override Color DialogueColor => new("590700");
     public override Color MapDrawingColor => new("CB282B");

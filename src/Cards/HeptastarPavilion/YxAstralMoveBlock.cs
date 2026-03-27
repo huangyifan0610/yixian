@@ -32,6 +32,9 @@ public sealed class YxAstralMoveBlock() : YxCardModel(1, CardType.Skill, CardRar
         HoverTipFactory.FromPower<YxStarPowerPower>(),
     ];
 
+    /// <summary>Gains block.</summary>
+    public override bool GainsBlock => true;
+
     /// <summary>Glow if on star point.</summary>
     protected override bool ShouldGlowGoldInternal => IsOnStarPoint;
 

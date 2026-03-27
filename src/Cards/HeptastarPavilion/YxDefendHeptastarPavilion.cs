@@ -24,6 +24,9 @@ public sealed class YxDefendHeptastarPavilion() : YxCardModel(1, CardType.Skill,
     /// <summary>Defend.</summary>
     public override IEnumerable<CardTag> Tags => [CardTag.Defend];
 
+    /// <summary>Gains block.</summary>
+    public override bool GainsBlock => true;
+
     /// <summary>Gain more block.</summary>
     protected override void OnUpgrade() => DynamicVars.Block.UpgradeValueBy(3);
 

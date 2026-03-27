@@ -48,7 +48,7 @@ public sealed class YxAstralMoveTiger() : YxCardModel(0, CardType.Attack, CardRa
         await DamageCmd
             .Attack(DynamicVars.Damage.BaseValue)
             .WithHitCount(3)
-            .WithWaitBeforeHit(0.35f, 0.4f)
+            .WithWaitBeforeHit(0.15f, 0.25f)
             .FromCard(this)
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
