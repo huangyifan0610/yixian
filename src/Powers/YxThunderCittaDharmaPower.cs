@@ -26,7 +26,7 @@ public sealed class YxThunderCittaDharmaPower : PowerModel
         if (props.HasFlag(ValueProp.Unpowered) || !props.HasFlag(ValueProp.Move)) { return 0; }
 
         // Modifies the damage.
-        return (cardSource is YxCardModel yxCardModel && yxCardModel.IsThunder)
+        return (cardSource is YxCardModel thunderCard && thunderCard.IsThunder)
             ? 1m + (Amount / 100m)
             : 1m;
     }

@@ -45,7 +45,12 @@ public sealed class YxHeavenHexagram() : YxCardModel(0, CardType.Skill, CardRari
     {
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
         await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
-        var hexagram = await PowerCmd.Apply<YxHexagramPower>(Owner.Creature, DynamicVars[nameof(YxHexagramPower)].BaseValue, Owner.Creature, this);
+        var hexagram = await PowerCmd.Apply<YxHexagramPower>(
+            Owner.Creature,
+            DynamicVars[nameof(YxHexagramPower)].BaseValue,
+            Owner.Creature,
+            this
+        );
         if (hexagram?.Amount >= DynamicVars["YxRequiredHexagram"].BaseValue)
         {
             await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);

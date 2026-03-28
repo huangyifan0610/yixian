@@ -44,6 +44,11 @@ public sealed class YxEarthHexagram() : YxCardModel(1, CardType.Skill, CardRarit
     {
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
-        await PowerCmd.Apply<YxHexagramPower>(Owner.Creature, DynamicVars[nameof(YxHexagramPower)].BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<YxHexagramPower>(
+            Owner.Creature,
+            DynamicVars[nameof(YxHexagramPower)].BaseValue,
+            Owner.Creature,
+            this
+        );
     }
 }

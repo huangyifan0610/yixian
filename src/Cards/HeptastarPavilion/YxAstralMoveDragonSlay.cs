@@ -27,11 +27,11 @@ public sealed class YxAstralMoveDragonSlay() : YxCardModel(0, CardType.Attack, C
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CalculationBaseVar(10),
         new ExtraDamageVar(5),
-        new CalculatedDamageVar(ValueProp.Move).WithMultiplier(CalculatedDamageMultiplyer),
+        new CalculatedDamageVar(ValueProp.Move).WithMultiplier(CalculatedDamageMultiplier),
     ];
 
     /// <summary>Multiplyer for <see cref="CalculatedDamageVar"/>.</summary>
-    private static decimal CalculatedDamageMultiplyer(CardModel card, Creature? target) =>
+    private static decimal CalculatedDamageMultiplier(CardModel card, Creature? target) =>
         card.Owner.Creature.GetPower<YxStarPowerPower>()?.Amount ?? 0;
 
     /// <summary>Adds necessary hover tips.</summary>

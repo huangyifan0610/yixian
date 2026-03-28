@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Combat.History.Entries;
@@ -18,7 +17,7 @@ using Yixian.Powers;
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>Heptastar Pavilion - Thunder Hexagram Rhythm.</summary>
-public sealed class YxThunderHexagramRhythm() : YxCardModel(0, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+public sealed class YxThunderHexagramRhythm() : YxCardModel(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     /// <summary>See <see cref="YxHeptastarPavilionCardPool"/>.</summary>
     public override CardPoolModel Pool => ModelDb.CardPool<YxHeptastarPavilionCardPool>();
@@ -28,8 +27,8 @@ public sealed class YxThunderHexagramRhythm() : YxCardModel(0, CardType.Attack, 
 
     /// <summary>Deal random damage; Gain used Hexagram.</summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(1, ValueProp.Move),
-        new ExtraDamageVar(5),
+        new DamageVar("MinDamage", 1m, ValueProp.Move),
+        new DamageVar("MaxDamage", 5m, ValueProp.Move),
         new CalculationBaseVar(0),
         new CalculationExtraVar(1),
         new CalculatedVar("CalculatedHexagram").WithMultiplier(CalculatedHexagramMultiplyer)
@@ -66,7 +65,7 @@ public sealed class YxThunderHexagramRhythm() : YxCardModel(0, CardType.Attack, 
     protected override bool ShouldGlowGoldInternal => Owner.Creature.HasPower<YxHexagramPower>();
 
     /// <summary>Deal more damage.</summary>
-    protected override void OnUpgrade() => DynamicVars.ExtraDamage.UpgradeValueBy(5);
+    protected override void OnUpgrade() => DynamicVars["MaxDamage"].UpgradeValueBy(5);
 
     /// <summary>Deal random damage; Gain used Hexagram.</summary>
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -74,7 +73,7 @@ public sealed class YxThunderHexagramRhythm() : YxCardModel(0, CardType.Attack, 
         ArgumentNullException.ThrowIfNull(cardPlay.Target, nameof(cardPlay.Target));
         ArgumentNullException.ThrowIfNull(RunState, nameof(RunState));
         await DamageCmd
-            .Attack(Owner.Creature.GetPower<YxHexagramPower>().Range(RunState, DynamicVars.Damage.IntValue, DynamicVars.ExtraDamage.IntValue, out bool _))
+            .Attack(Owner.Creature.GetPower<YxHexagramPower>().Range(RunState, DynamicVars["MinDamage"].IntValue, DynamicVars["MaxDamage"].IntValue, out bool _))
             .WithHitFx("vfx/vfx_attack_lightning")
             .FromCard(this)
             .Targeting(cardPlay.Target)

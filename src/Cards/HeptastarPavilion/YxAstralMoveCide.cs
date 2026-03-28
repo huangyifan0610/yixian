@@ -49,11 +49,21 @@ public sealed class YxAstralMoveCide() : YxCardModel(1, CardType.Attack, CardRar
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
 
-        if (cardPlay.Target.Monster != null && IsOnStarPoint)
+        if (IsOnStarPoint)
         {
-            cardPlay.Target.Monster.MoveStateMachine?.OnMovePerformed(cardPlay.Target.Monster.NextMove);
-            cardPlay.Target.Monster.RollMove(cardPlay.Target.Monster.CombatState.PlayerCreatures);
-            cardPlay.Target.Monster.SetMoveImmediate(cardPlay.Target.Monster.NextMove, true);
+            // Run carefully because the target enemy may have been killed.
+            if (cardPlay.Target.Monster?.MoveStateMachine != null && cardPlay.Target.Monster.NextMove != null)
+            {
+                cardPlay.Target.Monster.MoveStateMachine?.OnMovePerformed(cardPlay.Target.Monster.NextMove);
+            }
+            if (cardPlay.Target.Monster?.CombatState != null)
+            {
+                cardPlay.Target.Monster.RollMove(cardPlay.Target.Monster.CombatState.PlayerCreatures);
+            }
+            if (cardPlay.Target.Monster?.MoveStateMachine != null && cardPlay.Target.Monster.NextMove != null)
+            {
+                cardPlay.Target.Monster.SetMoveImmediate(cardPlay.Target.Monster.NextMove, true);
+            }
         }
     }
 }

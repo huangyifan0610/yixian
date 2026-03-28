@@ -57,9 +57,11 @@ public abstract class YxCardModel(int canonicalEnergyCost, CardType type, CardRa
     {
         // Short Path.
         if (PostAction) { return true; }
-
         // Activates the post action.
         PostAction = true;
+
+        // Allows post action for replay.
+        if (cardPlay.PlayIndex > 1) { return true; }
 
         return false;
     }
