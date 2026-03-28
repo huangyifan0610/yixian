@@ -13,7 +13,7 @@ namespace Yixian.Patches;
 
 /// <summary>Patches <see cref="NCardLibrary"/> to add new card pools to card library.</summary>
 [HarmonyPatch(typeof(NCardLibrary), nameof(NCardLibrary._Ready))]
-public static class Ready
+public static class NCardLibrary_Ready
 {
     // Private members and methods in "NCardLibrary".
     private static readonly FieldInfo _poolFilters = AccessTools.Field(typeof(NCardLibrary), "_poolFilters");

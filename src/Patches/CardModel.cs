@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.Models;
 
 namespace Yixian.Patches;
 
-/// <summary>Extension class for <see cref="CardModel"/>.</summary>
+/// <summary>Extension to <see cref="CardModel"/>.</summary>
 public static class CardModelExtension
 {
     /// <summary>Extended data for <see cref="CardModel"/>.</summary>
@@ -37,7 +37,7 @@ public static class CardModelExtension
 /// Checkes whether the card is on Star Point before playing the card. 
 /// </summary>
 [HarmonyPatch(typeof(CardModel), nameof(CardModel.OnPlayWrapper))]
-public static class OnPlayWrapper
+public static class CardModel_OnPlayWrapper
 {
     /// <summary>
     /// Patches <see cref="CardModel.OnPlayWrapper"/> that updates <see cref="CardModelExtension.Data"/>>.

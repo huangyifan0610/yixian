@@ -10,7 +10,7 @@ namespace Yixian.Patches;
 /// Patches <see cref="ModelDb.AllCharacters"/>.
 /// </summary>
 [HarmonyPatch(typeof(ModelDb), nameof(ModelDb.AllCharacters), MethodType.Getter)]
-public static class AllCharacters
+public static class ModelDb_AllCharacters
 {
     /// <summary>
     /// Appends <see cref="ModelDb.AllCharacters"/>.

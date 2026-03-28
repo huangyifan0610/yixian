@@ -3,6 +3,8 @@ using Godot;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Saves;
+using Yixian.Patches;
 
 namespace Yixian.Characters;
 
@@ -28,7 +30,13 @@ public sealed class YxHeptastarPavilion : YxCharacterModel
     public override PotionPoolModel PotionPool => ModelDb.PotionPool<YxHeptastarPavilionPotionPool>();
 
     /// <summary>The real character ID.</summary>
-    public YxHeptastarPavilionCharacter Character = default;
+    public YxHeptastarPavilionCharacter Character
+    {
+        // Loads from save.
+        get => (_character ??= SaveManager.Instance.GetYxSerializableRun()?.CharacterHeptastarPavilion) ?? default;
+        set => _character = value;
+    }
+    private YxHeptastarPavilionCharacter? _character = null;
 
     /// <summary>Returns the character gender.</summary>
     public override CharacterGender Gender => Character.Gender();

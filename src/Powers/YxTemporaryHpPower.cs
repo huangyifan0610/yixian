@@ -25,7 +25,6 @@ public sealed class YxTemporaryHpPower : PowerModel
             decimal oldHp = Owner.CurrentHp;
             decimal newMaxHp = oldMaxHp + amount;
             decimal newHp = Math.Clamp(oldHp + amount, 1, newMaxHp);
-            Main.LOGGER.Info("============ BeforeApplied " + amount + "     " + newMaxHp);
 
             if (oldMaxHp != newMaxHp)
             {
