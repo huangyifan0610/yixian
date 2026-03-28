@@ -20,10 +20,7 @@ public sealed class YxAstralMoveTwinSwallows() : YxCardModel(0, CardType.Attack,
     public override CardPoolModel Pool => ModelDb.CardPool<YxHeptastarPavilionCardPool>();
 
     /// <summary>Astral Move.</summary>
-    public override IEnumerable<YxCardTag> CanonicalYxTags => [YxCardTag.AstralMove];
-
-    /// <summary>Post Action.</summary>
-    public override IEnumerable<YxCardKeyword> CanonicalYxKeywords => [YxCardKeyword.PostAction];
+    public override IEnumerable<YxCardKeyword> CanonicalYxKeywords => [YxCardKeyword.AstralMove, YxCardKeyword.PostAction];
 
     /// <summary>Deal damage; Deal damage on star point and post action; Draw cards.</summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -33,8 +30,9 @@ public sealed class YxAstralMoveTwinSwallows() : YxCardModel(0, CardType.Attack,
 
     /// <summary>Adds necessary hover tips.</summary>
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
-        HoverTipFactory.FromPower<YxStarPointPower>(),
+        YxCardKeyword.AstralMove.GetHoverTip(),
         YxCardKeyword.PostAction.GetHoverTip(),
+        HoverTipFactory.FromPower<YxStarPointPower>(),
     ];
 
     /// <summary>Glow for post action or if on star point.</summary>

@@ -1,4 +1,10 @@
 {
+    "YX_ASTRAL_MOVE.title": "Astral Move",
+    "YX_ASTRAL_MOVE.description": "This is the [blue]Astral Move[/blue] series card in [blue]Heptastar Pavilion[/blue].",
+    "YX_HEXAGRAM.title": "Hexagram",
+    "YX_HEXAGRAM.description": "This is the [blue]Hexagram[/blue] series card in [blue]Heptastar Pavilion[/blue].",
     "YX_POST_ACTION.title": "Post Action",
-    "YX_POST_ACTION.description": "When this card is played a second times and later in the same battle, the [gold]Post Action[/gold] effect will be triggered."
+    "YX_POST_ACTION.description": "When this card is played a second times and later in the same battle, the [gold]Post Action[/gold] effect will be triggered.",
+    "YX_THUNDER.title": "Thunder",
+    "YX_THUNDER.description": "This is the [blue]Thunder[/blue] series card in [blue]Heptastar Pavilion[/blue]."
 }

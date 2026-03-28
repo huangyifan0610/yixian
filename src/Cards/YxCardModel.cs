@@ -11,25 +11,24 @@ namespace Yixian.Cards;
 public abstract class YxCardModel(int canonicalEnergyCost, CardType type, CardRarity rarity, TargetType targetType, bool shouldShowInCardLibrary = true)
     : CardModel(canonicalEnergyCost, type, rarity, targetType, shouldShowInCardLibrary)
 {
-    /// <summary>Canonical card tags.</summary>
-    public virtual IEnumerable<YxCardTag> CanonicalYxTags => [];
-
     /// <summary>Canonical card Keywords.</summary>
     public virtual IEnumerable<YxCardKeyword> CanonicalYxKeywords => [];
-
-    /// <summary>Card tags.</summary>
-    public IReadOnlySet<YxCardTag> YxTags => _yxTags ??= [.. CanonicalYxTags];
-    private HashSet<YxCardTag>? _yxTags = null;
 
     /// <summary>Card Keywords.</summary>
     public IReadOnlySet<YxCardKeyword> YxKeywords => _yxKeywords ??= [.. CanonicalYxKeywords];
     private HashSet<YxCardKeyword>? _yxKeywords = null;
 
     /// <summary>Returns true if the card is 'Astral Move'.</summary>
-    public bool IsAstralMove => YxTags.Contains(YxCardTag.AstralMove);
+    public bool IsAstralMove => YxKeywords.Contains(YxCardKeyword.AstralMove);
+
+    /// <summary>Returns true if the card is 'Hexagram'.</summary>
+    public bool IsHexagram => YxKeywords.Contains(YxCardKeyword.Hexagram);
 
     /// <summary>Returns true if the card is 'Post Action'.</summary>
-    public bool IsPostAction => YxKeywords.Contains(YxCardKeyword.PostAction);
+    public bool IsPostAction => YxKeywords.Contains(YxCardKeyword.Thunder);
+
+    /// <summary>Returns true if the card is 'Post Action'.</summary>
+    public bool IsThunder => YxKeywords.Contains(YxCardKeyword.Thunder);
 
     /// <summary>Returns true if the card is on 'Star Point'.</summary>
     public bool IsOnStarPoint => YxStarPointPower.Test(this);

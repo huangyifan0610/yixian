@@ -4,32 +4,52 @@ using System.Threading.Tasks;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using Yixian.Characters;
+using Yixian.Powers;
 
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>Heptastar Pavilion - Falling Thunder.</summary>
-public sealed class YxFallingThunder() : YxCardModel(1, CardType.Attack, CardRarity.Status, TargetType.AnyEnemy)
+public sealed class YxFallingThunder() : YxCardModel(2, CardType.Attack, CardRarity.Common, TargetType.AllEnemies)
 {
     /// <summary>See <see cref="YxHeptastarPavilionCardPool"/>.</summary>
     public override CardPoolModel Pool => ModelDb.CardPool<YxHeptastarPavilionCardPool>();
 
+    /// <summary>Thunder.</summary>
+    public override IEnumerable<YxCardKeyword> CanonicalYxKeywords => [YxCardKeyword.Thunder];
+
+    /// <summary>Deal random damage to all enemies.</summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(6, ValueProp.Move),
+        new DamageVar(12m, ValueProp.Move),
+        new ExtraDamageVar(22m),
     ];
 
-    protected override void OnUpgrade() => DynamicVars.Damage.UpgradeValueBy(3);
+    /// <summary>Adds necessary hover tips.</summary>
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        YxCardKeyword.Thunder.GetHoverTip(),
+        HoverTipFactory.FromPower<YxHexagramPower>(),
+    ];
 
+    /// <summary>Glow if we have hexagram.</summary>
+    protected override bool ShouldGlowGoldInternal => Owner.Creature.HasPower<YxHexagramPower>();
+
+    /// <summary>Deal more damage.</summary>
+    protected override void OnUpgrade() => DynamicVars.ExtraDamage.UpgradeValueBy(6);
+
+    /// <summary>Deal random damage to all enemies.</summary>
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+        ArgumentNullException.ThrowIfNull(RunState, nameof(RunState));
+        ArgumentNullException.ThrowIfNull(CombatState, nameof(CombatState));
         await DamageCmd
-            .Attack(DynamicVars.Damage.BaseValue)
+            .Attack(Owner.Creature.GetPower<YxHexagramPower>().Range(RunState, DynamicVars.Damage.IntValue, DynamicVars.ExtraDamage.IntValue, out bool _))
+            .WithHitFx("vfx/vfx_attack_lightning")
             .FromCard(this)
-            .Targeting(cardPlay.Target)
+            .TargetingAllOpponents(CombatState)
             .Execute(choiceContext);
     }
 }

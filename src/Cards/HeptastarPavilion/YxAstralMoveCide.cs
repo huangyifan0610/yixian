@@ -20,7 +20,7 @@ public sealed class YxAstralMoveCide() : YxCardModel(1, CardType.Attack, CardRar
     public override CardPoolModel Pool => ModelDb.CardPool<YxHeptastarPavilionCardPool>();
 
     /// <summary>Astral Move.</summary>
-    public override IEnumerable<YxCardTag> CanonicalYxTags => [YxCardTag.AstralMove];
+    public override IEnumerable<YxCardKeyword> CanonicalYxKeywords => [YxCardKeyword.AstralMove];
 
     /// <summary>Deal damage; Skip target's next intent on star point.</summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -29,6 +29,7 @@ public sealed class YxAstralMoveCide() : YxCardModel(1, CardType.Attack, CardRar
 
     /// <summary>Adds necessary hover tips.</summary>
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        YxCardKeyword.AstralMove.GetHoverTip(),
         HoverTipFactory.FromPower<YxStarPointPower>(),
     ];
 

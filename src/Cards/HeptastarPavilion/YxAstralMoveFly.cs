@@ -20,7 +20,7 @@ public sealed class YxAstralMoveFly() : YxCardModel(1, CardType.Attack, CardRari
     public override CardPoolModel Pool => ModelDb.CardPool<YxHeptastarPavilionCardPool>();
 
     /// <summary>Astral Move.</summary>
-    public override IEnumerable<YxCardTag> CanonicalYxTags => [YxCardTag.AstralMove];
+    public override IEnumerable<YxCardKeyword> CanonicalYxKeywords => [YxCardKeyword.AstralMove];
 
     /// <summary>Deal damage twice; Draw cards on star point.</summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -30,6 +30,7 @@ public sealed class YxAstralMoveFly() : YxCardModel(1, CardType.Attack, CardRari
 
     /// <summary>Adds necessary hover tips.</summary>
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        YxCardKeyword.AstralMove.GetHoverTip(),
         HoverTipFactory.FromPower<YxStarPointPower>(),
     ];
 

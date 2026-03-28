@@ -11,5 +11,8 @@
   "YX_STAR_POWER_POWER.smartDescription": "{Amount:cond:<0?Decreases|Increases} attack damage by [blue]{Amount:abs()}[/blue] for cards on [gold]Star Point[/gold].",
   "YX_TEMPORARY_HP_POWER.title": "Temporary HP",
   "YX_TEMPORARY_HP_POWER.description": "Increase [red]HP[/red] and [red]Max HP[/red] in the battle.\nAfter the battle, lose [red]HP[/red] and [red]Max HP[/red] (retain at least 1 [red]HP[/red] and [red]Max HP[/red] health).",
-  "YX_TEMPORARY_HP_POWER.smartDescription": "Increase [red]HP[/red] and [red]Max HP[/red] in the battle.\nAfter the battle, lose {Amount} [red]HP[/red] and [red]Max HP[/red] (retain at least 1 [red]HP[/red] and [red]Max HP[/red] health)."
+  "YX_TEMPORARY_HP_POWER.smartDescription": "Increase [red]HP[/red] and [red]Max HP[/red] in the battle.\nAfter the battle, lose {Amount} [red]HP[/red] and [red]Max HP[/red] (retain at least 1 [red]HP[/red] and [red]Max HP[/red] health).",
+  "YX_THUNDER_CITTA_DHARMA_POWER.title": "Thunder Citta Dharma",
+  "YX_THUNDER_CITTA_DHARMA_POWER.description": "[blue]Thunder[/blue] cards deal additional damage.",
+  "YX_THUNDER_CITTA_DHARMA_POWER.smartDescription": "[blue]Thunder[/blue] cards deal additional [blue]{Amount}%[/blue] damage."
 }

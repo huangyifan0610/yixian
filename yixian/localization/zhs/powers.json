@@ -11,5 +11,8 @@
   "YX_STAR_POWER_POWER.smartDescription": "使[gold]星位[/gold]上的卡牌{Amount:cond:<0?减少|增加}[blue]{Amount:abs()}[/blue]点伤害。",
   "YX_TEMPORARY_HP_POWER.title": "临时生命",
   "YX_TEMPORARY_HP_POWER.description": "在战斗中临时增加[red]生命[/red]和[red]生命上限[/red]。\n战斗结束后，失去[red]生命[/red]和[red]生命上限[/red]（最低保留1[red]生命[/red]和[red]生命上限[/red]）。",
-  "YX_TEMPORARY_HP_POWER.smartDescription": "在战斗中临时增加{Amount}点[red]生命[/red]和[red]生命上限[/red]。\n战斗结束后，失去{Amount}点[red]生命[/red]和[red]生命上限[/red]（最低保留1[red]生命[/red]和[red]生命上限[/red]）。"
+  "YX_TEMPORARY_HP_POWER.smartDescription": "在战斗中临时增加{Amount}点[red]生命[/red]和[red]生命上限[/red]。\n战斗结束后，失去{Amount}点[red]生命[/red]和[red]生命上限[/red]（最低保留1[red]生命[/red]和[red]生命上限[/red]）。",
+  "YX_THUNDER_CITTA_DHARMA_POWER.title": "雷霆心法",
+  "YX_THUNDER_CITTA_DHARMA_POWER.description": "[blue]雷霆[/blue]卡牌造成额外伤害。",
+  "YX_THUNDER_CITTA_DHARMA_POWER.smartDescription": "[blue]雷霆[/blue]卡牌额外造成[blue]{Amount}%[/blue]的伤害。"
 }

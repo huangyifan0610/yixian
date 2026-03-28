@@ -1,4 +1,10 @@
 {
+    "YX_ASTRAL_MOVE.title": "星弈",
+    "YX_ASTRAL_MOVE.description": "[blue]七星阁[/blue]“[blue]星弈[/blue]”系列的卡牌。",
+    "YX_HEXAGRAM.title": "卦象",
+    "YX_HEXAGRAM.description": "[blue]七星阁[/blue]“[blue]卦象[/blue]”系列的卡牌。",
     "YX_POST_ACTION.title": "后招",
-    "YX_POST_ACTION.description": "此牌在同场战斗中第二次及以后生效时，才会触发[gold]后招[/gold]效果。"
+    "YX_POST_ACTION.description": "此牌在同场战斗中第二次及以后生效时，才会触发[gold]后招[/gold]效果。",
+    "YX_THUNDER.title": "雷霆",
+    "YX_THUNDER.description": "[blue]七星阁[/blue]“[blue]雷霆[/blue]”系列的卡牌。"
 }

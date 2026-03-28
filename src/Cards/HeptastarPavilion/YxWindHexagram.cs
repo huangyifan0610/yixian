@@ -20,7 +20,7 @@ public sealed class YxWindHexagram() : YxCardModel(1, CardType.Skill, CardRarity
     public override CardPoolModel Pool => ModelDb.CardPool<YxHeptastarPavilionCardPool>();
 
     /// <summary>Hexagram.</summary>
-    public override IEnumerable<YxCardTag> CanonicalYxTags => [YxCardTag.Hexagram];
+    public override IEnumerable<YxCardKeyword> CanonicalYxKeywords => [YxCardKeyword.Hexagram];
 
     /// <summary>Gain hexagram; Apply weak.</summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -30,6 +30,7 @@ public sealed class YxWindHexagram() : YxCardModel(1, CardType.Skill, CardRarity
 
     /// <summary>Adds necessary hover tips.</summary>
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        YxCardKeyword.Hexagram.GetHoverTip(),
         HoverTipFactory.FromPower<YxHexagramPower>(),
         HoverTipFactory.FromPower<WeakPower>(),
     ];

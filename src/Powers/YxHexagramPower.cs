@@ -28,61 +28,69 @@ public static class YxHexagramPowerExtension
     /// <paramref name="max"/>; On failure, returns random range between <paramref name="min"/> and
     /// <paramref name="max"/> (both inclusive).
     /// </summary>
-    public static int Range(this YxHexagramPower? hexagram, IRunState state, int min, int max)
+    public static int Range(this YxHexagramPower? hexagram, IRunState state, int min, int max, out bool hexagramUsed)
     {
         if (hexagram?.Amount > 0)
         {
             PowerCmd.Decrement(hexagram);
+            hexagramUsed = true;
             return max;
         }
         else
         {
+            hexagramUsed = false;
             return GetRng(state).NextInt(min, max + 1);
         }
     }
 
     /// <summary>
     /// Attempts to consume one stack of <paramref name="hexagram"/>. On success, returns true;
-    /// On failure, returns true for a chance of <paramref name="percentage"/>.
+    /// On failure, returns true for a chance of <paramref name="percent0to100"/>.
     /// </summary>
-    public static bool Test(this YxHexagramPower? hexagram, IRunState state, decimal percentage)
+    public static bool Test(this YxHexagramPower? hexagram, IRunState state, decimal percent0to100, out bool hexagramUsed)
     {
         if (hexagram?.Amount > 0)
         {
             PowerCmd.Decrement(hexagram);
+            hexagramUsed = true;
             return true;
         }
         else
         {
-            return GetRng(state).NextInt(100) < (percentage * 100m);
+            hexagramUsed = false;
+            return GetRng(state).NextInt(100) < percent0to100;
         }
     }
 
     /// <summary>
     /// Repeats <paramref name="hexagram"/>.Percentage(<paramref name="state"/>, 
-    /// <paramref name="percentage"/>) for <paramref name="repeat"/> times. 
+    /// <paramref name="percent0to100"/>) for <paramref name="repeat"/> times. 
     /// Returns the number of times the boolean test succeeds.
     /// </summary>
-    public static int Test(this YxHexagramPower? hexagram, IRunState state, decimal percentage, int repeat, CardModel? cardSource)
+    public static int Test(this YxHexagramPower? hexagram, IRunState state, decimal percent0to100, int repeat, out int hexagramUsed)
     {
         if (hexagram?.Amount >= repeat)
         {
-            PowerCmd.ModifyAmount(hexagram, -repeat, hexagram.Owner, cardSource);
+            PowerCmd.ModifyAmount(hexagram, -repeat, hexagram.Owner, null);
+            hexagramUsed = repeat;
             return repeat;
         }
         else
         {
-            int success = 0;
-
             if (hexagram?.Amount > 0)
             {
-                success = hexagram.Amount;
+                hexagramUsed = hexagram.Amount;
                 hexagram.SetAmount(0);
             }
+            else
+            {
+                hexagramUsed = 0;
+            }
 
+            int success = hexagramUsed;
             for (int j = success; j < repeat; ++j)
             {
-                if (GetRng(state).NextInt(100) < (percentage * 100m))
+                if (GetRng(state).NextInt(100) < percent0to100)
                 {
                     ++success;
                 }

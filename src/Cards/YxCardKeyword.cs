@@ -8,8 +8,14 @@ namespace Yixian.Cards;
 /// <summary>Card keywords.</summary>
 public enum YxCardKeyword
 {
+    /// <summary>Astral move.</summary>
+    AstralMove,
+    /// <summary>Hexagram.</summary>
+    Hexagram,
     /// <summary>Post action.</summary>
     PostAction,
+    /// <summary>Thunder.</summary>
+    Thunder,
 }
 
 /// <summary>Extension to <see cref="YxCardKeyword"/>.</summary>
@@ -24,7 +30,10 @@ public static class YxCardKeywordExtension
     /// <summary>Returns the prefix of the locale key.</summary>
     public static string GetLocKeyPrefix(this YxCardKeyword keyword) => keyword switch
     {
+        YxCardKeyword.AstralMove => "YX_ASTRAL_MOVE",
+        YxCardKeyword.Hexagram => "YX_HEXAGRAM",
         YxCardKeyword.PostAction => "YX_POST_ACTION",
+        YxCardKeyword.Thunder => "YX_THUNDER",
         _ => throw new UnreachableException("unknown keyword"),
     };
 
@@ -37,15 +46,11 @@ public static class YxCardKeywordExtension
     /// <summary>Returns hover tip for the keyword.</summary>
     public static HoverTip GetHoverTip(this YxCardKeyword keyword)
     {
-        if (_hoverTips.TryGetValue(keyword, out var value))
+        if (!_hoverTips.TryGetValue(keyword, out var hoverTip))
         {
-            return value;
-        }
-        else
-        {
-            var hoverTip = new HoverTip(keyword.GetTitle(), keyword.GetDescription());
+            hoverTip = new HoverTip(keyword.GetTitle(), keyword.GetDescription());
             _hoverTips.Add(keyword, hoverTip);
-            return hoverTip;
         }
+        return hoverTip;
     }
 }

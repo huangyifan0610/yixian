@@ -21,7 +21,7 @@ public sealed class YxFlameHexagram() : YxCardModel(0, CardType.Skill, CardRarit
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 
     /// <summary>Hexagram.</summary>
-    public override IEnumerable<YxCardTag> CanonicalYxTags => [YxCardTag.Hexagram];
+    public override IEnumerable<YxCardKeyword> CanonicalYxKeywords => [YxCardKeyword.Hexagram];
 
     /// <summary>Gain hexagram.</summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -30,6 +30,7 @@ public sealed class YxFlameHexagram() : YxCardModel(0, CardType.Skill, CardRarit
 
     /// <summary>Adds necessary hover tips.</summary>
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        YxCardKeyword.Hexagram.GetHoverTip(),
         HoverTipFactory.FromPower<YxHexagramPower>(),
     ];
 
