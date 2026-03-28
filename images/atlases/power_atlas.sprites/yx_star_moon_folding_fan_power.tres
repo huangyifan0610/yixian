@@ -1,0 +1,6 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://ct2c1ul83dypq"]
+
+[ext_resource type="Texture2D" uid="uid://banvg0sgr1s4i" path="res://images/powers/yx_star_moon_folding_fan_power.png" id="1_lkyru"]
+
+[resource]
+atlas = ExtResource("1_lkyru")

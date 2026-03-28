@@ -1,0 +1,6 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://h3cwdtbkv3qs"]
+
+[ext_resource type="Texture2D" uid="uid://cuiqylocftcyg" path="res://images/powers/yx_ultimate_hexagram_base_power.png" id="1_fuapg"]
+
+[resource]
+atlas = ExtResource("1_fuapg")

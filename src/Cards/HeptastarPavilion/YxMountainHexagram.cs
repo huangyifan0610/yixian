@@ -40,7 +40,18 @@ public sealed class YxMountainHexagram() : YxCardModel(1, CardType.Skill, CardRa
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
-        await PowerCmd.Apply<YxTemporaryHpPower>(Owner.Creature, DynamicVars[nameof(YxTemporaryHpPower)].BaseValue, Owner.Creature, this);
-        await PowerCmd.Apply<YxHexagramPower>(Owner.Creature, DynamicVars[nameof(YxHexagramPower)].BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<YxTemporaryHpPower>(
+            Owner.Creature,
+            DynamicVars[nameof(YxTemporaryHpPower)].BaseValue,
+            Owner.Creature,
+            this
+        );
+        await PowerCmd.Apply<YxHexagramPower>(
+            Owner.Creature,
+            DynamicVars[nameof(YxHexagramPower)].BaseValue,
+            Owner.Creature,
+            this
+        );
+
     }
 }

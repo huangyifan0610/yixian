@@ -25,8 +25,8 @@ public sealed class YxThunderAndLighting() : YxCardModel(0, CardType.Attack, Car
     /// <summary>Repeat: deal random damage; gain energy if hexagram is consumed.</summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new RepeatVar(2),
-        new DamageVar(1, ValueProp.Move),
-        new ExtraDamageVar(10),
+        new DamageVar("MinDamage", 1m, ValueProp.Move),
+        new DamageVar("MaxDamage", 10m, ValueProp.Move),
     ];
 
     /// <summary>Adds necessary hover tips.</summary>
@@ -39,7 +39,7 @@ public sealed class YxThunderAndLighting() : YxCardModel(0, CardType.Attack, Car
     protected override bool ShouldGlowGoldInternal => Owner.Creature.GetPower<YxHexagramPower>()?.Amount >= DynamicVars.Repeat.BaseValue;
 
     /// <summary>Deal more damage.</summary>
-    protected override void OnUpgrade() => DynamicVars.ExtraDamage.UpgradeValueBy(3);
+    protected override void OnUpgrade() => DynamicVars["MaxDamage"].UpgradeValueBy(3);
 
     /// <summary>Repeat: deal random damage; gain energy if hexagram is consumed.</summary>
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -53,7 +53,7 @@ public sealed class YxThunderAndLighting() : YxCardModel(0, CardType.Attack, Car
         for (int times = 0; times < repeat; ++times)
         {
             await DamageCmd
-                .Attack(hexagram.Range(RunState, DynamicVars.Damage.IntValue, DynamicVars.ExtraDamage.IntValue, out bool used))
+                .Attack(hexagram.Range(RunState, DynamicVars["MinDamage"].IntValue, DynamicVars["MaxDamage"].IntValue, out bool used))
                 .WithWaitBeforeHit(0.25f, 0.35f)
                 .WithHitFx("vfx/vfx_attack_lightning")
                 .FromCard(this)

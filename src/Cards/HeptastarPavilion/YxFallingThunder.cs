@@ -24,8 +24,8 @@ public sealed class YxFallingThunder() : YxCardModel(2, CardType.Attack, CardRar
 
     /// <summary>Deal random damage to all enemies.</summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(12m, ValueProp.Move),
-        new ExtraDamageVar(22m),
+        new DamageVar("MinDamage", 12m, ValueProp.Move),
+        new DamageVar("MaxDamage", 22m, ValueProp.Move),
     ];
 
     /// <summary>Adds necessary hover tips.</summary>
@@ -38,7 +38,7 @@ public sealed class YxFallingThunder() : YxCardModel(2, CardType.Attack, CardRar
     protected override bool ShouldGlowGoldInternal => Owner.Creature.HasPower<YxHexagramPower>();
 
     /// <summary>Deal more damage.</summary>
-    protected override void OnUpgrade() => DynamicVars.ExtraDamage.UpgradeValueBy(6);
+    protected override void OnUpgrade() => DynamicVars["MaxDamage"].UpgradeValueBy(6);
 
     /// <summary>Deal random damage to all enemies.</summary>
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -46,7 +46,7 @@ public sealed class YxFallingThunder() : YxCardModel(2, CardType.Attack, CardRar
         ArgumentNullException.ThrowIfNull(RunState, nameof(RunState));
         ArgumentNullException.ThrowIfNull(CombatState, nameof(CombatState));
         await DamageCmd
-            .Attack(Owner.Creature.GetPower<YxHexagramPower>().Range(RunState, DynamicVars.Damage.IntValue, DynamicVars.ExtraDamage.IntValue, out bool _))
+            .Attack(Owner.Creature.GetPower<YxHexagramPower>().Range(RunState, DynamicVars["MinDamage"].IntValue, DynamicVars["MaxDamage"].IntValue, out bool _))
             .WithHitFx("vfx/vfx_attack_lightning")
             .FromCard(this)
             .TargetingAllOpponents(CombatState)

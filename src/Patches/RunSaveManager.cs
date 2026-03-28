@@ -63,7 +63,6 @@ public static class RunSaveManagerExtension
     /// <summary>Saves the save.</summary>
     internal static async Task OnSave(this RunSaveManager __instance)
     {
-        Main.LOGGER.Info("================ Save");
         // HACK: "RunManager.Instance.State" is private.
         MethodInfo HackRunManagerState = AccessTools.PropertyGetter(typeof(RunManager), "State");
         var state = HackRunManagerState.Invoke(RunManager.Instance, []) as RunState;
@@ -80,8 +79,6 @@ public static class RunSaveManagerExtension
             CharacterHeptastarPavilion = ModelDb.Character<YxHeptastarPavilion>().Character,
             HexagramRngCounter = state.Rng.GetRngForHexagram().Counter
         };
-
-        Main.LOGGER.Info("================ " + value.HexagramRngCounter);
 
         if (__instance.GetForceSynchronous())
         {

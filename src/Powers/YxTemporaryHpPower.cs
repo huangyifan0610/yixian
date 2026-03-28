@@ -3,8 +3,10 @@ using System.Threading.Tasks;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Rooms;
+using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Yixian.Powers;
 
@@ -17,27 +19,20 @@ public sealed class YxTemporaryHpPower : PowerModel
     /// <summary>The amount counts.</summary>
     public override PowerStackType StackType => PowerStackType.Counter;
 
+    /// <summary>Gains HP and Max HP after power applied.</summary>
     public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
         if (power == this)
         {
-            decimal oldMaxHp = Owner.MaxHp;
-            decimal oldHp = Owner.CurrentHp;
-            decimal newMaxHp = oldMaxHp + amount;
-            decimal newHp = Math.Clamp(oldHp + amount, 1, newMaxHp);
+            decimal newMaxHp = Owner.MaxHp + amount;
+            decimal newHp = Owner.CurrentHp + amount;
 
-            if (oldMaxHp != newMaxHp)
-            {
-                await CreatureCmd.SetMaxHp(Owner, newMaxHp);
-            }
-
-            if (oldHp != newHp)
-            {
-                await CreatureCmd.SetCurrentHp(Owner, newHp);
-            }
+            await CreatureCmd.SetMaxHp(Owner, newMaxHp);
+            await CreatureCmd.SetCurrentHp(Owner, newHp);
         }
     }
 
+    /// <summary>Loses HP and Max HP after the combat.</summary>
     public override async Task AfterCombatEnd(CombatRoom room)
     {
         Flash();
@@ -58,5 +53,24 @@ public sealed class YxTemporaryHpPower : PowerModel
         }
 
         await PowerCmd.Remove(this);
+    }
+
+    /// <summary>Loses Max HP after damage received.</summary>
+    public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)
+    {
+        if (target == Owner)
+        {
+            int oldAmount = Amount;
+            if (result.UnblockedDamage < oldAmount)
+            {
+                SetAmount(oldAmount - result.UnblockedDamage);
+                await CreatureCmd.SetMaxHp(Owner, Owner.MaxHp - result.UnblockedDamage);
+            }
+            else
+            {
+                RemoveInternal();
+                await CreatureCmd.SetMaxHp(Owner, Owner.MaxHp - oldAmount);
+            }
+        }
     }
 }
