@@ -11,33 +11,32 @@ using Yixian.Powers;
 
 namespace Yixian.Cards.HeptastarPavilion;
 
-/// <summary>Heptastar Pavilion - Hunter Hunting Hunter.</summary>
-public sealed class YxHunterHuntingHunter() : YxCardModel(1, CardType.Power, CardRarity.Rare, TargetType.Self)
+/// <summary>Heptastar Pavilion - Propitious Omen - Hexagram.</summary>
+public sealed class YxPropitiousOmenHexagram() : YxCardModel(0, CardType.Skill, CardRarity.Event, TargetType.Self, false)
 {
     /// <summary>See <see cref="YxHeptastarPavilionCardPool"/>.</summary>
     public override CardPoolModel Pool => ModelDb.CardPool<YxHeptastarPavilionCardPool>();
 
-    /// <summary>Gain 'Hunter Hunting Hunter' power; Shuffle.</summary>
+    /// <summary>Exhaust.</summary>
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+
+    /// <summary>Gain hexagram.</summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<YxHunterHuntingHunterPower>(7),
+        new PowerVar<YxHexagramPower>(1),
     ];
 
     /// <summary>Adds necessary hover tips.</summary>
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
-        YxCardKeyword.PostAction.GetHoverTip()
+        HoverTipFactory.FromPower<YxHexagramPower>(),
     ];
 
-    /// <summary>Gain more power.</summary>
-    protected override void OnUpgrade() => DynamicVars[nameof(YxHunterHuntingHunterPower)].UpgradeValueBy(3);
-
-    /// <summary>Gain 'Hunter Hunting Hunter' power; Shuffle.</summary>
+    /// <summary>Gain hexagram.</summary>
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
-        await CardPileCmd.Shuffle(choiceContext, Owner);
-        await PowerCmd.Apply<YxHunterHuntingHunterPower>(
+        await PowerCmd.Apply<YxHexagramPower>(
             Owner.Creature,
-            DynamicVars[nameof(YxHunterHuntingHunterPower)].BaseValue,
+            DynamicVars[nameof(YxHexagramPower)].BaseValue,
             Owner.Creature,
             this
         );

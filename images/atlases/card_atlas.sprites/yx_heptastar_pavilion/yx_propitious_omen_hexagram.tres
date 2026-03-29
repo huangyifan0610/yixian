@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://o4umee1jsu8h"]
+
+[ext_resource type="Texture2D" uid="uid://bqxah7y5172rk" path="res://images/packed/card_portraits/yx_heptastar_pavilion/yx_propitious_omen_hexagram.png" id="1_nbg8p"]
+
+[resource]
+atlas = ExtResource("1_nbg8p")
+region = Rect2(12, 32, 168, 132)
