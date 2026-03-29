@@ -81,7 +81,7 @@ public sealed class Main
         ModHelper.AddModelToPool<YxHeptastarPavilionCardPool, YxPalmThunder>();
         ModHelper.AddModelToPool<YxHeptastarPavilionCardPool, YxPerfectlyPlanned>();
         ModHelper.AddModelToPool<YxHeptastarPavilionCardPool, YxPolarisCittaDharma>();
-        ModHelper.AddModelToPool<YxHeptastarPavilionCardPool, YxPreemptiveStrtike>();
+        ModHelper.AddModelToPool<YxHeptastarPavilionCardPool, YxPreemptiveStrike>();
         ModHelper.AddModelToPool<YxHeptastarPavilionCardPool, YxPropitiousOmen>();
         ModHelper.AddModelToPool<YxHeptastarPavilionCardPool, YxQiTherapy>();
         ModHelper.AddModelToPool<YxHeptastarPavilionCardPool, YxRepelCittaDharma>();

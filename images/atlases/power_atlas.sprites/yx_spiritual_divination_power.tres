@@ -1,0 +1,6 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://lrkur1hpkgw"]
+
+[ext_resource type="Texture2D" uid="uid://bl55td8bgueo8" path="res://images/powers/yx_spiritual_divination_power.png" id="1_8ca23"]
+
+[resource]
+atlas = ExtResource("1_8ca23")

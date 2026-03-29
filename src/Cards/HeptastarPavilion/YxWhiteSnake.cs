@@ -33,6 +33,9 @@ public sealed class YxWhiteSnake() : YxCardModel(0, CardType.Attack, CardRarity.
         HoverTipFactory.FromPower<YxHexagramPower>(),
     ];
 
+    /// <summary>Glow if we have enough hexagram.</summary>
+    protected override bool ShouldGlowGoldInternal => Owner.Creature.HasPower<YxHexagramPower>();
+
     /// <summary>Deal more damage.</summary>
     protected override void OnUpgrade() => DynamicVars.Damage.UpgradeValueBy(3);
 

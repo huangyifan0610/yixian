@@ -15,14 +15,14 @@ using Yixian.Vars;
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>Heptastar Pavilion - Dance Of The Dragonfly.</summary>
-public sealed class YxDanceOfTheDragonfly() : YxCardModel(0, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+public sealed class YxDanceOfTheDragonfly() : YxCardModel(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     /// <summary>See <see cref="YxHeptastarPavilionCardPool"/>.</summary>
     public override CardPoolModel Pool => ModelDb.CardPool<YxHeptastarPavilionCardPool>();
 
     /// <summary>Deal damage; Have chance to draw cards.</summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(4, ValueProp.Move),
+        new DamageVar(9, ValueProp.Move),
         new ChanceVar(15),
         new CardsVar(2),
     ];
@@ -35,8 +35,8 @@ public sealed class YxDanceOfTheDragonfly() : YxCardModel(0, CardType.Attack, Ca
     /// <summary>Glow if we have hexagram.</summary>
     protected override bool ShouldGlowGoldInternal => Owner.Creature.HasPower<YxHexagramPower>();
 
-    /// <summary>Deal more damage.</summary>
-    protected override void OnUpgrade() => DynamicVars.Damage.UpgradeValueBy(4);
+    /// <summary>Draw more cards.</summary>
+    protected override void OnUpgrade() => DynamicVars.Cards.UpgradeValueBy(1);
 
     /// <summary>Deal damage; Have chance to draw cards.</summary>
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

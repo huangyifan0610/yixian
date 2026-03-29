@@ -11,35 +11,34 @@ using Yixian.Powers;
 
 namespace Yixian.Cards.HeptastarPavilion;
 
-/// <summary>Heptastar Pavilion - Hunter Hunting Hunter.</summary>
-public sealed class YxHunterHuntingHunter() : YxCardModel(1, CardType.Power, CardRarity.Rare, TargetType.Self)
+/// <summary>Heptastar Pavilion - Preemptive Strike.</summary>
+public sealed class YxPreemptiveStrike() : YxCardModel(2, CardType.Power, CardRarity.Rare, TargetType.Self)
 {
     /// <summary>See <see cref="YxHeptastarPavilionCardPool"/>.</summary>
     public override CardPoolModel Pool => ModelDb.CardPool<YxHeptastarPavilionCardPool>();
 
-    /// <summary>Gain 'Hunter Hunting Hunter' power; Shuffle.</summary>
+    /// <summary>Gain Preemptive Strike power.</summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<YxHunterHuntingHunterPower>(7),
+        new PowerVar<YxPreemptiveStrikePower>(1),
     ];
 
     /// <summary>Adds necessary hover tips.</summary>
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
-        YxCardKeyword.PostAction.GetHoverTip()
+        YxCardKeyword.PostAction.GetHoverTip(),
     ];
 
-    /// <summary>Gain more power.</summary>
-    protected override void OnUpgrade() => DynamicVars[nameof(YxHunterHuntingHunterPower)].UpgradeValueBy(3);
+    /// <summary>Become innate.</summary>
+    protected override void OnUpgrade() => AddKeyword(CardKeyword.Innate);
 
-    /// <summary>Gain 'Hunter Hunting Hunter' power; Shuffle.</summary>
+    /// <summary>Gain Preemptive Strike power.</summary>
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
-        await PowerCmd.Apply<YxHunterHuntingHunterPower>(
+        await PowerCmd.Apply<YxPreemptiveStrikePower>(
             Owner.Creature,
-            DynamicVars[nameof(YxHunterHuntingHunterPower)].BaseValue,
+            DynamicVars[nameof(YxPreemptiveStrikePower)].BaseValue,
             Owner.Creature,
             this
         );
-        await CardPileCmd.Shuffle(choiceContext, Owner);
     }
 }

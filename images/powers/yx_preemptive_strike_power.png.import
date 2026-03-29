@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cau26a7jyjxrr"
-path="res://.godot/imported/yx_preemptive_strtike.png-f6cf5049328258375a28fc4734439d8e.ctex"
+uid="uid://cvj8g7ogae16i"
+path="res://.godot/imported/yx_preemptive_strike_power.png-36f424398a4632330a7c851ecc6fc0ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/packed/card_portraits/yx_heptastar_pavilion/yx_preemptive_strtike.png"
-dest_files=["res://.godot/imported/yx_preemptive_strtike.png-f6cf5049328258375a28fc4734439d8e.ctex"]
+source_file="res://images/powers/yx_preemptive_strike_power.png"
+dest_files=["res://.godot/imported/yx_preemptive_strike_power.png-36f424398a4632330a7c851ecc6fc0ad.ctex"]
 
 [params]
 

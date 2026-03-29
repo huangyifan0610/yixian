@@ -53,19 +53,14 @@ public sealed class YxAllOrNothing() : YxCardModel(2, CardType.Attack, CardRarit
         ArgumentNullException.ThrowIfNull(cardPlay.Target, nameof(cardPlay.Target));
         ArgumentNullException.ThrowIfNull(RunState, nameof(RunState));
         await DamageCmd
-            .Attack(Owner
-                .Creature
-                .GetPower<YxHexagramPower>()
-                .Range(RunState, DynamicVars["MinDamage"].IntValue, DynamicVars["MaxDamage"].IntValue, out bool _)
-            )
+            .Attack(Owner.Creature.GetPower<YxHexagramPower>()
+                .Range(RunState, DynamicVars["MinDamage"].IntValue, DynamicVars["MaxDamage"].IntValue, out bool _))
             .FromCard(this)
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
         await CreatureCmd.GainBlock(
             Owner.Creature,
-            Owner
-                .Creature
-                .GetPower<YxHexagramPower>()
+            Owner.Creature.GetPower<YxHexagramPower>()
                 .Range(RunState, DynamicVars["MinBlock"].IntValue, DynamicVars["MaxBlock"].IntValue, out bool _),
             ValueProp.Move,
             cardPlay

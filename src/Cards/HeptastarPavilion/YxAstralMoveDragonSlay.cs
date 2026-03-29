@@ -53,7 +53,7 @@ public sealed class YxAstralMoveDragonSlay() : YxCardModel(0, CardType.Attack, C
     /// <summary>Deal damage with bonus from star power.</summary>
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+        ArgumentNullException.ThrowIfNull(cardPlay.Target, nameof(cardPlay.Target));
         await DamageCmd
             .Attack(DynamicVars.CalculatedDamage.Calculate(cardPlay.Target))
             .FromCard(this)

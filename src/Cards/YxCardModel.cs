@@ -34,7 +34,12 @@ public abstract class YxCardModel(int canonicalEnergyCost, CardType type, CardRa
     public bool IsOnStarPoint => YxStarPointPower.Test(this);
 
     /// <summary>Represents whether the post action is effective.</summary>
-    public bool PostAction = false;
+    public bool PostAction
+    {
+        get => _postAction || Owner.Creature.HasPower<YxPreemptiveStrikePower>();
+        set => _postAction = value;
+    }
+    private bool _postAction = false;
 
     /// <summary>Adds new <paramref name="keyword"/> to the mutable card.</summary>
     public void AddYxKeyword(YxCardKeyword keyword)

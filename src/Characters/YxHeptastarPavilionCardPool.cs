@@ -62,7 +62,7 @@ public sealed class YxHeptastarPavilionCardPool : CardPoolModel
         ModelDb.Card<YxPalmThunder>(),
         ModelDb.Card<YxPerfectlyPlanned>(),
         ModelDb.Card<YxPolarisCittaDharma>(),
-        ModelDb.Card<YxPreemptiveStrtike>(),
+        ModelDb.Card<YxPreemptiveStrike>(),
         ModelDb.Card<YxPropitiousOmen>(),
         ModelDb.Card<YxQiTherapy>(),
         ModelDb.Card<YxRepelCittaDharma>(),

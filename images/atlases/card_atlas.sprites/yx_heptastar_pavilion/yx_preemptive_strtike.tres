@@ -1,7 +1,0 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://biq02psper2yy"]
-
-[ext_resource type="Texture2D" uid="uid://cau26a7jyjxrr" path="res://images/packed/card_portraits/yx_heptastar_pavilion/yx_preemptive_strtike.png" id="1_r34ke"]
-
-[resource]
-atlas = ExtResource("1_r34ke")
-region = Rect2(12, 36, 168, 132)

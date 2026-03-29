@@ -1,0 +1,6 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://d1dk7186q2v3o"]
+
+[ext_resource type="Texture2D" uid="uid://cvj8g7ogae16i" path="res://images/powers/yx_preemptive_strike_power.png" id="1_wxskt"]
+
+[resource]
+atlas = ExtResource("1_wxskt")

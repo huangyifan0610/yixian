@@ -45,11 +45,9 @@ public sealed class YxWildHorsesPartTheMane() : YxCardModel(1, CardType.Skill, C
         ArgumentNullException.ThrowIfNull(RunState, nameof(RunState));
         await CreatureCmd.GainBlock(
             Owner.Creature,
-            Owner
-                .Creature
-                .GetPower<YxHexagramPower>()
+            Owner.Creature.GetPower<YxHexagramPower>()
                 .Range(RunState, DynamicVars["MinBlock"].IntValue, DynamicVars["MaxBlock"].IntValue, out bool _),
-                ValueProp.Move,
+            ValueProp.Move,
             cardPlay
         );
     }

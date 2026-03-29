@@ -44,7 +44,7 @@ public sealed class YxAstralMoveTwinSwallows() : YxCardModel(0, CardType.Attack,
     /// <summary>Deal damage; Deal damage on star point and post action; Draw cards.</summary>
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+        ArgumentNullException.ThrowIfNull(cardPlay.Target, nameof(cardPlay.Target));
 
         bool starPoint = IsOnStarPoint;
         bool postAction = await TryPostAction(choiceContext, cardPlay);
