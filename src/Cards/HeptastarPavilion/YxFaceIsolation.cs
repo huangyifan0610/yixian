@@ -45,7 +45,7 @@ public sealed class YxFaceIsolation() : YxCardModel(0, CardType.Skill, CardRarit
         ArgumentNullException.ThrowIfNull(CombatState, nameof(CombatState));
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
         await PowerCmd.Apply<WeakPower>(
-            CombatState.Enemies,
+            CombatState.HittableEnemies,
             DynamicVars.Weak.BaseValue,
             Owner.Creature,
             this

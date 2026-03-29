@@ -52,7 +52,7 @@ public sealed class YxWindHexagram() : YxCardModel(1, CardType.Skill, CardRarity
         if (IsUpgraded)
         {
             ArgumentNullException.ThrowIfNull(CombatState, nameof(CombatState));
-            await PowerCmd.Apply<WeakPower>(CombatState.Enemies, DynamicVars.Weak.BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<WeakPower>(CombatState.HittableEnemies, DynamicVars.Weak.BaseValue, Owner.Creature, this);
         }
         else
         {

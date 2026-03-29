@@ -52,7 +52,7 @@ public sealed class YxZhenHexagram() : YxCardModel(1, CardType.Skill, CardRarity
         if (IsUpgraded)
         {
             ArgumentNullException.ThrowIfNull(CombatState, nameof(CombatState));
-            await PowerCmd.Apply<VulnerablePower>(CombatState.Enemies, DynamicVars.Vulnerable.BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<VulnerablePower>(CombatState.HittableEnemies, DynamicVars.Vulnerable.BaseValue, Owner.Creature, this);
         }
         else
         {

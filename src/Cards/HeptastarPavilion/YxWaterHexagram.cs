@@ -23,7 +23,7 @@ public sealed class YxWaterHexagram() : YxCardModel(0, CardType.Skill, CardRarit
 
     /// <summary>Gain hexagram; Gain energy on star point; Become star point.</summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<YxHexagramPower>(2),
+        new PowerVar<YxHexagramPower>(1),
         new EnergyVar(1),
     ];
 

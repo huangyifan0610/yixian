@@ -45,7 +45,7 @@ public sealed class YxStrikeVacuity() : YxCardModel(0, CardType.Skill, CardRarit
         ArgumentNullException.ThrowIfNull(CombatState, nameof(CombatState));
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
         await PowerCmd.Apply<VulnerablePower>(
-            CombatState.Enemies,
+            CombatState.HittableEnemies,
             DynamicVars.Vulnerable.BaseValue,
             Owner.Creature,
             this

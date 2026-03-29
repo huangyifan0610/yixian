@@ -40,13 +40,17 @@ public sealed class YxPalmThunder() : YxCardModel(1, CardType.Attack, CardRarity
     /// <summary>Deal more damage.</summary>
     protected override void OnUpgrade() => DynamicVars["MaxDamage"].UpgradeValueBy(4);
 
-    /// <summary>Deal random damage to all enemies.</summary>
+    /// <summary>Deal random damage.</summary>
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         ArgumentNullException.ThrowIfNull(cardPlay.Target, nameof(cardPlay.Target));
         ArgumentNullException.ThrowIfNull(RunState, nameof(RunState));
+        decimal damage = Owner
+            .Creature
+            .GetPower<YxHexagramPower>()
+            .Range(RunState, DynamicVars["MinDamage"].IntValue, DynamicVars["MaxDamage"].IntValue, out bool _);
         await DamageCmd
-            .Attack(Owner.Creature.GetPower<YxHexagramPower>().Range(RunState, DynamicVars["MinDamage"].IntValue, DynamicVars["MaxDamage"].IntValue, out bool _))
+            .Attack(damage)
             .WithHitFx("vfx/vfx_attack_lightning")
             .FromCard(this)
             .Targeting(cardPlay.Target)
