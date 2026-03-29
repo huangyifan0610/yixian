@@ -17,6 +17,7 @@ public static class NCardLibrary_Ready
 {
     // Private members and methods in "NCardLibrary".
     private static readonly FieldInfo _poolFilters = AccessTools.Field(typeof(NCardLibrary), "_poolFilters");
+    private static readonly FieldInfo _cardPoolFilters = AccessTools.Field(typeof(NCardLibrary), "_cardPoolFilters");
     private static readonly FieldInfo _lastHoveredControl = AccessTools.Field(typeof(NCardLibrary), "_lastHoveredControl");
     private static readonly MethodInfo UpdateCardPoolFilter = AccessTools.Method(typeof(NCardLibrary), "UpdateCardPoolFilter", [typeof(NCardPoolFilter)]);
 
@@ -27,17 +28,19 @@ public static class NCardLibrary_Ready
         var scene = PreloadManager.Cache.GetScene(SceneHelper.GetScenePath("screens/card_library/library_pool_toggle"));
         var parent = __instance.GetNode<GridContainer>("Sidebar/MarginContainer/TopVBox/PoolFilters");
         var poolFilters = _poolFilters.GetValue(__instance) as Dictionary<NCardPoolFilter, Func<CardModel, bool>>;
-        ArgumentNullException.ThrowIfNull(poolFilters, "__instance._poolFilters");
+        var cardPoolFilters = _cardPoolFilters.GetValue(__instance) as Dictionary<CharacterModel, NCardPoolFilter>;
 
-        __instance.AddCardPoolFilter<YxHeptastarPavilionCardPool>(scene, parent, poolFilters);
+        ArgumentNullException.ThrowIfNull(poolFilters, nameof(poolFilters));
+        ArgumentNullException.ThrowIfNull(cardPoolFilters, nameof(cardPoolFilters));
+
+        var filter = __instance.AddCardPoolFilter<YxHeptastarPavilionCardPool>(scene, parent);
+        poolFilters.Add(filter, card => card.Pool is YxHeptastarPavilionCardPool);
+        cardPoolFilters.Add(ModelDb.Character<YxHeptastarPavilion>(), filter);
     }
 
-    private static void AddCardPoolFilter<T>(
-        this NCardLibrary __instance,
-        PackedScene scene,
-        GridContainer parent,
-        Dictionary<NCardPoolFilter, Func<CardModel, bool>> poolFilters)
-    where T : CardPoolModel
+    private static NCardPoolFilter AddCardPoolFilter<T>(this NCardLibrary __instance, PackedScene scene, GridContainer parent)
+    where
+        T : CardPoolModel
     {
         // Generates scene instance.
         var filter = scene.Instantiate<NCardPoolFilter>();
@@ -59,7 +62,7 @@ public static class NCardLibrary_Ready
         filter.Connect(Control.SignalName.FocusEntered, Callable.From(
             () => _lastHoveredControl.SetValue(__instance, filter))
         );
-        poolFilters.Add(filter, card => card.Pool is T);
         Main.LOGGER.Info("New card pool has been added to the library: " + filter.Name);
+        return filter;
     }
 }

@@ -27,6 +27,7 @@ public sealed class YxThunderAndLighting() : YxCardModel(0, CardType.Attack, Car
         new RepeatVar(2),
         new DamageVar("MinDamage", 1m, ValueProp.Move),
         new DamageVar("MaxDamage", 10m, ValueProp.Move),
+        new EnergyVar(1),
     ];
 
     /// <summary>Adds necessary hover tips.</summary>
@@ -59,10 +60,9 @@ public sealed class YxThunderAndLighting() : YxCardModel(0, CardType.Attack, Car
                 .FromCard(this)
                 .Targeting(cardPlay.Target)
                 .Execute(choiceContext);
-
             if (used)
             {
-                await PlayerCmd.GainEnergy(1, Owner);
+                await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
             }
         }
     }

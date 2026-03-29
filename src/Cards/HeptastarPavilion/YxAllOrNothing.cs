@@ -52,22 +52,23 @@ public sealed class YxAllOrNothing() : YxCardModel(2, CardType.Attack, CardRarit
     {
         ArgumentNullException.ThrowIfNull(cardPlay.Target, nameof(cardPlay.Target));
         ArgumentNullException.ThrowIfNull(RunState, nameof(RunState));
-
-        decimal damage = Owner
-            .Creature
-            .GetPower<YxHexagramPower>()
-            .Range(RunState, DynamicVars["MinDamage"].IntValue, DynamicVars["MaxDamage"].IntValue, out bool _);
         await DamageCmd
-            .Attack(damage)
-            .WithHitFx("vfx/vfx_attack_lightning")
+            .Attack(Owner
+                .Creature
+                .GetPower<YxHexagramPower>()
+                .Range(RunState, DynamicVars["MinDamage"].IntValue, DynamicVars["MaxDamage"].IntValue, out bool _)
+            )
             .FromCard(this)
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
-
-        decimal block = Owner
-            .Creature
-            .GetPower<YxHexagramPower>()
-            .Range(RunState, DynamicVars["MinBlock"].IntValue, DynamicVars["MaxBlock"].IntValue, out bool _);
-        await CreatureCmd.GainBlock(Owner.Creature, block, ValueProp.Move, cardPlay);
+        await CreatureCmd.GainBlock(
+            Owner.Creature,
+            Owner
+                .Creature
+                .GetPower<YxHexagramPower>()
+                .Range(RunState, DynamicVars["MinBlock"].IntValue, DynamicVars["MaxBlock"].IntValue, out bool _),
+            ValueProp.Move,
+            cardPlay
+        );
     }
 }
