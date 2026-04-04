@@ -33,7 +33,7 @@ public sealed class YxTemporaryHpPower : PowerModel
     }
 
     /// <summary>Loses HP and Max HP after the combat.</summary>
-    public override async Task AfterCombatEnd(CombatRoom room)
+    public override async Task AfterCombatVictory(CombatRoom room)
     {
         Flash();
 
@@ -64,12 +64,12 @@ public sealed class YxTemporaryHpPower : PowerModel
             if (result.UnblockedDamage < oldAmount)
             {
                 SetAmount(oldAmount - result.UnblockedDamage);
-                await CreatureCmd.SetMaxHp(Owner, Owner.MaxHp - result.UnblockedDamage);
+                await CreatureCmd.SetMaxHp(Owner, Math.Max(1m, Owner.MaxHp - result.UnblockedDamage));
             }
             else
             {
                 RemoveInternal();
-                await CreatureCmd.SetMaxHp(Owner, Owner.MaxHp - oldAmount);
+                await CreatureCmd.SetMaxHp(Owner, Math.Max(1m, Owner.MaxHp - oldAmount));
             }
         }
     }

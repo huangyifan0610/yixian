@@ -24,18 +24,16 @@ public sealed class YxCovertShift() : YxCardModel(3, CardType.Skill, CardRarity.
         new PowerVar<YxCovertShiftPower>(1),
     ];
 
-    /// <summary>Remove Innate keyword.</summary>
+    /// <summary>Remove ethereal keyword.</summary>
     protected override void OnUpgrade() => RemoveKeyword(CardKeyword.Ethereal);
 
     /// <summary>Gain Covert Shift power.</summary>
-    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-    {
-        await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
-        await PowerCmd.Apply<YxCovertShiftPower>(
-            Owner.Creature,
-            DynamicVars[nameof(YxCovertShiftPower)].BaseValue,
-            Owner.Creature,
-            this
-        );
-    }
+    protected override Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay) =>
+        CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay)
+            .ContinueWith(_ => PowerCmd.Apply<YxCovertShiftPower>(
+                Owner.Creature,
+                DynamicVars[nameof(YxCovertShiftPower)].BaseValue,
+                Owner.Creature,
+                this
+            ));
 }

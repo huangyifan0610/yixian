@@ -51,7 +51,7 @@ public sealed class YxGoldenRoosterIndependence() : YxCardModel(1, CardType.Atta
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
 
-        if (Owner.Creature.GetPower<YxHexagramPower>().Test(RunState, DynamicVars["Chance"].BaseValue, out bool _))
+        if (Owner.Creature.GetPower<YxHexagramPower>().Test(RunState, DynamicVars[ChanceVar.KEY].BaseValue, out bool _))
         {
             await PowerCmd.Apply<WeakPower>(cardPlay.Target, DynamicVars.Weak.BaseValue, Owner.Creature, this);
         }

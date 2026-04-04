@@ -49,7 +49,7 @@ public sealed class YxHeptastarPavilionCardPool : CardPoolModel
         ModelDb.Card<YxHeavenHexagram>(),
         ModelDb.Card<YxHeptastarSoulstat>(),
         ModelDb.Card<YxHexagramFormacide>(),
-        ModelDb.Card<YxHexgramsSpiritResurrection>(),
+        ModelDb.Card<YxHexagramsSpiritResurrection>(),
         ModelDb.Card<YxHunterBecomesPreyer>(),
         ModelDb.Card<YxHunterHuntingHunter>(),
         ModelDb.Card<YxImposing>(),

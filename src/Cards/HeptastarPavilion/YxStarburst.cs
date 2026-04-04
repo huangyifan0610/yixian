@@ -41,7 +41,7 @@ public sealed class YxStarburst() : YxCardModel(0, CardType.Attack, CardRarity.A
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+        ArgumentNullException.ThrowIfNull(cardPlay.Target, nameof(cardPlay.Target));
 
         decimal damage = DynamicVars.Damage.BaseValue;
         var starPower = Owner.Creature.GetPower<YxStarPowerPower>();

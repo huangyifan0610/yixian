@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://11n32xeabyns"
-path="res://.godot/imported/yx_hexgrams_spirit_resurrection.png-3b3a683ce77040cd03799399401ee8ea.ctex"
+path="res://.godot/imported/yx_hexagrams_spirit_resurrection.png-09b44edacb81dd81bd4e80b13afb0190.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/packed/card_portraits/yx_heptastar_pavilion/yx_hexgrams_spirit_resurrection.png"
-dest_files=["res://.godot/imported/yx_hexgrams_spirit_resurrection.png-3b3a683ce77040cd03799399401ee8ea.ctex"]
+source_file="res://images/packed/card_portraits/yx_heptastar_pavilion/yx_hexagrams_spirit_resurrection.png"
+dest_files=["res://.godot/imported/yx_hexagrams_spirit_resurrection.png-09b44edacb81dd81bd4e80b13afb0190.ctex"]
 
 [params]
 

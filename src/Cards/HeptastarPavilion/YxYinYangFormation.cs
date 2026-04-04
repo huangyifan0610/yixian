@@ -46,6 +46,7 @@ public sealed class YxYinYangFormation() : YxCardModel(0, CardType.Skill, CardRa
         var hexagram = hexagramVar.Calculate(null);
         if (hexagram > 0)
         {
+            await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
             await PowerCmd.Apply<YxTemporaryHpPower>(Owner.Creature, hexagram, Owner.Creature, this);
 
             if (IsUpgraded)

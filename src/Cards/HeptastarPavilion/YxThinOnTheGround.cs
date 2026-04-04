@@ -46,7 +46,7 @@ public sealed class YxThinOnTheGround() : YxCardModel(1, CardType.Skill, CardRar
     {
         ArgumentNullException.ThrowIfNull(RunState, nameof(RunState));
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
-        decimal doubled = Owner.Creature.GetPower<YxHexagramPower>().Test(RunState, DynamicVars["Chance"].BaseValue, out bool _) ? 2m : 1m;
+        decimal doubled = Owner.Creature.GetPower<YxHexagramPower>().Test(RunState, DynamicVars[ChanceVar.KEY].BaseValue, out bool _) ? 2m : 1m;
         await PowerCmd.Apply<YxTemporaryHpPower>(
             Owner.Creature,
             DynamicVars[nameof(YxTemporaryHpPower)].BaseValue * doubled,

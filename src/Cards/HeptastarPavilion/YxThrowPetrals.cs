@@ -1,35 +1,43 @@
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.ValueProps;
+using MegaCrit.Sts2.Core.Models.Powers;
 using Yixian.Characters;
+using Yixian.Powers;
 
 namespace Yixian.Cards.HeptastarPavilion;
 
 /// <summary>Heptastar Pavilion - Throw Petrals.</summary>
-public sealed class YxThrowPetrals() : YxCardModel(1, CardType.Attack, CardRarity.Status, TargetType.AnyEnemy)
+public sealed class YxThrowPetrals() : YxCardModel(1, CardType.Power, CardRarity.Rare, TargetType.Self)
 {
     /// <summary>See <see cref="YxHeptastarPavilionCardPool"/>.</summary>
     public override CardPoolModel Pool => ModelDb.CardPool<YxHeptastarPavilionCardPool>();
 
+    /// <summary>Gain 'Throw Petrals' power.</summary>
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(6, ValueProp.Move),
+        new PowerVar<YxThrowPetralsPower>(1),
     ];
 
-    protected override void OnUpgrade() => DynamicVars.Damage.UpgradeValueBy(3);
+    /// <summary>Adds necessary hover tips.</summary>
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        HoverTipFactory.FromPower<PoisonPower>(),
+    ];
 
-    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-    {
-        ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
-        await DamageCmd
-            .Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
-            .Targeting(cardPlay.Target)
-            .Execute(choiceContext);
-    }
+    /// <summary>Become innate.</summary>
+    protected override void OnUpgrade() => AddKeyword(CardKeyword.Innate);
+
+    /// <summary>Gain 'Throw Petrals' power.</summary>
+    protected override Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay) =>
+        CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay)
+            .ContinueWith(_ => PowerCmd.Apply<YxThrowPetralsPower>(
+                Owner.Creature,
+                DynamicVars[nameof(YxThrowPetralsPower)].BaseValue,
+                Owner.Creature,
+                this
+            ));
 }

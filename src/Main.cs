@@ -68,7 +68,7 @@ public sealed class Main
         ModHelper.AddModelToPool<YxHeptastarPavilionCardPool, YxHeavenHexagram>();
         ModHelper.AddModelToPool<YxHeptastarPavilionCardPool, YxHeptastarSoulstat>();
         ModHelper.AddModelToPool<YxHeptastarPavilionCardPool, YxHexagramFormacide>();
-        ModHelper.AddModelToPool<YxHeptastarPavilionCardPool, YxHexgramsSpiritResurrection>();
+        ModHelper.AddModelToPool<YxHeptastarPavilionCardPool, YxHexagramsSpiritResurrection>();
         ModHelper.AddModelToPool<YxHeptastarPavilionCardPool, YxHunterBecomesPreyer>();
         ModHelper.AddModelToPool<YxHeptastarPavilionCardPool, YxHunterHuntingHunter>();
         ModHelper.AddModelToPool<YxHeptastarPavilionCardPool, YxImposing>();

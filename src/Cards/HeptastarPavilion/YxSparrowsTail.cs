@@ -49,7 +49,7 @@ public sealed class YxSparrowsTail() : YxCardModel(1, CardType.Attack, CardRarit
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
 
-        if (Owner.Creature.GetPower<YxHexagramPower>().Test(RunState, DynamicVars["Chance"].BaseValue, out bool _))
+        if (Owner.Creature.GetPower<YxHexagramPower>().Test(RunState, DynamicVars[ChanceVar.KEY].BaseValue, out bool _))
         {
             await DamageCmd
                 .Attack(DynamicVars["ExtraDamage"].BaseValue)

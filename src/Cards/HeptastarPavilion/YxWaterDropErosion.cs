@@ -44,7 +44,7 @@ public sealed class YxWaterDropErosion() : YxCardModel(1, CardType.Attack, CardR
     /// <summary>Post action: Apply poison; Draw cards if target has poison.</summary>
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+        ArgumentNullException.ThrowIfNull(cardPlay.Target, nameof(cardPlay.Target));
         if (await TryPostAction(choiceContext, cardPlay))
         {
             await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
