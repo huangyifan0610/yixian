@@ -48,11 +48,21 @@ public sealed class YxHexagramsSpiritResurrection() : YxCardModel(0, CardType.Sk
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
         for (int i = 0; i < success; ++i)
         {
-            await CreatureCmd.Heal(Owner.Creature, DynamicVars[nameof(YxTemporaryHpPower)].BaseValue * 2);
+            await PowerCmd.Apply<YxTemporaryHpPower>(
+                Owner.Creature,
+                DynamicVars[nameof(YxTemporaryHpPower)].BaseValue * 2,
+                Owner.Creature,
+                this
+            );
         }
         for (int i = success; i < repeat; ++i)
         {
-            await CreatureCmd.Heal(Owner.Creature, DynamicVars[nameof(YxTemporaryHpPower)].BaseValue);
+            await PowerCmd.Apply<YxTemporaryHpPower>(
+                Owner.Creature,
+                DynamicVars[nameof(YxTemporaryHpPower)].BaseValue,
+                Owner.Creature,
+                this
+            );
         }
     }
 }

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj5txikjd6f0r"]
+
+[ext_resource type="Script" uid="uid://dys63ay8dnner" path="res://src/Nodes/Screens/Shops/MerchantCharacter.cs" id="1_ulypt"]
+[ext_resource type="SpineSkeletonDataResource" uid="uid://c45tkfp14dyf4" path="res://animations/characters/yx_jiang_ximing/yx_jiang_ximing_skel_data.tres" id="2_ulypt"]
+
+[node name="YxHeptastarPavilionMerchant" type="Node2D"]
+script = ExtResource("1_ulypt")
+
+[node name="SpineSprite" type="SpineSprite" parent="."]
+skeleton_data_res = ExtResource("2_ulypt")
+preview_skin = "default"
+preview_animation = "Game_Idle"
+preview_frame = false
+preview_time = 0.0
+scale = Vector2(0.6, 0.6)

@@ -170,18 +170,6 @@ public static class CharacterModel_IconPath
     );
 }
 
-/// <summary>See <see cref="CharacterModel.TrailPath"/>.</summary>
-[HarmonyPatch(typeof(CharacterModel), nameof(CharacterModel.TrailPath), MethodType.Getter)]
-public static class CharacterModel_TrailPath
-{
-    [HarmonyPrefix]
-    public static bool Prefix(ref string __result, CharacterModel __instance) => __instance.Patch(ref __result,
-        // TODO: Patch CharacterModel.TrailPath
-        // hp => SceneHelper.GetScenePath("vfx/card_trail_" + hp.Character.Lowercase())
-        hp => SceneHelper.GetScenePath("vfx/card_trail_ironclad")
-    );
-}
-
 /// <summary>See <see cref="CharacterModel.EnergyCounterPath"/>.</summary>
 [HarmonyPatch(typeof(CharacterModel), nameof(CharacterModel.EnergyCounterPath), MethodType.Getter)]
 public static class CharacterModel_EnergyCounterPath
@@ -200,9 +188,7 @@ public static class CharacterModel_MerchantAnimPath
 {
     [HarmonyPrefix]
     public static bool Prefix(ref string __result, CharacterModel __instance) => __instance.Patch(ref __result,
-        // TODO: Patch CharacterModel.MerchantAnimPath
-        // hp => SceneHelper.GetScenePath("merchant/characters/" + hp.Character.Lowercase() + "_merchant")
-        hp => SceneHelper.GetScenePath("merchant/characters/ironclad_merchant")
+        hp => SceneHelper.GetScenePath("merchant/characters/" + hp.Character.Lowercase() + "_merchant")
     );
 }
 
@@ -210,10 +196,8 @@ public static class CharacterModel_MerchantAnimPath
 [HarmonyPatch(typeof(CharacterModel), nameof(CharacterModel.RestSiteAnimPath), MethodType.Getter)]
 public static class CharacterModel_RestSiteAnimPath
 {
-    // TODO: Patch CharacterModel.RestSiteAnimPath
-    // hp => SceneHelper.GetScenePath("rest_site/characters/" + hp.Character.Lowercase() + "_rest_site")
     [HarmonyPrefix]
     public static bool Prefix(ref string __result, CharacterModel __instance) => __instance.Patch(ref __result,
-        hp => SceneHelper.GetScenePath("rest_site/characters/ironclad_rest_site")
+        hp => SceneHelper.GetScenePath("rest_site/characters/" + hp.Character.Lowercase() + "_rest_site")
     );
 }

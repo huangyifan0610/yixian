@@ -5,7 +5,6 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Rooms;
 
 namespace Yixian.Powers;
 
@@ -25,16 +24,10 @@ public sealed class YxVitalityBlossomPower : PowerModel
     ];
 
     /// <remarks>Convert damage to healing after the combat.</remarks>
-    public override async Task AfterCombatVictoryEarly(CombatRoom room)
+    public async Task OnCombatEnd(YxTemporaryHpPower temporaryHp)
     {
         Flash();
-
-        var temporaryHp = Owner.GetPower<YxTemporaryHpPower>();
-        if (temporaryHp != null)
-        {
-            await CreatureCmd.Heal(Owner, Math.Min(temporaryHp.Amount, Amount));
-        }
-
+        await CreatureCmd.Heal(Owner, Math.Min(temporaryHp.Amount, Amount));
         await PowerCmd.Remove(this);
     }
 }

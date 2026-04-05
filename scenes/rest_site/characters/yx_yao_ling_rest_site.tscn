@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://pqktdghtchlq"]
+
+[ext_resource type="Script" uid="uid://d2xtslnd5tp2k" path="res://src/Nodes/RestSite/RestSiteCharacter.cs" id="1_qkggq"]
+[ext_resource type="SpineSkeletonDataResource" uid="uid://brdf0o2xfadsw" path="res://animations/characters/yx_yao_ling/yx_yao_ling_skel_data.tres" id="2_qkggq"]
+[ext_resource type="PackedScene" uid="uid://ug0k8kvhn5jf" path="res://scenes/ui/yx_selection_reticle.tscn" id="3_86v01"]
+
+[sub_resource type="GDScript" id="GDScript_qkggq"]
+script/source = "extends SpineSprite
+
+func _ready() -> void:
+	var state = get_animation_state()
+	state.set_animation(\"Game_Idle\")
+"
+
+[node name="YxYaoLingRestSite" type="Node2D"]
+script = ExtResource("1_qkggq")
+
+[node name="ControlRoot" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="SelectionReticle" parent="ControlRoot" instance=ExtResource("3_86v01")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -219.0
+offset_top = -367.0
+offset_right = 236.0
+offset_bottom = 137.0
+
+[node name="Hitbox" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -239.0
+offset_top = -389.0
+offset_right = 261.0
+offset_bottom = 159.0
+
+[node name="ThoughtBubbleRight" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 118.0
+offset_top = -334.0
+offset_right = 118.0
+offset_bottom = -334.0
+
+[node name="ThoughtBubbleLeft" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -172.0
+offset_top = -343.99997
+offset_right = -172.0
+offset_bottom = -343.99997
+scale = Vector2(24.845001, -581.96075)
+
+[node name="SpineSprite" type="SpineSprite" parent="ControlRoot"]
+skeleton_data_res = ExtResource("2_qkggq")
+preview_skin = "default"
+preview_animation = "Game_Idle"
+preview_frame = false
+preview_time = 0.0
+position = Vector2(0, 600)
+script = SubResource("GDScript_qkggq")

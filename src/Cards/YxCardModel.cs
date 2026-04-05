@@ -25,7 +25,7 @@ public abstract class YxCardModel(int canonicalEnergyCost, CardType type, CardRa
     public bool IsHexagram => YxKeywords.Contains(YxCardKeyword.Hexagram);
 
     /// <summary>Returns true if the card is 'Post Action'.</summary>
-    public bool IsPostAction => YxKeywords.Contains(YxCardKeyword.Thunder);
+    public bool IsPostAction => YxKeywords.Contains(YxCardKeyword.PostAction);
 
     /// <summary>Returns true if the card is 'Post Action'.</summary>
     public bool IsThunder => YxKeywords.Contains(YxCardKeyword.Thunder);

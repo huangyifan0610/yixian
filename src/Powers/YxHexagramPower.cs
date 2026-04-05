@@ -80,7 +80,7 @@ public static class YxHexagramPowerExtension
             if (hexagram?.Amount > 0)
             {
                 hexagramUsed = hexagram.Amount;
-                hexagram.SetAmount(0);
+                PowerCmd.Remove(hexagram);
             }
             else
             {

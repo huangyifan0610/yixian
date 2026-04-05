@@ -33,14 +33,20 @@ public sealed class YxTemporaryHpPower : PowerModel
     }
 
     /// <summary>Loses HP and Max HP after the combat.</summary>
-    public override async Task AfterCombatVictory(CombatRoom room)
+    public override async Task AfterCombatEnd(CombatRoom room)
     {
-        Flash();
+        var vitalityBlossom = Owner.GetPower<YxVitalityBlossomPower>();
+        if (vitalityBlossom != null)
+        {
+            await vitalityBlossom.OnCombatEnd(this);
+        }
 
         decimal oldMaxHp = Owner.MaxHp;
         decimal oldHp = Owner.CurrentHp;
         decimal newMaxHp = Math.Max(oldMaxHp - Amount, 1m);
         decimal newHp = Math.Clamp(oldHp - Amount, 1m, newMaxHp);
+
+        Flash();
 
         if (oldHp != newHp)
         {
